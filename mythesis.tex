@@ -493,11 +493,210 @@ where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\the
 
 \subsubsection{Light bending}
 
+The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry
+(i.e. light bending) is given by (...) %\citep[e.g.][]{mtw73}
+\be \label{eq:bend2}
+  \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
+       \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
+\ee
+where $b$ is impact parameter,
+\be \label{eq:impact2}
+  b=\frac{R}{\sqrt{1-u}} \sin\alpha .
+\ee
+The maximum bending angle corresponds to $\sigma=\pi/2$.
+The visibility of the spot is defined by a condition $\cos \sigma>0$. 
+
+The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is 
+\be 
+\psi(R,\alpha)=2\psi_{\max}-\psi_{p}(R,\pi-\alpha),
+\ee 
+where $\psi_{\max} = \psi_{p}(p,\alpha=\pi/2)$ and p is the distance of closest approach, given by
+\be
+p = -\frac{2}{\sqrt{3}}b\cos([arcos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
+\ee
+
+
+
 
 \subsubsection{Observed flux}
 
 
+The observed flux from the spot 
+at photon energy $E$ is
+\be
+\label{eq:dF_E2}
+  \d F_E=I_E\ \d\Omega,
+\ee
+where $I_E$ is the specific   intensity of radiation
+at infinity and $\d\Omega$ is
+the solid angle occupied by spot with area $\d S'$ on the observer's sky.
+The solid angle can be expressed in terms of the impact parameter
+\be
+\d\Omega=b\ \d b\ \d\varphi/D^2,
+\ee
+where $D$ is the distance to the source and $\varphi$ is the azimuthal
+angle corresponding to rotation around line of sight (vector $\bmath{k}$).
+The impact parameter $b$ depends on $\psi$ only, but not on $\varphi$.
+
+The apparent area of the spot as measured by photon beams
+in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
+(see Terrell 1959; Lightman et al. 1975; Ghisellini 1999) 
+and the relation between $\sigma$ and $\sigma'$ is described 
+by the relativistic aberration formula (for motions parallel to the 
+spot surface) (\ref{eq:aberr2}). Thus the spot area projected on to the plane perpendicular 
+to the photon propagation direction, i.e. a photon beam cross-section,
+is Lorentz invariant (see e.g.  Lightman et al. 1975; 
+Lind \& Blandford 1985): 
+\be \label{eq:Salpha2}
+\d S\ \cos\sigma = \d S'\ \cos\sigma' . 
+\ee
+%Using equation~(\ref{eq:impact2}) and
+%the facts that $\d S=R^2\ \d\cos\psi\  \d\varphi$  (THIS IS NOT CORRECT %NOW) one gets... (see Morsink)
+Combining this information to equation derived by (...)%\citet{MLCB07}
+ the solid angle is 
+\be\label{eq:omega2}
+ \d\Omega=\frac{\d S' \cos \sigma'}{D^2} \frac{1}{1-u} \frac{\d\cos\alpha}{\d\cos\psi}.
+\ee
+In the limit of weak gravity $u\ll 1$, this gives
+the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
+
+The combined effect of the gravitational redshift and Doppler effect
+results in the following  relation between the monochromatic
+observed and local intensities
+(...)%\citep[see e.g.][]{mtw73,rl79}:
+\be
+I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
+\ee
+where $E/E'=\Dop \sqrt{1-u}$.
+Here $I'_{E'}(\sigma')$ is the intensity computed in the frame comoving with
+the spot.
+For the bolometric intensity, one gets
+\be
+I= \left (\Dop \sqrt{1-u} \right )^4 I'(\sigma') .
+\ee
+
+The observed spectral flux (eq.~\ref{eq:dF_E2}) now reads
+\be \label{eq:fluxspot2}
+F_{E}=(1-u)^{1/2} \Dop^{4} I'_{E'}(\sigma') \cos\sigma
+\frac{\d \cos\alpha}{\d\cos\psi}
+ \frac{\d S'}{D^2} ,
+\ee
+where we have used the aberration formula (\ref{eq:aberr2}).
+The bolometric flux is given by:
+\be  \label{eq:fluxbolo2}
+F= (1-u)\ \Dop^5 \
+I'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
+\ee
+If the radiation spectrum can be represented by
+a power-law $I'_{E'}(\sigma') \propto E '^{-(\Gamma-1)}$
+with a photon spectral index
+$\Gamma$ which does not depend on the angle $\sigma'$ then
+\be \label{eq:int_trans2}
+I'_{E'}(\sigma') = I'_{E}(\sigma')
+\left( \Dop \sqrt{1-u} \right)^{\Gamma-1} .
+\ee
+The observed spectral flux at a distance $D$ from the star is then given by 
+\be\label{eq:fluxplaw2}
+ F_{E}= (1-u)^{\Gamma/2}\ \Dop^{\Gamma+3} I'_E(\sigma')
+\cos\sigma\ \frac{\d\cos\alpha}{\d\cos\psi}\ \frac{\d S'}{D^2}.
+\ee
+Expression for the bolometric flux (\ref{eq:fluxbolo2})
+may be obtained as a special case of Eq.~(\ref{eq:fluxplaw2}) by setting $\Gamma=2$. 
+
+Thus, the bolometric flux from a rapidly rotating star differs by a factor  $\Dop^5$
+from that for a slowly rotating star. Two powers of $\Dop$ come
+from the solid angle transformation, one from the energy, one from the
+photon arrival time contraction,
+and the fifth from the change in the projected  area due to  aberration.
+Aberration may also change the specific intensity since it has to be computed
+for angle $\sigma'$ in the comoving frame
+
+
+
+
 \subsubsection{Time delays}
+
+
+
+Expressions (\ref{eq:fluxspot2}), (\ref{eq:fluxbolo2}) and (\ref{eq:fluxplaw2}) 
+contain the pulsar phase $\phi$, but the flux actually corresponds to a different 
+observed phase $\phiobs$, which is different from $\phi$ due to light travel delays.  
+The delays become significant only for rapidly rotating pulsars.
+In Schwarzschild metric the maximum time delay for a neutron star
+of $M=1.4\msun$ is $\Delta t\sim 7\times 10^{-2}$ ms (almost independent
+of compactness of the star $M/R$). This gives at most 
+a 5 per cent correction to the arrival phase for a rotational period $P=1.5$~ms.
+   
+The delay is caused by different travel times of emitted
+photons to the observer, depending on the position of the emitting spot.
+A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
+is lagging the photon originating from a reference radius $r_{ref}$ (which can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by (...)%\citep{pfc83}:
+
+ADD THIS LATER
+
+\iffalse
+\be \label{eq:delay2}
+\begin{split}
+c\Delta t_{p}(R,\alpha)=  \int_R^{\infty} \frac{\d r}{1- \rg/r}
+\left\{ \left[ 1-  \frac{b^2}{r^2}  \left( 1- \frac{\rg}{r} \right)
+\right] ^{-1/2}  -1 \right\} \\ +\delta t(r_{ref},R),
+\end{split}
+\ee
+where 
+\be
+\delta t(r_{ref},R) = R-r_{ref}+\rg\ln(\frac{R-\rg}{r_{ref}-\rg})
+\ee
+is the time difference between photons $b=0$ from $R$ and $r_{ref}$. 
+
+In the case when $\alpha > \pi/2$ the corresponding delay is
+\be\label{eq:delay22}
+\begin{split}
+c\Delta t(R,\alpha)= 2c\Delta t_{p}(p,\pi/2)-c\Delta t_{p}(R,\pi-\alpha)\\+4\left[ R-p+\rg\ln(\frac{R-\rg}{p-\rg})\right].
+\end{split}
+\ee
+
+\fi
+
+For a given pulsar phase $\phi$, we compute angle $\psi$, then
+we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter
+using  formulae (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}), and
+  compute the corresponding  delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$
+with equations  (\ref{eq:delay2}) and (\ref{eq:delay22}).
+We then construct a one-to-one
+correspondence between the pulsar phase $\phi$ and
+the photon arrival phase to the observer $\phiobs=\phi+ \Delta\phi$,
+with the phase delays
+\be \label{eq:deltaphi2}
+\Delta \phi(\phi) =2\pi\nu \Delta t[b(\phi)] .
+\ee
+
+The flux at observed phase $\phiobs$ is
+${F}_{\rm obs}(\phiobs)=F(\phiobs-\Delta\phi)$ with
+phase delay  $\Delta \phi=2\pi\nu\Delta t$
+computed using (\ref{eq:delay2}), (\ref{eq:delay22}) and (\ref{eq:deltaphi2}).
+The effect of the photon arrival time contraction (or stretching) on
+the observed flux is already accounted for by one of the Doppler factors, 
+so there is no need to multiply again flux by $\delta$.
+
+
+
+\subsubsection{Profiles from a large spot} 
+
+For a finite size spot, obviously, integration over the spot surface is required. 
+I will not write here any formulae as they are rather trivial. 
+The idea is to split the spot into a number of small sub-spots and compute the profiles 
+from each sub-spot separately. One should be careful to include time delays correctly. 
+(For this problem it is actually good to compute the time delays relative to the 
+photons emitted from the point directly under the observer.) 
+I just  integrated over the spot surface using Gaussian quadrature in (cosine of) colatitude and 
+use trapezoidal rule for integration over the azimuth inside the spot. 
+Alternatively, one can use the HEALPIX representation of the spot, or any other routine. 
+For a large spot (angular radius $\sim$30 deg), 
+at least a few tens points in total are needed if one wants to achieve accuracy of the order of 1\%. 
+
+
+\subsubsection{Comparsion of the profiles}
+
 
 
 \subsection{Bayesian inference}
