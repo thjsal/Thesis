@@ -29,6 +29,11 @@
     {Contents}%
 }
 
+\addto\captionsfinnish{%
+  \renewcommand{\figurename}%
+    {Fig.}%
+}
+
 \def\rg{r_{\rm S}} % Schwarzschild radius
 
 \def\be{\begin{equation}}
@@ -382,9 +387,7 @@ f(\theta)=\frac{1+z}{R}\frac{dR}{d\theta}.
 
 We will  start the waveform with the center of the spot in the plane defined 
 by the spin axis and the direction to the observer 
-(when the spot crosses the plane defined by $\bmath{k}$ and $\bmath{z}$). 
-We define the zero of the observer's time coordinate by the time of arrival at the observer 
-of a light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g. the equator radius of the star). 
+(when the spot crosses the plane defined by $\bmath{k}$ and $\bmath{z}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g. the equator radius of the star) is used to define the zero of the observer's time coordinate. The time is zero when this photon arrives at the observer. 
 
 
 
@@ -455,7 +458,7 @@ and $\bmath{k}_0$:
 %But also $\bmath{\beta}$ (y-axis) and $\bmath{n}$ (z-axis)should be perpendicular???? Okey, I think it is both same time .. +if you choose $\bmath{r}$ as z-axis, then the z-component of $\bmath{k_{0}}$ will be $\cos\alpha$)
 
 Emission angle in the corotating frame relative to the surface normal is denoted by
-$\sigma'$.  It differs from $\sigma$ because of relativistic aberration. 
+$\sigma'$.  It differs from $\sigma$ because of relativistic aberration. The rays of light are tilted towards the direction of the spot motion relative to the observer.
 In the frame comoving with the spot 
 (with $y$-axis along the spot motion, $z$-axis along the local normal), 
 the unit vector along the photon momentum  is 
@@ -503,8 +506,8 @@ where $b$ is impact parameter,
 \be \label{eq:impact2}
   b=\frac{R}{\sqrt{1-u}} \sin\alpha .
 \ee
-The maximum bending angle corresponds to $\sigma=\pi/2$.
-The visibility of the spot is defined by a condition $\cos \sigma>0$. 
+The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
+The visibility of the spot is thus defined by a condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might be possible for an oblate star). This check is not yet included in the current pulse profile code.
 
 The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is 
 \be 
@@ -631,8 +634,30 @@ The delay is caused by different travel times of emitted
 photons to the observer, depending on the position of the emitting spot.
 A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
 is lagging the photon originating from a reference radius $r_{ref}$ (which can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by (...)%\citep{pfc83}:
+:
 
-ADD THIS LATER
+\be \label{eq:delay2}
+c\Delta t_{p}(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{ref},R),
+\ee
+where 
+\be
+c\Delta t_{s}(R,\alpha) =
+\int_R^{\infty} \frac{\d r}{1- \rg/r}
+\left\{ \left[ 1-  \frac{b^2}{r^2}  \left( 1- \frac{\rg}{r} \right)
+\right] ^{-1/2}  -1 \right\}
+\ee
+is the time difference between photons originating from the same radius (R) and
+\be
+\delta t(r_{ref},R) = R-r_{ref}+\rg\ln(\frac{R-\rg}{r_{ref}-\rg})
+\ee
+is the time difference between photons with $b=0$ from $R$ and $r_{ref}$. 
+
+In the case when $\alpha > \pi/2$ the corresponding delay is
+\be\label{eq:delay22}
+\begin{split}
+c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\left[ R-p+\rg\ln(\frac{R-\rg}{p-\rg})\right]-\delta t(r_{ref},R).
+\end{split}
+\ee
 
 \iffalse
 \be \label{eq:delay2}
