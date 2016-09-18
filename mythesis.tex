@@ -370,9 +370,9 @@ The angle between $\bmath{n}$ and $\bmath{r}$ is $\gamma$ and
 \cos\gamma=[1+f^{2}(\theta)]^{-1/2},
 \end{equation}
 where
-\begin{equation}
+\be \label{eq:ftheta}
 f(\theta)=\frac{1+z}{R}\frac{dR}{d\theta}.
-\end{equation}
+\ee
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -708,13 +708,20 @@ so there is no need to multiply again flux by $\delta$.
 \subsubsection{Profiles from a large spot} 
 
 For a finite size spot, obviously, integration over the spot surface is required. 
-I will not write here any formulae as they are rather trivial. 
+%I will not write here any formulae as they are rather trivial. 
 The idea is to split the spot into a number of small sub-spots and compute the profiles 
 from each sub-spot separately. One should be careful to include time delays correctly. 
 (For this problem it is actually good to compute the time delays relative to the 
 photons emitted from the point directly under the observer.) 
-I just  integrated over the spot surface using Gaussian quadrature in (cosine of) colatitude and 
-use trapezoidal rule for integration over the azimuth inside the spot. 
+Integration over the spot surface is done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. The surface element of the spot is 
+
+
+\be \label{eq:surf_element}
+\d S(\theta) = R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi ,
+\ee
+where the factor $[1+f^{2}(\theta)]^{1/2}$ takes care of the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
+
+
 Alternatively, one can use the HEALPIX representation of the spot, or any other routine. 
 For a large spot (angular radius $\sim$30 deg), 
 at least a few tens points in total are needed if one wants to achieve accuracy of the order of 1\%. 
