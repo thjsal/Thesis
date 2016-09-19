@@ -234,20 +234,39 @@
 %    \vskip 3em%
   \end{center}\par
   \vfill
-	\if@haslab\makebox[8cm]{}\@lab\par\fi%
-        \makebox[8cm]{}Turun yliopisto\par%
-        \makebox[8cm]{}Fysiikan ja tähtitieteen laitos\par%
-        \if@hasoppiaine\makebox[8cm]{}\@oppiaine\par\fi%
-        \if@hasvuosi\makebox[8cm]{}\@vuosi\par\fi%
-	\makebox[8cm]{}\@author\par%
+	%\if@haslab\makebox[8cm]{}\@lab\par\fi%
+    %    \makebox[8cm]{}Turun yliopisto\par%
+    %    %\makebox[8cm]{}Fysiikan ja tähtitieteen laitos\par%
+    %    \makebox[7cm]{}Department of Physics and Astronomy\par%
+    %    \if@hasoppiaine\makebox[8cm]{}\@oppiaine\par\fi%
+    %    \if@hasvuosi\makebox[8cm]{}\@vuosi\par\fi%
+	%\makebox[8cm]{}\@author\par%
+	\if@haslab\makebox[7cm]{}\@lab\par\fi%
+        \makebox[7cm]{}University of Turku\par%
+        %\makebox[8cm]{}Fysiikan ja tähtitieteen laitos\par%
+        \makebox[7cm]{}Department of Physics and Astronomy\par%
+        \if@hasoppiaine\makebox[7cm]{}\@oppiaine\par\fi%
+        \if@hasvuosi\makebox[7cm]{}\@vuosi\par\fi%
+	\makebox[7cm]{}\@author\par%
 	\ifnum\tark@maara=2%	
-	  \makebox[8cm]{}Tarkastajat:\par%
-	  \makebox[8.5cm]{}\@urveloi\par%
-	  \makebox[8.5cm]{}\@urveloii\par%
+	  %\makebox[8cm]{}Tarkastajat:\par%
+	  \makebox[7cm]{}Supervised by:\par%
+	  	  \makebox[7.5cm]{}\@urveloi\par%
+	  \makebox[7.5cm]{}\@urveloii\par%
 	\else%
-	  \makebox[8cm]{}Tarkastaja:\par%
-	  \makebox[8.5cm]{}\@urveloi\par%
+	  \makebox[7cm]{}Supervised by:\par%
+	  \makebox[7.5cm]{}\@urveloi\par%
 	\fi%
+	  
+	  
+	  
+	  %\makebox[8.5cm]{}\@urveloi\par%
+	  %\makebox[8.5cm]{}\@urveloii\par%
+	%\else%
+	%  \makebox[8cm]{}Tarkastaja:\par%
+	%  \makebox[8.5cm]{}\@urveloi\par%
+	%\fi%
+	
 	\vskip 60\p@
 %    \end{tabbing}
 %    {\large
