@@ -761,10 +761,17 @@ at least a few tens points in total are needed if one wants to achieve accuracy 
 
 \subsection{Bayesian inference}
 
+The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic in order to test if the sampler will actually find the same values that were used when creating the data. More about the synthetic data is presented in the Results section.
 
 
+\subsubsection{Metropolis}
+
+The original, standard MCMC algorithm is called the Metropolis algorithm. 
 
 \subsubsection{Ensemble sampler}
+
+In this algorithm, we use a group or ensemble of sequences. Each member of
+the ensemble is called a walker.
 
 \section{Results}
 
