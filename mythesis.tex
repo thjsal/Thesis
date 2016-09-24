@@ -761,7 +761,18 @@ at least a few tens points in total are needed if one wants to achieve accuracy 
 
 \subsection{Bayesian inference}
 
-The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic in order to test if the sampler will actually find the same values that were used when creating the data. More about the synthetic data is presented in the Results section.
+The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. More about the synthetic data is presented in the Results section. The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" waveform, and the confidence regions for the values of these parameters. Probabilities are calculated using Bayes's theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a quite new ensemble sampler (used in this thesis) are discussed in the two following sections. 
+
+\subsubsection{Bayesian analysis}
+
+We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in this Thesis). According to the Bayes's theorem    this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values:
+
+
+\be \label{eq:bayes}
+p(\textbf{y}|D) \propto p(D|\textbf{y})p(\textbf{y}).
+\ee
+
+In the previous equation $p(D|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The next factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior, which is the most uninformative prior. Later we take account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to see how or if it is improving the fits. 
 
 
 \subsubsection{Metropolis}
