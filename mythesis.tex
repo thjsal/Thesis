@@ -777,7 +777,7 @@ p(\textbf{y}|D) \propto p(D|\textbf{y})p(\textbf{y}).
 In the previous equation $p(D|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The next factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior, which is the most uninformative prior. Later we take account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to see how or if it is improving the fits. The constant of proportionality is the inverse of the normalization factor, but it is irrelevant when estimating the values of the parameters in a given model. 
 
 
-\subsubsection{Metropolis}
+\subsubsection{Metropolis (-Hastings?)}
 
 The original, standard MCMC algorithm is called the Metropolis algorithm. It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional distribution of $X_{t+1}$ given all past elements is independent of all but the previous state:
 
@@ -785,12 +785,35 @@ The original, standard MCMC algorithm is called the Metropolis algorithm. It is 
 P(X_{t+1} = x|X_{t}. . . X_{1}) = P(X_{t+1} = x|X_{t}).
 \ee
 A Markov chain is a random walk with Markov property.
+ 
+The Metropolis algorithm works by taking an arbitrary move near the current
+point. If $X_{t}$ is the sample at time t, then the new sample Y is propesed from the proposal distribution $q(Y|X_{t})$. The likelihood of this new sample is then compared to that of the previous sample. The likelihood ratio $\alpha$ between the to states is calculated with the following equation:
+\be \label{eq:likely_ratio} 
+\alpha = \frac{p(Y|D)q(X_{t}|Y)}{p(X_{t}|D)q(Y|X_{t})}.
+\ee
+The conditional probabilities given the data are calculated using the Bayes's formula (\ref{eq:bayes}). The ratio of these probabilites is multiplied with the ratio of proposal distributions (sometimes called transition kernels) so that the algorithm satisfy condition called detailed balance. It is an important property for proving the convergence of the chain. It states that a step from $X_{t}$ must have the same probability as a step from $Y$ to $X_{t}$.  The proposal density $q(X_{t}|Y)$ describes the probability of a transition from $Y$ j to $X_{t}$ in the parameter space.
+
+The next step is to decide whether the likelihood ratio is high enough in order to accept the new step. In Metropolis(-Hastings) algorithm, we automatically accept a step, if $\alpha \ge 1$, but otherwise with a probability $\alpha$ (if $\alpha$ is greater than a random number between 0 and 1). If the new state is accepted, we repeat the first steps using now $Y$ as the current point. Otherwise we propose the new sample using again the same $X_{t}$. 
+
+
+%If the probability distribution function (PDF) has greater value at that point, then the walk always moves there. If the PDF has a smaller value, then the move is accepted with probability dependent on how much less likely.
+
+It can be seen that the acceptance rule simplifies considerable when the
+proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change significantly when adding new members to the chain. Whether the obtained samples are statistically representative of the posterior can be verified if several chains with different initial states result in the same posterior density.
+
+Metropolis algorithm has also some limitations. The generated samples are not indpendent, since they are generated in a chain (concerns also other MCMC methods). The correlation between the samples can be measured by the autocorrelation time (ADD DEFINITION...and more). 
+
+
+One major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution (ADD EXAMPLES). Partially for this reason we have moved to use the ensemble sampler, which is presented in the next section. 
+
 
 
 \subsubsection{Ensemble sampler}
 
 In this algorithm, we use a group or ensemble of sequences. Each member of
 the ensemble is called a walker.
+
+\subsubsection{Implementation}
 
 \section{Results}
 
