@@ -203,8 +203,9 @@ FUNCTION {format.names}
               if$
               t "others" =
               etal or
-                { " {\it et~al.}" * }
-                { " ja " * t * }      % muokattu... alkuperäinen { " and " * t * }
+                { " {\it et~al.}" * }    
+                %{ " ja " * t * }  % muokattu... alkuperäinen { " and " * t * }
+		{ " and " * t * }
               if$
             }
           if$

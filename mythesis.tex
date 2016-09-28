@@ -87,6 +87,9 @@
 %
 \begin{document}
 
+
+\bibliographystyle{wihuri} %Tyylitiedosto "wihuri.bst". Hieman muutettu alkuperäisestä wihuri-versiosta.
+
 %\title{Gradu}
 %\opinnayte{Pro Gradu}
 %\author{Fil. yo. Tuomo Salmi}
@@ -95,7 +98,8 @@
 %\tarkastaja{P.P.}
 %\tarkastaja{H.H.}
 
-\title{Gradu}
+\title{Mass and radius constraints of neutron stars
+from pulse shape modelling}
 \opinnayte{Master Thesis}
 \author{Tuomo Salmi}
 \vuosi{2016}
@@ -135,7 +139,8 @@
 \begin{tiivistelma}%
         {Department of Physics and Astronomy}%
         {Salmi, Tuomo}%
-        {Gradu}
+        {Mass and radius constraints of neutron stars
+from pulse shape modelling}
         {Master's thesis, \pageref{LastPage} s., 3 Appendices}%
         {Astronomy}% Oppiaine
         {September 2016}%
@@ -336,7 +341,7 @@ Rotational effects are added by introducing Doppler terms as though the star is 
 Due to the fast rotation the millisecond pulsars have an oblate shape instead of spherical. The difference between oblate and spherical star are significant when the rotation frequency $\nu \ge 300 \, \mathrm{Hz}$. The most important effect is purely geometrical: The directions that the light can be emitted into are different in these two cases. Thus there are certain spot locations on the star where the spot is visible if the surface is oblate but would be invisible if the surface where spherical (and vice versa).
 
 
-The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis). One of the most recent ones was presented by Algendy et. al. (2014).%\citet{algendy}. 
+The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis). One of the most recent ones was presented by Algendy et. al. (2014) ~\cite{algendy}. 
 It is also the most used model in this thesis. In that model (in geometric units
 where G = c = 1)
 
@@ -405,7 +410,7 @@ f(\theta)=\frac{1+z}{R}\frac{dR}{d\theta}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
-\caption{Geometry of the problem. Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location.%Dotted curve shows the
+\caption{Geometry of the problem. Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location (~\cite{morsink}).%Dotted curve shows the
 %photon trajectory.
 \label{fig:geom2}}
 \end{figure}
@@ -525,7 +530,7 @@ where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\the
 \subsubsection{Light bending}
 
 The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry
-(i.e. light bending) is given by (...) %\citep[e.g.][]{mtw73}
+(i.e. light bending) is given by (... ~\cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
   \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
        \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
@@ -910,17 +915,18 @@ where N is the number of parameters sampled.
 \fi
 
 
-\newpage
-% Rivinväli pienemmäksi viiteluettelossa. Fonttia on vaihdettava, jotta käsky
-% toimisi !
-\renewcommand{\baselinestretch}{1}\large\normalsize
-%
-\begin{thebibliography}{50}% Viiteluettelo. TÄTÄ ON PAKKO KÄYTTÄÄ !
-% Jaa, ai miksi ? No, koska tällä tavalla se on vaan niin pirusti
-% helpompaa.
-\bibitem{lshort} T. Oetiker, H. Partl, I. Hyna and E. Schlegl,
-Not so short introduction to \LaTeX 2e, 1998
-\end{thebibliography}
+%\newpage
+%% Rivinväli pienemmäksi viiteluettelossa. Fonttia on vaihdettava, jotta käsky
+%% toimisi !
+%\renewcommand{\baselinestretch}{1}\large\normalsize
+%%
+%\begin{thebibliography}{50}% Viiteluettelo. TÄTÄ ON PAKKO KÄYTTÄÄ !
+%% Jaa, ai miksi ? No, koska tällä tavalla se on vaan niin pirusti
+%% helpompaa.
+%\bibitem{lshort} T. Oetiker, H. Partl, I. Hyna and E. Schlegl,
+%Not so short introduction to \LaTeX 2e, 1998
+%\end{thebibliography}
+
 %
 % Vaihtoehtoisesti thebibliography ympäristölle voi käyttää BibTeX
 % tietokantaa, jonka voit luoda tai käyttää olemassaolevaa (esim.
@@ -933,4 +939,29 @@ Not so short introduction to \LaTeX 2e, 1998
 %\bibliography{/var/bib/yhdistetty}
 %\bibliographystyle{wihuri}
 %
+
+
+
+\newpage
+\renewcommand{\baselinestretch}{1}\large\normalsize
+%kirjallisuusluettelo
+\addcontentsline{toc}{section}{\refname} %Sisällysluetteloon näkymään "Viitteet" sivunumerolla kuten kaikki muukin
+%\renewcommand{\baselinestretch}{1.2}\large\normalsize % jos on paljon viitteitä, tällä saa hieman sivuja karsittua
+\bibliography{bib1} %Bibtex-tiedoston nimi, joka sijaitsee samassa hakemistossa muiden kanssa. Näitä voi olla useita.
+\bibliographystyle{wihuri} %Tyylitiedosto "wihuri.bst". Hieman muutettu alkuperäisestä wihuri-versiosta.
+
+%------------------------
+%Jos sulle tulee liitteitä, niin tässä yksi tapa
+
+%\newpage
+%\setcounter{page}{1} %nollataan sivulaskurit tai ykköstetään ;)
+%\setcounter{section}{0} % sama temppu kappalenumeroille
+
+%\renewcommand\thesection{\Alph{section}} %Kappalenumerointi tyyliin A,B,C...
+%\renewcommand\thepage{\Alph{section}-\arabic{page}} % ja sivunumerot %vastaavasti A-1, A-2, B-1...
+
+
+
+
+
 \end{document} % Se oli siinä !
