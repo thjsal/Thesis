@@ -333,16 +333,19 @@ The oscillations in the flux during the outbursts (the light curves) of accretin
 Pechenick, Ftaclas and Cohen (1983)~\cite{pechenick}. 
 Rotational effects are added by introducing Doppler terms as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
 
-
+The observed pulse profiles from AMXPs appear to be rather close to sinusoidal with peak-to-peak oscillation amplitude $A = \frac{(F_{\mathrm{max}} - F_{\mathrm{min}}} {F_{\mathrm{max}} - F_{\mathrm{min}}}$ between 4 and 12 per cent \cite{poutarew2006}. This amplitude depends only weakly on energy and the spectrum may be fitted with a two-component model (blackbody and Comptonization). The weak energy dependence and a fairly constant spectral shape as a function of pulse phase, support also the idea that the bulk of the observed X-ray emission originates from polar caps (where the gas stream channeled by the neutron star magnetic field impacts the stellar surface forming a shock). Any additional source of radiation would have to have a spectrum identical to that of the shock.
 
 
 \subsubsection{Oblateness}
 
-Due to the fast rotation the millisecond pulsars have an oblate shape instead of spherical. The difference between oblate and spherical star are significant when the rotation frequency $\nu \ge 300 \, \mathrm{Hz}$. The most important effect is purely geometrical: The directions that the light can be emitted into are different in these two cases. Thus there are certain spot locations on the star where the spot is visible if the surface is oblate but would be invisible if the surface where spherical (and vice versa).
+Due to the fast rotation the millisecond pulsars have an oblate shape instead of spherical. The difference between an oblate and a spherical star is significant when the rotation frequency $\nu \ge 300 \, \mathrm{Hz}$ %a place for a reference..
+. The most important effect is purely geometrical: The directions that the light can be emitted into are different in these two cases. Thus there are certain spot locations on the star where the spot is visible if the surface is oblate but would be invisible if the surface where spherical (and vice versa).
 
 
-The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis). One of the most recent ones was presented by Algendy et. al. (2014) ~\cite{algendy}. 
-It is also the most used model in this thesis. In that model (in geometric units
+There are different models desscribing the exact shape and oblateness of the neutron star (function $R(\theta)$, where $\theta$ is the colatitude measured from the spin axis).
+%The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis).
+One of the most recent ones was presented by Algendy et. al. (2014) ~\cite{algendy}. 
+It is also the model we use in this thesis. In that model (in geometric units
 where G = c = 1)
 
 \begin{equation}
@@ -370,22 +373,21 @@ x = \frac{M}{R_{eq}},
 \end{equation}
 
 
-In these equations $R_{eq}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period.
+In these equations $R_{eq}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii in this thesis.
 
 
 \subsubsection{Geometry}
 
-We consider a small spot on the stellar surface at colatitude $\theta$. 
-The star is assumed to be rotating  with frequency $\nu=P^{-1}$.
-The velocity of the spot in units of $c$ is 
+Besides the geometry of the star itself, we also need to know relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (for a similar derivation see e.g. \cite{poutabelo}). 
+The star is assumed to be rotating  with frequency $\nu=P^{-1}$ (seen by a distant observer).
+The velocity of the spot in units of $c$ as measured in the non-rotating frame is 
 \begin{equation}
 \label{beta2}
-x = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta =\beta_{\rm eq} \sin\theta,
+x = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta =\beta_{\rm eq}(\theta) \sin\theta,
 \end{equation}
-where $\beta_{\rm eq}$ is the velocity at the equator (if $\theta = \frac{\pi}{2}$), $u\equiv\rg/R(\theta)$, 
+where $\beta_{\rm eq}$ would be constant if the star was spherical, $u\equiv\rg/R(\theta)$, 
 $\rg=2GM/c^2$ is the Schwarzschild radius, $M$ is mass and $R$ is
-radius of the star at spot location. The pulsar frequency has been corrected for the redshift $1/\sqrt{1-u}=1+z$.
-The corresponding Lorentz factor is $\Gamma=(1-\beta^2)^{-1/2}$.
+radius of the star at spot location (given by equation \ref{rtheta2}). The pulsar frequency has been corrected for the gravitational redshift $1/\sqrt{1-u}=1+z$, since the rotation frequency seen by observer is reduced in the gravitational field of the star due to the gravitational time dilation. The corresponding Lorentz factor for the velocity of the spot is $\Gamma=(1-\beta^2)^{-1/2}$.
 
 
 
@@ -394,7 +396,7 @@ the fixed lab frame is described by the unit vector
 \begin{equation}
 \bmath{r}=(\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta),
 \end{equation}
-that points to the spot from the star center (see Fig. ~\ref{fig:geom2}). The rotational phase of the pulsar is $\phi=2\pi\nu t$. The vector that points normal to the surface is
+that points to the spot from the star center (see Fig. ~\ref{fig:geom2}). The rotational phase of the pulsar is $\phi=2\pi\nu t$. The vector $\bmath{r}$ is not always directed perpendicular to the surface of the spot unless the star is spherical. The vector that points normal to the surface is given by
 \begin{equation}
 \bmath{n}=(\sin(\theta-\gamma)\cos\phi, \sin(\theta-\gamma)\sin\phi, \cos(\theta-\gamma)).
 \end{equation}
@@ -406,11 +408,12 @@ where
 \be \label{eq:ftheta}
 f(\theta)=\frac{1+z}{R}\frac{dR}{d\theta}.
 \ee
+In case of a spherical star $\frac{dR}{d\theta} = 0$ and thus $\bmath{n} = \bmath{r}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
-\caption{Geometry of the problem. Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location (~\cite{morsink}).%Dotted curve shows the
+\caption{Geometry of the problem. Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location (\cite{morsink}).%Dotted curve shows the
 %photon trajectory.
 \label{fig:geom2}}
 \end{figure}
@@ -418,9 +421,9 @@ f(\theta)=\frac{1+z}{R}\frac{dR}{d\theta}.
 
 
 
-We will  start the waveform with the center of the spot in the plane defined 
-by the spin axis and the direction to the observer 
-(when the spot crosses the plane defined by $\bmath{k}$ and $\bmath{z}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g. the equator radius of the star) is used to define the zero of the observer's time coordinate. The time is zero when this photon arrives at the observer. 
+%We will start the waveform with the center of the spot in the plane defined... 
+The computation of the waveform is started from the center of the spot in the plane defined by the spin axis and the direction to the observer 
+(when the spot crosses the plane defined by $\bmath{z}$ and $\bmath{k}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g. the equator radius of the star) is used to define the zero of the observer's time coordinate. The time is zero when this photon arrives at the observer. 
 
 
 
@@ -435,7 +438,7 @@ Thus
 \ee
 Angle $\psi$ measures the apparent inclination of the spot to the line of
 sight, which is different from the true inclination because of
-the light bending effect.
+the light bending effect. %IS THIS CORRECT?
 % The initial angle of the emitted photon with respect to the normal
 % ${\mathbf n}$ differs from $\psi$ because of the light bending.
 We denote the initial direction of the emitted photon by $\bmath{k}_0$ ($\bmath{l}$ in figure \ref{fig:geom2})
@@ -506,7 +509,7 @@ obtained from the Lorentz transformation:
 \end{array}
 \right) ,
 \ee 
-where  the Doppler factor 
+where is the Doppler factor 
 \be \label{eq:dop2}
 \Dop=\frac{1}{\Gamma(1-\beta\cos\xi)} .
 \ee
@@ -519,18 +522,19 @@ Making use of equation (\ref{eq:k02}) the zenith angle has the value
 \be\label{eq:cossigma2}
 \begin{split}
 \cos\sigma = \bmath{k_{0}}\cdot\bmath{n} = \cos\alpha\cos\gamma+\sin\alpha\sin\gamma\cos\delta = \\
-\cos \alpha  \cos \gamma + (\sin \alpha / \sin \psi) \sin \gamma (\cos i \sin \theta - \sin i \cos \theta \cos \phi),
+\cos \alpha  \cos \gamma + \frac{\sin \alpha}{\sin \psi} \sin \gamma (\cos i \sin \theta - \sin i \cos \theta \cos \phi),
 \end{split}
 \ee
-where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\theta\sin\psi\cos\delta$ (where $\delta$ is the angle between spot-observer and spot-spin-axis planes) and the equation (\ref{eq:psi2}) are used. With small bending angles the approximation $\sin \alpha / \sin \psi \approx \sqrt{(1-u)}$ is used.
+where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\theta\sin\psi\cos\delta$ (where $\delta$ is the angle between spot-observer and spot-spin-axis planes) and the equation (\ref{eq:psi2}) are used. With small bending angles the approximation $\frac{\sin \alpha}{\sin \psi} \approx \sqrt{(1-u)}$ is used (\cite{beloborodov}). 
 %if $\sin\psi\sin\theta \ne 0$. If $\sin\psi\sin\theta = 0$, then $\cos\sigma = \cos\alpha\cos\gamma$.
-
+The equation \ref{eq:cossigma2} is useful, since we need to know the emission angle relative to the spot normal ($\sigma$) in order to calculate fluxes and visibility conditions. 
 
 
 \subsubsection{Light bending}
 
-The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry
-(i.e. light bending) is given by (... ~\cite{mtw}) %\citep[e.g.][]{mtw73}
+Before we can get the angle $\sigma$ from equation \ref{eq:cossigma2} we also need first to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation \ref{eq:psi2}. In case of non-infitesimal spot we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons wchich are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
+
+The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by (\cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
   \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
        \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
@@ -539,8 +543,8 @@ where $b$ is impact parameter,
 \be \label{eq:impact2}
   b=\frac{R}{\sqrt{1-u}} \sin\alpha .
 \ee
-The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
-The visibility of the spot is thus defined by a condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might be possible for an oblate star). This check is not yet included in the current pulse profile code.
+
+
 
 The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is 
 \be 
@@ -548,17 +552,21 @@ The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is
 \ee 
 where $\psi_{\max} = \psi_{p}(p,\alpha=\pi/2)$ and p is the distance of closest approach, given by
 \be
-p = -\frac{2}{\sqrt{3}}b\cos([arcos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
+p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
 \ee
 
 
+Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simposon quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ values with different $\alpha$ and $r$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
+
+
+
+The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
+The visibility of the spot is thus defined by the condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might be possible for an oblate star). This check is not yet included in the current pulse profile code.
 
 
 \subsubsection{Observed flux}
 
-
-The observed flux from the spot 
-at photon energy $E$ is
+Next we can consider the flux originating from the small spot. The observed flux from the spot at photon energy $E$ is
 \be
 \label{eq:dF_E2}
   \d F_E=I_E\ \d\Omega,
@@ -578,8 +586,8 @@ The apparent area of the spot as measured by photon beams
 in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
 (see Terrell 1959; Lightman et al. 1975; Ghisellini 1999) 
 and the relation between $\sigma$ and $\sigma'$ is described 
-by the relativistic aberration formula (for motions parallel to the 
-spot surface) (\ref{eq:aberr2}). Thus the spot area projected on to the plane perpendicular 
+by the relativistic aberration formula (\ref{eq:aberr2}) (for motions parallel to the 
+spot surface). Thus the spot area projected on to the plane perpendicular 
 to the photon propagation direction, i.e. a photon beam cross-section,
 is Lorentz invariant (see e.g.  Lightman et al. 1975; 
 Lind \& Blandford 1985): 
@@ -588,18 +596,16 @@ Lind \& Blandford 1985):
 \ee
 %Using equation~(\ref{eq:impact2}) and
 %the facts that $\d S=R^2\ \d\cos\psi\  \d\varphi$  (THIS IS NOT CORRECT %NOW) one gets... (see Morsink)
-Combining this information to equation derived by (...)%\citet{MLCB07}
- the solid angle is 
+The solid angle measured at infinity is then (Morsink et al. 2007 \cite{morsink})
 \be\label{eq:omega2}
  \d\Omega=\frac{\d S' \cos \sigma'}{D^2} \frac{1}{1-u} \frac{\d\cos\alpha}{\d\cos\psi}.
 \ee
 In the limit of weak gravity $u\ll 1$, this gives
-the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
+the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$. 
 
 The combined effect of the gravitational redshift and Doppler effect
 results in the following  relation between the monochromatic
-observed and local intensities
-(...)%\citep[see e.g.][]{mtw73,rl79}:
+observed and local intensities \cite{mtw}%\citep[see e.g.][]{mtw73,rl79}:
 \be
 I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
 \ee
@@ -623,7 +629,7 @@ The bolometric flux is given by:
 F= (1-u)\ \Dop^5 \
 I'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
 \ee
-If the radiation spectrum can be represented by
+The radiation spectrum can be e.g. a black body spectrum or a power-law. If it can be represented by
 a power-law $I'_{E'}(\sigma') \propto E '^{-(\Gamma-1)}$
 with a photon spectral index
 $\Gamma$ which does not depend on the angle $\sigma'$ then
@@ -645,9 +651,11 @@ from the solid angle transformation, one from the energy, one from the
 photon arrival time contraction,
 and the fifth from the change in the projected  area due to  aberration.
 Aberration may also change the specific intensity since it has to be computed
-for angle $\sigma'$ in the comoving frame
+for angle $\sigma'$ in the comoving frame. 
 
+However in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more realistic case one can assume the intensity to be a multiplication of an angle-dependent ("beaming function") and an energy-dependent function.
 
+In the actual calculation of the flux, we make again a grid of values of the derivatives $\frac{\d\cos\psi}{\d\cos\alpha}$ (same as $(\frac{\d\cos\alpha}{\d\cos\psi})^{-1}$) with different $\alpha$ and $r$. The derivatives for each point are found by interpolating. 
 
 
 \subsubsection{Time delays}
@@ -662,18 +670,20 @@ In Schwarzschild metric the maximum time delay for a neutron star
 of $M=1.4\msun$ is $\Delta t\sim 7\times 10^{-2}$ ms (almost independent
 of compactness of the star $M/R$). This gives at most 
 a 5 per cent correction to the arrival phase for a rotational period $P=1.5$~ms.
+%citate here to JP pulse profile comparisons paper?
+
    
 The delay is caused by different travel times of emitted
 photons to the observer, depending on the position of the emitting spot.
 A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
-is lagging the photon originating from a reference radius $r_{ref}$ (which can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by (...)%\citep{pfc83}:
+is lagging the photon originating from a reference radius $r_{\mathrm{ref}}$ (which can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by \cite{pechenick}%\citep{pfc83}:
 :
 
 \be \label{eq:delay2}
-c\Delta t_{p}(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{ref},R),
+c\Delta t_{p}(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{\mathrm{ref}},R),
 \ee
 where 
-\be
+\be \label{eq:delayint}
 c\Delta t_{s}(R,\alpha) =
 \int_R^{\infty} \frac{\d r}{1- \rg/r}
 \left\{ \left[ 1-  \frac{b^2}{r^2}  \left( 1- \frac{\rg}{r} \right)
@@ -681,39 +691,19 @@ c\Delta t_{s}(R,\alpha) =
 \ee
 is the time difference between photons originating from the same radius (R) and
 \be
-\delta t(r_{ref},R) = R-r_{ref}+\rg\ln(\frac{R-\rg}{r_{ref}-\rg})
+\delta t(r_{\mathrm{ref}},R) = R-r_{\mathrm{ref}}+\rg\ln(\frac{R-\rg}{r_{\mathrm{ref}}-\rg})
 \ee
-is the time difference between photons with $b=0$ from $R$ and $r_{ref}$. 
+is the time difference between photons with $b=0$ from $R$ and $r_{\mathrm{ref}}$ \cite{falkner}. 
+%%(...) Citate here to falkner
 
 In the case when $\alpha > \pi/2$ the corresponding delay is
 \be\label{eq:delay22}
 \begin{split}
-c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\left[ R-p+\rg\ln(\frac{R-\rg}{p-\rg})\right]-\delta t(r_{ref},R).
+c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\left[ R-p+\rg\ln(\frac{R-\rg}{p-\rg})\right]-\delta t(r_{\mathrm{ref}},R).
 \end{split}
 \ee
 
-\iffalse
-\be \label{eq:delay2}
-\begin{split}
-c\Delta t_{p}(R,\alpha)=  \int_R^{\infty} \frac{\d r}{1- \rg/r}
-\left\{ \left[ 1-  \frac{b^2}{r^2}  \left( 1- \frac{\rg}{r} \right)
-\right] ^{-1/2}  -1 \right\} \\ +\delta t(r_{ref},R),
-\end{split}
-\ee
-where 
-\be
-\delta t(r_{ref},R) = R-r_{ref}+\rg\ln(\frac{R-\rg}{r_{ref}-\rg})
-\ee
-is the time difference between photons $b=0$ from $R$ and $r_{ref}$. 
-
-In the case when $\alpha > \pi/2$ the corresponding delay is
-\be\label{eq:delay22}
-\begin{split}
-c\Delta t(R,\alpha)= 2c\Delta t_{p}(p,\pi/2)-c\Delta t_{p}(R,\pi-\alpha)\\+4\left[ R-p+\rg\ln(\frac{R-\rg}{p-\rg})\right].
-\end{split}
-\ee
-
-\fi
+The integral in equation \ref{eq:delayint} is again not very easy to solve numerically. That is why we use again a variable substitution (...) before using Simpson quadrature. We also make a grid of time delays corresponding for different $\alpha$ and $r$, which we later interpolate, to make the code run faster.
 
 For a given pulsar phase $\phi$, we compute angle $\psi$, then
 we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter
@@ -742,37 +732,32 @@ so there is no need to multiply again flux by $\delta$.
 
 For a finite size spot, obviously, integration over the spot surface is required. 
 %I will not write here any formulae as they are rather trivial. 
-The idea is to split the spot into a number of small sub-spots and compute the profiles 
-from each sub-spot separately. One should be careful to include time delays correctly. 
-(For this problem it is actually good to compute the time delays relative to the 
-photons emitted from the point directly under the observer.) 
-Integration over the spot surface is done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. The surface element of the spot is 
-
-
+The idea is to split the spot into a number of small sub-spots and compute the profiles from each sub-spot separately. One should be careful to include time delays correctly. For this problem it is actually good to compute the time delays relative to the photons emitted from the point directly under the observer. Integration over the spot surface is done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. The surface element of the spot is 
 \be \label{eq:surf_element}
 \d S(\theta) = R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi ,
 \ee
 where the factor $[1+f^{2}(\theta)]^{1/2}$ takes care of the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
 
+In this model we assumed a spherically symmetric spot (the angle measured from the spot center to the end of the spot is constant). The shape of the spot could also be modelled with a more complicated model. For a large spot (angular radius $\sim$30 deg) at least a few tens points in total are needed if one wants to achieve accuracy of the order of 1\%.
 
-Alternatively, one can use the HEALPIX representation of the spot, or any other routine. 
-For a large spot (angular radius $\sim$30 deg), 
-at least a few tens points in total are needed if one wants to achieve accuracy of the order of 1\%. 
+%Alternatively, one could use the HEALPIX representation of the spot, or any other %routine. For a large spot (angular radius $\sim$30 deg), 
+%at least a few tens points in total are needed if one wants to achieve accuracy of %the order of 1\%. 
 
 
 \subsubsection{Comparison of the profiles}
 
+Show here some profiles..
 
 
 \subsection{Bayesian inference}
 
-The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. More about the synthetic data is presented in the Results section. 
+The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller} (for future space missions). More about the synthetic data of this thesis is presented in the Results section. 
 
-The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" waveform, and the confidence regions for the values of these parameters. Probabilities are calculated using Bayes's theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a quite new ensemble sampler (used in this thesis) are discussed in the two following sections. 
+The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" waveform, and the confidence regions for the values of these parameters. The goal is also to study the effect of polarization measurements to the posterior probability distributions. Probabilities are calculated using Bayes's theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a quite new ensemble sampler (used in this thesis) are discussed in the two following sections. 
 
 \subsubsection{Bayesian analysis}
 
-We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in this Thesis). According to the Bayes's theorem    this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values:
+We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in this Thesis). According to the Bayes's theorem this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values:
 
 
 \be \label{eq:bayes}
@@ -782,9 +767,10 @@ p(\textbf{y}|D) \propto p(D|\textbf{y})p(\textbf{y}).
 In the previous equation $p(D|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The next factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior, which is the most uninformative prior. Later we take account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to see how or if it is improving the fits. The constant of proportionality is the inverse of the normalization factor, but it is irrelevant when estimating the values of the parameters in a given model. 
 
 
-\subsubsection{Metropolis (-Hastings?)}
+\subsubsection{Metropolis-Hastings}
 
-The original, standard MCMC algorithm is called the Metropolis algorithm. It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional distribution of $X_{t+1}$ given all past elements is independent of all but the previous state:
+The original, standard MCMC algorithm is called the Metropolis algorithm (Metropo-
+lis et al., 1953; Hastings, 1970). It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional distribution of $X_{t+1}$ given all past elements is independent of all but the previous state \cite{kaiser}:
 
  \be \label{eq:markov_prop}
 P(X_{t+1} = x|X_{t}. . . X_{1}) = P(X_{t+1} = x|X_{t}).
@@ -792,7 +778,7 @@ P(X_{t+1} = x|X_{t}. . . X_{1}) = P(X_{t+1} = x|X_{t}).
 A Markov chain is a random walk with Markov property.
  
 The Metropolis algorithm works by taking an arbitrary move near the current
-point. If $X_{t}$ is the sample at time t, then the new sample Y is proposed from the proposal distribution $q(Y|X_{t})$. The likelihood of this new sample is then compared to that of the previous sample. The likelihood ratio $\alpha$ between the to states is calculated with the following equation:
+point. If $X_{t}$ is the sample at time t, then the new sample Y is proposed from the proposal distribution $q(Y|X_{t})$. In the original Metropolis algorithm this distribution must be symmetric, meaning that $q(X_{t}|Y)$ = $q(Y|X_{t})$. However in Metrpolis-Hastings algorithm it may be non-symmetric. The likelihood of the new sample is then in any case compared to that of the previous sample. The likelihood ratio $\alpha$ between the to states is calculated with the following equation \cite{tuomi}:
 \be \label{eq:likely_ratio} 
 \alpha = \frac{p(Y|D)q(X_{t}|Y)}{p(X_{t}|D)q(Y|X_{t})}.
 \ee
@@ -815,7 +801,7 @@ One major disadvantage is that the Metropolis algorithm may work poorly for skew
 
 \subsubsection{Ensemble sampler}
 
-The affine invariant ensemble sampler is a novel MCMC method developed a few years ago (Goodman, Weare...). The algorithm has a similar structure to Metropolis, and still uses a proposal and and accept/reject step. But instead of only one sequence $X_{1}...X_{t}$, we use now a group or ensemble of sequences. Each member of the ensemble is called a walker. On each iteration the algorithm generates a new sample for every walker using the  current positions of all of the other walkers in
+The affine invariant ensemble sampler is a novel MCMC method developed a few years ago (Goodmana and Weare, 2010 \cite{ensemble1}). The algorithm has a similar structure to Metropolis, and still uses a proposal and and accept/reject step. But instead of only one sequence $X_{1}...X_{t}$, we use now a group or ensemble of sequences. Each member of the ensemble is called a walker. On each iteration the algorithm generates a new sample for every walker using the  current positions of all of the other walkers in
 the ensemble. However each walker is independent of the other walkers and is not correlated with the previous states of other walkers (it is correlated only to its own previous state).
 
 
@@ -853,7 +839,7 @@ This ensures that the move \ref{eq:smove} is symmetric in the usual informal way
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=stretchmove.png,width=8.0cm}}
-\caption{A stretch move for updating the position of $X_{k}$ based on the position of another random walker, $X_{j}$ (subscript identifies here the walker instead of the step count). The light-gray walkers are other members of the ensemble. Figure 2 from Goodman and Weare (2010).
+\caption{A stretch move for updating the position of $X_{k}$ based on the position of another random walker, $X_{j}$ (subscript identifies here the walker instead of the step count). The light-gray walkers are other members of the ensemble. Figure 2 from Goodman and Weare (2010) \cite{ensemble1}.
 \label{fig:smove}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -863,11 +849,11 @@ When deciding whether the new sample is good enough, the Metropolis-Hastings sel
 \be \label{eq:likely_ratio_smove} 
 \alpha = Z^{N-1}\frac{p(Y|D)}{p(X_{t}|D)},
 \ee
-where N is the number of parameters sampled. 
+where N is the number of parameters sampled \cite{ensemble1}. 
 
 
 
-\subsubsection{Implementation}
+%\subsubsection{Implementation}
 
 \section{Results}
 
