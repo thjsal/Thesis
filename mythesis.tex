@@ -156,7 +156,7 @@ from pulse shape modelling}
 \addcontentsline{toc}{section}{Introduction}
 %Näin tehtynä Johdannolle ei tule numeroa sisälllysluetteloon
 
-Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from the neutron star is emitted towards the Earth.  This emission is thought be created when matter is accreted to a hot spot on a magnetic pole at the surface of the pulsar. These pulses or light curves can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray portions of the electromagnetic spectrum.
+Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from a neutron star is emitted towards the Earth.  This emission is thought be created when matter is accreted to a hot spot on a magnetic pole at the surface of the pulsar. These pulses or light curves can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray portions of the electromagnetic spectrum.
 
 The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in neutron star astrophysics. This information could provide tight constraints on the equation of state of ultra-dense matter located inside the neutron star. This high densities of cold matter is otherwise unattainable. Studies of the light curves of pulsars can therefore help determine the properties of such matter. It is also not overstated to say that the properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
 
@@ -230,21 +230,19 @@ Näitä noudattamalla saadaan vähennettyä ainakin yksi tarkastuskierros.
 
 
 Neutron stars are some of the densest and most massive objects in the
-universe. Typical mass of a neutron star (M) is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius R on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 fm^{-3}$ of neutrons and protons found in laboratory nuclei ~\cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear.
+universe. Typical mass of a neutron star ($M$) is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius ($R$) on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 fm^{-3}$ of neutrons and protons found in laboratory nuclei ~\cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear.
 
  
 Neutron stars are created after the gravitational collapse of the core of a
 massive star (>8$M_{\odot}$) at the end of its life, which triggers a Type II supernova explosion. Too massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
-
 \begin{equation}
  R > \frac{2GM}{c^{2}},
  \end{equation} 
-where G is the gravitational constant and c is the speed of light, constrains the possible mass and radius of neutron stars.
+where $G$ is the gravitational constant and $c$ is the speed of light, constrains the possible mass and radius of neutron stars.
 
 A more strict upper bound to the compactness (ratio between mass and radius) of the star follows
 the fact ~\cite{rhoades} %(/PhysRevLett.32.324 )
 that the speed of sound in dense matter have to be less than the speed of light. This gives us the so called causality condition
-
 \begin{equation}
  R \gtrsim \frac{3GM}{c^{2}}.
  \end{equation} 
@@ -264,7 +262,7 @@ and
 \begin{equation}
  \frac{dm(r)}{dr} = 4 \pi \rho r^{2},
  \end{equation}
-where P and $\rho$ are the pressure and mass-energy density, respectively, and m(r) is the gravitational mass enclosed within a radius r. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state.
+where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state.
 
 %http://journals.aps.org/prl/pdf/10.1103/PhysRevLett.32.324 %link works in Tuorla
 
@@ -654,6 +652,11 @@ Aberration may also change the specific intensity since it has to be computed
 for angle $\sigma'$ in the comoving frame. 
 
 However in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more realistic case one can assume the intensity to be a multiplication of an angle-dependent ("beaming function") and an energy-dependent function.
+
+Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e. the energy-depence of $I'_{E'}(\sigma')$ ) can be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of SAX J1808.4-3658 the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which are near the lowest observed energies) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cutoff energy, which is defined to be at the maximum flux of a blackbody with a temperature of 2 keV (in the frame of the spot). Below the cutoff energy we use Rayleigh-Jeans law and above the cutoff a descending power-law with a power-law index (...add...). The power-law is normalized to be equal with the named blackbody at 1 keV.
+
+In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission and with e.g. a linear dependence on the beaming angle (representing the accretion shock). The spots may have different shapes and sizes. This model will be implented to the pulse profile code in the near future.
+
 
 In the actual calculation of the flux, we make again a grid of values of the derivatives $\frac{\d\cos\psi}{\d\cos\alpha}$ (same as $(\frac{\d\cos\alpha}{\d\cos\psi})^{-1}$) with different $\alpha$ and $r$. The derivatives for each point are found by interpolating. 
 
