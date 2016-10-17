@@ -265,10 +265,19 @@ and
 where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state.
 
 %http://journals.aps.org/prl/pdf/10.1103/PhysRevLett.32.324 %link works in Tuorla
+%Maximum Mass of a Neutron star*
+%Clifford E. Rhoades, Jr.,t and Remo Ruffini
+%Joseph Henry Iaboratomes, Princeton University, Princeton, Net Jersey 08540
+%(Received 30 October 1972)
+%On the basis of Einstein's theory of relativity, the principle of causality, and Le Chatelier's
+%principle, it is here established that the maximum mass of the equilibrium configuration
+%of a neutron star cd~not be larger than 3.2M'. The extremal principle given
+%here applies as well when the equation of state of matter is unknown in a limited range of
+%densities. The absolute maximum mass of a neutron star provides a decisive method of
+%observationally distinguishing neutron stars from black holes.
+%One more potential constraint on the EOS is based on the rotation of neutron stars. The velocity of the stellar surface cannot exceed the velocity of an orbiting particle suspended just above the surface ("break-up frequency"). The highest observed spin rate gives a lower limit to the compactness of the neutron star.
 
-
-
-One more potential constraint on the EOS is based on the rotation of neutron stars. The velocity of the stellar surface cannot exceed the velocity of an orbiting particle suspended just above the surface ("break-up frequency"). The highest observed spin rate gives a lower limit to the compactness of the neutron star.
+%VOLUME 32, NUMBER 6 PHYSICAL R E V I E W L E T T E R S 11 FEBRUARY 1974
 
 
 \subsection{Accreting millisecond pulsars}
@@ -331,7 +340,11 @@ The oscillations in the flux during the outbursts (the light curves) of accretin
 Pechenick, Ftaclas and Cohen (1983)~\cite{pechenick}. 
 Rotational effects are added by introducing Doppler terms as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
 
-The observed pulse profiles from AMXPs appear to be rather close to sinusoidal with peak-to-peak oscillation amplitude $A = \frac{(F_{\mathrm{max}} - F_{\mathrm{min}}} {F_{\mathrm{max}} - F_{\mathrm{min}}}$ between 4 and 12 per cent \cite{poutarew2006}. This amplitude depends only weakly on energy and the spectrum may be fitted with a two-component model (blackbody and Comptonization). The weak energy dependence and a fairly constant spectral shape as a function of pulse phase, support also the idea that the bulk of the observed X-ray emission originates from polar caps (where the gas stream channelled by the neutron star magnetic field impacts the stellar surface forming a shock). Any additional source of radiation would have to have a spectrum identical to that of the shock.
+The observed pulse profiles from AMXPs appear to be rather close to sinusoidal with peak-to-peak oscillation amplitude 
+\be \label{eq:amplitude}
+A = \frac{F_{\mathrm{max}} - F_{\mathrm{min}}} {F_{\mathrm{max}} - F_{\mathrm{min}}}
+\ee
+ between 4 and 12 per cent \cite{poutarew2006}. This amplitude depends only weakly on energy and the spectrum may be fitted with a two-component model (blackbody and Comptonization). The weak energy dependence and a fairly constant spectral shape as a function of pulse phase, support also the idea that the bulk of the observed X-ray emission originates from polar caps (where the gas stream channelled by the neutron star magnetic field impacts the stellar surface forming a shock). Any additional source of radiation would have to have a spectrum identical to that of the shock.
 
 
 \subsubsection{Oblateness}
@@ -653,9 +666,19 @@ for angle $\sigma'$ in the comoving frame.
 
 However in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more realistic case one can assume the intensity to be a multiplication of an angle-dependent ("beaming function") and an energy-dependent function.
 
-Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e. the energy-depence of $I'_{E'}(\sigma')$ ) can be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of SAX J1808.4-3658 the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which are near the lowest observed energies) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cutoff energy, which is defined to be at the maximum flux of a blackbody with a temperature of 2 keV (in the frame of the spot). Below the cutoff energy we use Rayleigh-Jeans law and above the cutoff a descending power-law with a power-law index (...add...). The power-law is normalized to be equal with the named blackbody at 1 keV.
+Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e. the energy-dependence of $I'_{E'}(\sigma')$ ) can be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of SAX J1808.4-3658 the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which are near the lowest observed energies) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with a temperature of 2 keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law and above the cut-off a descending power-law. The power-law is normalized to be equal with the named blackbody at 1 keV. This is shown in the Figure \ref{fig:spectrum}.
 
-In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission and with e.g. a linear dependence on the beaming angle (representing the accretion shock). The spots may have different shapes and sizes. This model will be implented to the pulse profile code in the near future.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=spectrum_numflux0.pdf,width=10.0cm}}
+\caption{The two-component power-law compared to a blackbody at 2 keV temperature. The spectra are calculated using the time-averaged fluxes at different energies of the pulse profile model with physical parameters. 
+\label{fig:spectrum}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission and with e.g. a linear dependence on the beaming angle (representing the accretion shock). The spots may have different shapes and sizes. This model will be added to the pulse profile code in the near future.
 
 
 In the actual calculation of the flux, we make again a grid of values of the derivatives $\frac{\d\cos\psi}{\d\cos\alpha}$ (same as $(\frac{\d\cos\alpha}{\d\cos\psi})^{-1}$) with different $\alpha$ and $r$. The derivatives for each point are found by interpolating. 
@@ -749,10 +772,42 @@ In this model we assumed a spherically symmetric spot (the angle measured from t
 
 \subsubsection{Comparison of the profiles}
 
-Show here some profiles..
+The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which been shown to give accurate results). In the case of oblate star we have e.g. compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. The profiles of oblate pulsars have also been compared to profiles obtained by light-ray tracing methods (Figures?), which correspond each other well. 
+
+%Show here some profiles..
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=mor3test.eps,width=8.0cm}}
+\caption{The light curves for light emitted from one infinitesimal spot with parameters given in the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of Morsink and the black solid line is our result.
+\label{fig:mor3}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=cad3test.eps,width=8.0cm}}
+\caption{The light curves for light emitted from one infinitesimal spot with parameters given in the Figure 3 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of Cadeau and the black solid line is our result.
+\label{fig:cad3}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=cad4test.eps,width=8.0cm}}
+\caption{The light curves for light emitted from one infinitesimal spot with parameters given in the Figure 4 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of Cadeau and the black solid line is our result.
+\label{fig:cad4}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 \subsection{Bayesian inference}
+
+
+%http://math.nyu.edu/~mjlewis/foo.pdf %about Monte Carlo
 
 The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller} (for future space missions). More about the synthetic data of this thesis is presented in the Results section. 
 
@@ -793,19 +848,31 @@ The next step is to decide whether the likelihood ratio is high enough in order 
 %If the probability distribution function (PDF) has greater value at that point, then the walk always moves there. If the PDF has a smaller value, then the move is accepted with probability dependent on how much less likely.
 
 It can be seen that the acceptance rule simplifies considerable when the
-proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change significantly when adding new members to the chain. Whether the obtained samples are statistically representative of the posterior can be verified if several chains with different initial states result in the same posterior density.
-
-Metropolis algorithm has also some limitations. The generated samples are not independent, since they are generated in a chain (concerns also other MCMC methods). The correlation between the samples can be measured by the autocorrelation time (ADD DEFINITION...and more). 
+proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change significantly when adding new members to the chain. Whether the obtained samples are statistically representative of the posterior can be verified if several chains with different initial states result in the same posterior density. It is also necessary to remove perhaps tens of thousands of the first iterations ("burn-in"), since the probability distribution has not yet converged in those. There is no general theory for length of burn-in required. 
 
 
-One major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution (ADD EXAMPLES). Partially for this reason we have moved to use the ensemble sampler, which is presented in the next section. 
+Metropolis algorithm has also some limitations. The generated samples are not independent, since they are generated in a chain (concerns also other MCMC methods). The correlation between the samples can be measured by the autocorrelation time (ADD DEFINITION...and more). %DO THIS!...
 
+One major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution. One example of such a two dimensional skewed probability distribution is given by (shown in Figure \ref{fig:skewed})
+\be \label{eq:skew} 
+f(\vec{x}) = \exp(-\frac{(x_{1}-x_{2})^{2}}{2\epsilon}-\frac{(x_{1}+x_{2})^{2}}{2}).
+\ee
+Metropolis (like many other MCMC strategies too) would be forced to make perturbations of order $\sqrt{\epsilon}$ and would have slow equilibration. A better MCMC sampler would use larger perturbations in (-1,1) than in (1,1) direction. However the problem is worse in high dimensions, where it would be difficult to tune all the step sizes correctly. As we encountered this problem, we  moved to use the ensemble sampler, which is presented in the next section. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=skewed.png,width=8.0cm}}
+\caption{Contours of the Gaussian density defined in expression \ref{eq:skew}. Figure 1 from Goodman and Weare (2010) \cite{ensemble1}.
+\label{fig:skewed}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsubsection{Ensemble sampler}
 
 The affine invariant ensemble sampler is a novel MCMC method developed a few years ago (Goodman and Weare, 2010 \cite{ensemble1}). The algorithm has a similar structure to Metropolis, and still uses a proposal and and accept/reject step. But instead of only one sequence $X_{1}...X_{t}$, we use now a group or ensemble of sequences. Each member of the ensemble is called a walker. On each iteration the algorithm generates a new sample for every walker using the  current positions of all of the other walkers in
-the ensemble. However each walker is independent of the other walkers and is not correlated with the previous states of other walkers (it is correlated only to its own previous state).
+the ensemble. However each walker is independent of the other walkers and is not correlated with the previous states of other walkers (it is correlated only to its own previous state). After burn-in each walker is also distributed according to the invariant posterior probability distribution.
 
 
 
@@ -860,13 +927,41 @@ where N is the number of parameters sampled \cite{ensemble1}.
 
 \section{Results}
 
+As mentioned already the aim of this work is to determine the probability distributions of the parameters in the pulse profile model (especially mass and radius), given the synthetic pulse profile, and study the effect of polarization measurements to these. Some details of the data and constraints obtained are showed in the two following sections. 
+
+
 \subsection{Synthetic data}
+
+The synthetic data in this work is made to resemble to real observations as closely as possible. The X-ray count data from SAX J1808.4-3658 is used as a reference. The amplitude of the modulation in the normalized number fluxes have the same order of magnitude. We use also the same energy intervals and same number of phase points as in the real data. The original data is shown in Figure \ref{fig:saxdata}.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=data_sax1808.pdf,width=10.0cm}} %TRIM THIS IMAGE!
+\caption{Sax-data
+\label{fig:saxdata}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in the Table (...). The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\theta$ appropriately, since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
+\be \label{eq:amplitude_incthet}
+A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
+\ee 
+
+We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_incthet} without affecting the result. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$. These are shown in the Figures \ref{fig:syntpol2} and \ref{fig:synteq2}. In our simulation we see how these two solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$, and we show their effect on the constraints of mass and radius. 
+
+
+ 
+%
+%MAKE HERE A TABLE OF THE PARAMETERS OF THE SYNTHETIC DATA
+%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_pol2.png,width=10.0cm}}
-\caption{Synthetic data for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are described in the text.
+\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are described in the Table (...).
 \label{fig:syntpol2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -875,10 +970,15 @@ where N is the number of parameters sampled \cite{ensemble1}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_eq2.png,width=10.0cm}}
-\caption{Synthetic data for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are described in the text.
+\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are described in the Table (...).
 \label{fig:synteq2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
 
 
 \subsection{Parameter constraints}
