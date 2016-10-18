@@ -9,6 +9,7 @@
 \usepackage{lastpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{gensymb}
 
 %###
 \usepackage{epsfig}
@@ -32,6 +33,11 @@
 \addto\captionsfinnish{%
   \renewcommand{\figurename}%
     {Fig.}%
+}
+
+\addto\captionsfinnish{%
+  \renewcommand{\tablename}%
+    {Table}%
 }
 
 \def\rg{r_{\rm S}} % Schwarzschild radius
@@ -264,6 +270,7 @@ and
  \end{equation}
 where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state.
 
+%This is "rhoades":
 %http://journals.aps.org/prl/pdf/10.1103/PhysRevLett.32.324 %link works in Tuorla
 %Maximum Mass of a Neutron star*
 %Clifford E. Rhoades, Jr.,t and Remo Ruffini
@@ -423,8 +430,9 @@ In case of a spherical star $\frac{dR}{d\theta} = 0$ and thus $\bmath{n} = \bmat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
-\caption{Geometry of the problem. Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location (\cite{morsink}).%Dotted curve shows the
+%\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
+\centerline{\epsfig{file=fig2.png,width=8.0cm}}
+\caption{Geometry of the problem. Created with https://github.com/natj/nsfig. %Dotted curve shows a spherical star which radius is equal to the radius of the oblate star at spot location (\cite{morsink}).%Dotted curve shows the
 %photon trajectory.
 \label{fig:geom2}}
 \end{figure}
@@ -452,7 +460,7 @@ sight, which is different from the true inclination because of
 the light bending effect. %IS THIS CORRECT?
 % The initial angle of the emitted photon with respect to the normal
 % ${\mathbf n}$ differs from $\psi$ because of the light bending.
-We denote the initial direction of the emitted photon by $\bmath{k}_0$ ($\bmath{l}$ in figure \ref{fig:geom2})
+We denote the initial direction of the emitted photon by $\bmath{k}_0$ %($\bmath{l}$ in figure \ref{fig:geom2})
 and the true emission angle (relative to the radius vector) by $\alpha$, so that
 \be
  \cos\alpha=\bmath{k}_0 \cdot \bmath{r}.
@@ -545,7 +553,7 @@ The equation \ref{eq:cossigma2} is useful, since we need to know the emission an
 
 Before we can get the angle $\sigma$ from equation \ref{eq:cossigma2} we also need first to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation \ref{eq:psi2}. In case of non-infinitesimal spot we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
 
-The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by (\cite{mtw}) %\citep[e.g.][]{mtw73}
+The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by \cite{mtw} %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
   \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
        \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
@@ -809,7 +817,7 @@ The new versions of the waveform code have been tested by comparing the pulse pr
 
 %http://math.nyu.edu/~mjlewis/foo.pdf %about Monte Carlo
 
-The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller} (for future space missions). More about the synthetic data of this thesis is presented in the Results section. 
+The model presented in the previous section, can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model \cite{mc_methods_book}. The data can also be synthetic (as in this Thesis) in order to test if the sampler will actually find the same values that were used when creating the data. Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller} (for future space missions). More about the synthetic data of this thesis is presented in the Results section. 
 
 The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" waveform, and the confidence regions for the values of these parameters. The goal is also to study the effect of polarization measurements to the posterior probability distributions. Probabilities are calculated using Bayes's theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a quite new ensemble sampler (used in this thesis) are discussed in the two following sections. 
 
@@ -877,6 +885,8 @@ the ensemble. However each walker is independent of the other walkers and is not
 
 
 %http://msp.org/camcos/2010/5-1/camcos-v5-n1-p04-s.pdf
+%https://arxiv.org/pdf/1202.3665v4.pdf
+
 
 The ensemble sampler is called affine invariant, since its performance is unaffected by affine transformations of space. This means that sampling a PDF g(x) = Af(x) + b is equivalent to sampling
 f then applying A and b after. This is the reason why the algorithm is particularly useful for sampling badly scaled distributions. Computational tests show that the affine invariant methods can be significantly faster than standard MCMC methods on highly skewed distributions.
@@ -895,7 +905,7 @@ the ensemble (we call them complementary ensemble). The motivation is that the d
 %In this algorithm, we use a group or ensemble of sequences. Each member of
 %the ensemble is called a walker.
 
-One of the simplest affine invariant trial moves is stretch-move (we use it). In a stretch-move each walker is moved using only one randomly selected complementary walker (see Fig. \ref{fig:smove}). The move proposed alone a line between the current walker k and the complementary walker j according to the distribution
+One of the simplest affine invariant trial moves is stretch-move (we use it). In a stretch-move each walker is moved using only one randomly selected complementary walker (see Fig. \ref{fig:smove}). The move proposed alone a line between the current walker k and the complementary walker j according to the distribution \cite{emceehammer}
 \be \label{eq:smove}
 Y = X(j) + Z(X(k)-X(j)),
 \ee
@@ -919,7 +929,7 @@ When deciding whether the new sample is good enough, the Metropolis-Hastings sel
 \be \label{eq:likely_ratio_smove} 
 \alpha = Z^{N-1}\frac{p(Y|D)}{p(X_{t}|D)},
 \ee
-where N is the number of parameters sampled \cite{ensemble1}. 
+where N is the number of parameters sampled \cite{ensemble1}. %=dimension of the parameter space
 
 
 
@@ -943,7 +953,7 @@ The synthetic data in this work is made to resemble to real observations as clos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in the Table (...). The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\theta$ appropriately, since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
+The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in the Table \ref{table:params} The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\theta$ appropriately, since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
 \be \label{eq:amplitude_incthet}
 A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
 \ee 
@@ -951,9 +961,33 @@ A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
 We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_incthet} without affecting the result. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$. These are shown in the Figures \ref{fig:syntpol2} and \ref{fig:synteq2}. In our simulation we see how these two solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$, and we show their effect on the constraints of mass and radius. 
 
 
- 
-%
-%MAKE HERE A TABLE OF THE PARAMETERS OF THE SYNTHETIC DATA
+
+
+\begin{center}
+\begin{table}
+  \caption{Paramters of the synthetic datasets.}
+\label{table:params}
+\begin{center}
+  \begin{tabular}{| c | c |}
+    \hline
+     Parameter & Value\\ \hline
+      Radius $R$ & 12.0 km  \\ \hline
+      Mass $M$ & 1.5 $\msun$  \\ \hline
+      Inclination $i$ & 5 $\degree$ or 75 $\degree$ \\ \hline
+      Spot colatitude $\theta$ & 75 $\degree$ or 5 $\degree$ \\ \hline
+      Spot angular size $\rho$ & 10.0 $\degree$  \\ \hline
+      Distance D & 2.5 kpc \\ \hline
+      Temperature $t_{\mathrm{planck}}$ & 2.0 keV \\
+
+    \hline
+  \end{tabular}
+  \end{center} 
+
+  \end{table}
+\end{center} 
+
+
+
 %
 
 
@@ -961,7 +995,7 @@ We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_pol2.png,width=10.0cm}}
-\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are described in the Table (...).
+\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:syntpol2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -970,7 +1004,7 @@ We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_eq2.png,width=10.0cm}}
-\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are described in the Table (...).
+\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:synteq2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
