@@ -164,7 +164,7 @@ from pulse shape modelling}
 
 Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from a neutron star is emitted towards the Earth.  This emission is thought be created when matter is accreted to a hot spot on a magnetic pole at the surface of the pulsar. These pulses or light curves can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray portions of the electromagnetic spectrum.
 
-The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in neutron star astrophysics. This information could provide tight constraints on the equation of state of ultra-dense matter located inside the neutron star. This high densities of cold matter is otherwise unattainable. Studies of the light curves of pulsars can therefore help determine the properties of such matter. It is also not overstated to say that the properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
+The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in neutron star astrophysics. This information could provide tight constraints on the equation of state of ultra-dense matter located inside the neutron star \cite{lattimer2007}, \cite{hebeler}. This high densities of cold matter is otherwise unattainable. Studies of the light curves of pulsars can therefore help determine the properties of such matter. It is also not overstated to say that the properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
 
 
 One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms. The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find correct values for these parameters. 
@@ -257,7 +257,7 @@ Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $
 
 
 Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a spherical object under hydrostatic equilibrium in general relativity these are the the so called Tolman-Oppenheimer-Volkov equations (Tolman,
-1934; Oppenheimer \& Volkoff, 1939):
+1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer}):
 
 
 \begin{equation}
@@ -608,8 +608,8 @@ and the relation between $\sigma$ and $\sigma'$ is described
 by the relativistic aberration formula (\ref{eq:aberr2}) (for motions parallel to the 
 spot surface). Thus the spot area projected on to the plane perpendicular 
 to the photon propagation direction, i.e. a photon beam cross-section,
-is Lorentz invariant (see e.g.  Lightman et al. 1975; 
-Lind \& Blandford 1985): 
+is Lorentz invariant (see e.g.  Lightman et al. 1975; %Problem book in relativity and gravitation?
+Lind \& Blandford 1985 \cite{lindbland85}): 
 \be \label{eq:Salpha2}
 \d S\ \cos\sigma = \d S'\ \cos\sigma' . 
 \ee
@@ -823,7 +823,7 @@ The aim of this work is to determine the most probable ("best-fit") values of th
 
 \subsubsection{Bayesian analysis}
 
-We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in this Thesis). According to the Bayes's theorem this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values:
+We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in this Thesis). According to the Bayes's theorem this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values \cite{nattila_bayes}:
 
 
 \be \label{eq:bayes}
@@ -836,7 +836,7 @@ In the previous equation $p(D|\textbf{y})$ is the likelihood or the probability 
 \subsubsection{Metropolis-Hastings}
 
 The original, standard MCMC algorithm is called the Metropolis algorithm (Metropo-
-lis et al., 1953; Hastings, 1970). It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional distribution of $X_{t+1}$ given all past elements is independent of all but the previous state \cite{kaiser}:
+lis et al., 1953 \cite{metropolis53}; Hastings, 1970 \cite{hastings70}). It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional distribution of $X_{t+1}$ given all past elements is independent of all but the previous state \cite{kaiser}:
 
  \be \label{eq:markov_prop}
 P(X_{t+1} = x|X_{t}. . . X_{1}) = P(X_{t+1} = x|X_{t}).
