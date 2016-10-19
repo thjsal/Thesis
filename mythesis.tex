@@ -368,7 +368,7 @@ where G = c = 1)
 
 \begin{equation}
 \label{rtheta2}
-\frac{R(\theta)}{R_{eq}} = (1 + o_{2}(x,\bar{\Omega})),
+\frac{R(\theta)}{R_{\mathrm{eq}}} = (1 + o_{2}(x,\bar{\Omega})),
 \end{equation}
 where
 
@@ -381,17 +381,17 @@ o_{2}(x,\bar{\Omega}) = \bar{\Omega}^{2}(-0.788+1.030x),
 
 \begin{equation}
 \label{rtheta2x}
-x = \frac{M}{R_{eq}},
+x = \frac{M}{R_{\mathrm{eq}}},
 \end{equation}
 
 
 \begin{equation}
 \label{rtheta2omega}
-\bar{\Omega} = \Omega (\frac{R_{eq}^{3}}{M})^{1/2}.
+\bar{\Omega} = \Omega (\frac{R_{\mathrm{eq}}^{3}}{M})^{1/2}.
 \end{equation}
 
 
-In these equations $R_{eq}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii in this thesis.
+In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii in this thesis.
 
 
 \subsubsection{Geometry}
@@ -946,7 +946,7 @@ The synthetic data in this work is made to resemble to real observations as clos
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=data_sax1808.pdf,width=10.0cm}} %TRIM THIS IMAGE!
+\centerline{\epsfig{file=data_sax1808.pdf,width=10.0cm}} 
 \caption{Sax-data
 \label{fig:saxdata}}
 \end{figure}
@@ -958,7 +958,7 @@ The parameters of the pulse profile model are chosen such that their values are 
 A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
 \ee 
 
-We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_incthet} without affecting the result. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$. These are shown in the Figures \ref{fig:syntpol2} and \ref{fig:synteq2}. In our simulation we see how these two solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$, and we show their effect on the constraints of mass and radius. 
+We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_incthet} without affecting the result. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$ (we may call them datasets for polar and equatorial spots even though they are not exactly that). These are shown in the Figures \ref{fig:syntpol2} and \ref{fig:synteq2}.They have been created using the pulse profile model and adding random Gaussian noise to fluxes of every phase point. In our simulation we see how these two solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$, and we show their effect on the constraints of mass and radius. 
 
 
 
@@ -1010,19 +1010,77 @@ We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\subsection{Sampling methods}
 
+All the parameters presented in the Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not sampled (at least not in this work yet). "Beaming parameter" is set to zero, meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
 
+We also use only one spherical hot spot. The oblate shape of the star is descibed by the function in equation \ref{rtheta2}. Some parameters affecting on the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get the sampling faster. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
+
+To exploit all the possible computational power we have also made it possible to run the ensemble sampler code parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor has its own ensamble (or chain). The number of walkers was set to 20 in each ensemble. 
+ 
+
+The choice of the reference radius $r_{\mathrm{ref}}$ needed in time delay calculation effects only on the phase shift of the waveform. Since we want to simulate a realistic situation where the phase shift is unknown, we use different $r_{\mathrm{ref}}$ in the creation of the data and in the fitting procedure of the ensemble sampler.  
+
+The likelihood of the data for each sample ($p(D|\textbf{y})$ in equation \ref{eq:bayes}) is calculated by fitting the data to the pulse profile model. To be more specific, we assume that the probability density of the data fluxes $F_{\mathrm{data}}$ given the modelled fluxes $F_{\mathrm{model}}$  is normally distributed around the $F_{\mathrm{model}}$ with the known errors as standard deviation ($\sigma$ in the following equation): 
+\be \label{eq:gaussprob}
+p(F_{\mathrm{data}}|F_{\mathrm{model}}) = \exp (\frac{-(F_{\mathrm{data}}-F_{\mathrm{model}})^{2}}{2\sigma^{2}}).
+\ee
+Normalization is not needed, since it will cancel out when calculating likelihood ratios. The total probability density of the data given the sample is the multiplication of $p(F_{\mathrm{data}}|F_{\mathrm{model}})$ from each phase point and at each energy (or the sum of log-probabilites). 
+
+Of course we need also take to account that we have different phase shift in the data and the model. For that reason we calculate the model with e.g. 5 times higher phase resolution and then calculate the probability densities using all the different phase shifts. The total probability $p(D|\textbf{y})$ (which will be used to calculate likelihood ratio \ref{eq:likely_ratio_smove}) is then the marginalized probability over all phasehsifts. 
+
+As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y}$) are flat, so that equations \ref{eq:bayes} and \ref{eq:likely_ratio_smove} give 
+\be \label{eq:alpha1}
+\alpha = Z^{N-1}\frac{p(D|Y)}{p(D|X_{t})}.
+\ee
+
+As a second step we make the prior probabilities of inclination and spot colatitude non-uniform, so then the previous likelihood ratio is multiplied with the ratio of the prior probabilites:
+\be \label{eq:alpha2}
+\alpha = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{t})}.
+\ee
+
+It is not obvious what kind of prior probabilities one should use. It depends on how tight constraints we can get to the given parameter. Unlike in case of normal flux, the measured polarization differ significantly if $i$ and $\theta$ are switched \cite{poutaviironen}. Thus from modelling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilites of $i$ and $\theta$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilites of mass and radius. The standard deviation of that distribution is chosen to be $15 \degree$. 
+
+Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same than the sizes of the corresponding axes in the posterior probability plots in the next section. 
 
 
 
 \subsection{Parameter constraints}
 
+The results of our samplings are presented in the Figures...
+
+..Show also weights after burn-in removal and autocorrelations?
+
 \iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=syntsaxpol2_nph16nmg.pdf,width=12.0cm}}
-\caption{Posterior probability distributions (Replace later with better image).
-\label{fig:pol2posterior}}
+\centerline{\epsfig{file=syntsaxpol2.pdf,width=12.0cm}}
+\caption{Posterior probability distributions of polar spot with only flat priors.
+\label{fig:polpost}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=syntsaxeq2.pdf,width=12.0cm}}
+\caption{Posterior probability distributions of the equatorial spot with only flat priors.
+\label{fig:eqpost}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=syntsaxpol2pr.pdf,width=12.0cm}}
+\caption{Posterior probability distributions of polar spot with non-uniform $i$ and $\theta$ priors.
+\label{fig:polpostpr}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=syntsaxpol2.pdf,width=12.0cm}}
+\caption{Posterior probability distributions of equatorial spot with non-uniform $i$ and $\theta$ priors.
+\label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \fi
