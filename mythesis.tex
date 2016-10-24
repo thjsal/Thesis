@@ -104,7 +104,7 @@
 %\tarkastaja{P.P.}
 %\tarkastaja{H.H.}
 
-\title{Mass and radius constraints of neutron stars
+\title{Mass and radius constraints for neutron stars
 from pulse shape modelling}
 \opinnayte{Master Thesis}
 \author{Tuomo Salmi}
@@ -145,7 +145,7 @@ from pulse shape modelling}
 \begin{tiivistelma}%
         {Department of Physics and Astronomy}%
         {Salmi, Tuomo}%
-        {Mass and radius constraints of neutron stars
+        {Mass and radius constraints for neutron stars
 from pulse shape modelling}
         {Master's thesis, \pageref{LastPage} s., 3 Appendices}%
         {Astronomy}% Oppiaine
@@ -1014,9 +1014,9 @@ We see that $i$ and $\theta$ can be changed in the equation \ref{eq:amplitude_in
 
 All the parameters presented in the Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not sampled (at least not in this work yet). "Beaming parameter" is set to zero, meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
 
-We also use only one spherical hot spot. The oblate shape of the star is descibed by the function in equation \ref{rtheta2}. Some parameters affecting on the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get the sampling faster. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
+We also use only one spherical hot spot. The oblate shape of the star is described by the function in equation \ref{rtheta2}. Some parameters affecting on the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get the sampling faster. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
 
-To exploit all the possible computational power we have also made it possible to run the ensemble sampler code parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor has its own ensamble (or chain). The number of walkers was set to 20 in each ensemble. 
+To exploit all the possible computational power we have also made it possible to run the ensemble sampler code parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor has its own ensemble (or chain). The number of walkers was set to 20 in each ensemble. 
  
 
 The choice of the reference radius $r_{\mathrm{ref}}$ needed in time delay calculation effects only on the phase shift of the waveform. Since we want to simulate a realistic situation where the phase shift is unknown, we use different $r_{\mathrm{ref}}$ in the creation of the data and in the fitting procedure of the ensemble sampler.  
@@ -1025,21 +1025,21 @@ The likelihood of the data for each sample ($p(D|\textbf{y})$ in equation \ref{e
 \be \label{eq:gaussprob}
 p(F_{\mathrm{data}}|F_{\mathrm{model}}) = \exp (\frac{-(F_{\mathrm{data}}-F_{\mathrm{model}})^{2}}{2\sigma^{2}}).
 \ee
-Normalization is not needed, since it will cancel out when calculating likelihood ratios. The total probability density of the data given the sample is the multiplication of $p(F_{\mathrm{data}}|F_{\mathrm{model}})$ from each phase point and at each energy (or the sum of log-probabilites). 
+Normalization is not needed, since it will cancel out when calculating likelihood ratios. The total probability density of the data given the sample is the multiplication of $p(F_{\mathrm{data}}|F_{\mathrm{model}})$ from each phase point and at each energy (or the sum of log-probabilities). 
 
-Of course we need also take to account that we have different phase shift in the data and the model. For that reason we calculate the model with e.g. 5 times higher phase resolution and then calculate the probability densities using all the different phase shifts. The total probability $p(D|\textbf{y})$ (which will be used to calculate likelihood ratio \ref{eq:likely_ratio_smove}) is then the marginalized probability over all phasehsifts. 
+Of course we need also take to account that we have different phase shift in the data and the model. For that reason we calculate the model with e.g. 5 times higher phase resolution and then calculate the probability densities using all the different phase shifts. The total probability $p(D|\textbf{y})$ (which will be used to calculate likelihood ratio \ref{eq:likely_ratio_smove}) is then the marginalized probability over all phase shifts. 
 
 As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y}$) are flat, so that equations \ref{eq:bayes} and \ref{eq:likely_ratio_smove} give 
 \be \label{eq:alpha1}
 \alpha = Z^{N-1}\frac{p(D|Y)}{p(D|X_{t})}.
 \ee
 
-As a second step we make the prior probabilities of inclination and spot colatitude non-uniform, so then the previous likelihood ratio is multiplied with the ratio of the prior probabilites:
+As a second step we make the prior probabilities of inclination and spot colatitude non-uniform, so then the previous likelihood ratio is multiplied with the ratio of the prior probabilities:
 \be \label{eq:alpha2}
 \alpha = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{t})}.
 \ee
 
-It is not obvious what kind of prior probabilities one should use. It depends on how tight constraints we can get to the given parameter. Unlike in case of normal flux, the measured polarization differ significantly if $i$ and $\theta$ are switched \cite{poutaviironen}. Thus from modelling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilites of $i$ and $\theta$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilites of mass and radius. The standard deviation of that distribution is chosen to be $15 \degree$. 
+It is not obvious what kind of prior probabilities one should use. It depends on how tight constraints we can get to the given parameter. Unlike in case of normal flux, the measured polarization differ significantly if $i$ and $\theta$ are switched \cite{poutaviironen}. Thus from modelling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilities of $i$ and $\theta$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviation of that distribution is chosen to be $15 \degree$. 
 
 Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same than the sizes of the corresponding axes in the posterior probability plots in the next section. 
 
@@ -1047,33 +1047,40 @@ Other prior probabilities of the parameters are kept always uniform inside their
 
 \subsection{Parameter constraints}
 
-The results of our samplings are presented in the Figures...
+The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\theta$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). 
 
-..Show also weights after burn-in removal and autocorrelations?
+Without prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\theta$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. The polar and equatorial spots give very similar results as excepted (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However they are not identical, which shows that switching $\theta$ and $i$ has a significant (but not very large) effect on the light curves of the pulsar. It seems also slightly easier to find the correct $\theta$-$i$ solution  in the case of equatorial spot (although in the one-dimensional histograms the small angles dominate because of the marginalization and the shape of two-dimensional distribution of $\theta$-$i$). 
+
+In case of non-uniform priors for $\theta$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}) we find correct solutions for $\theta$ and $i$ even though our prior distributions are not centered  around the correct values. The posterior probability distributions for the mass and radius are now also distributed on both sides of the correct values having the maximum near the correct value. Both lower and upper limits can now be determined. 
+
+The angular size of the spot $\rho$ is the best-fitted parameter in our sampling. The highest probability is found to be very close to $10 \degree$, which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between 2 and 3 kpc). For that reason the size of the spot cannot change very much in order to keep to the observed count rate at a correct level. 
+
+
+..Show also weights after burn-in removal and autocorrelations...TBD
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpol.pdf,width=12.0cm}}
-\caption{Posterior probability distributions of the polar spot with only flat priors.
+\centerline{\epsfig{file=fpol.pdf,width=17.0cm}}
+\caption{Posterior probability distributions of the polar spot with only flat priors. The one-dimensional distributions are normalized to give 1 as the total probability.
 \label{fig:polpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpolpr.pdf,width=12.0cm}}
-\caption{Posterior probability distributions of the polar spot with non-uniform $i$ and $\theta$ priors.
+\centerline{\epsfig{file=fpolpr.pdf,width=17.0cm}}
+\caption{Posterior probability distributions of the polar spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability.
 \label{fig:polpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\iffalse
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feq.pdf,width=12.0cm}}
-\caption{Posterior probability distributions of the equatorial spot with only flat priors.
+\centerline{\epsfig{file=feq.pdf,width=17.0cm}}
+\caption{Posterior probability distributions of the equatorial spot with only flat priors.The one-dimensional distributions are normalized to give 1 as the total probability.
 \label{fig:eqpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1082,12 +1089,12 @@ The results of our samplings are presented in the Figures...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feqpr.pdf,width=12.0cm}}
-\caption{Posterior probability distributions of the equatorial spot with non-uniform $i$ and $\theta$ priors.
+\centerline{\epsfig{file=feqpr.pdf,width=17.0cm}}
+\caption{Posterior probability distributions of the equatorial spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fi
+
 
 
 
