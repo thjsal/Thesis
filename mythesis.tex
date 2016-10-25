@@ -167,7 +167,7 @@ Rapidly rotating neutron stars, called pulsars, are the lighthouses of the unive
 The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in neutron star astrophysics. This information could provide tight constraints on the equation of state of ultra-dense matter located inside the neutron star \cite{lattimer2007}, \cite{hebeler}. This high densities of cold matter is otherwise unattainable. Studies of the light curves of pulsars can therefore help determine the properties of such matter. It is also not overstated to say that the properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
 
 
-One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms. The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find correct values for these parameters. 
+One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms. The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
 
 
 
@@ -236,11 +236,11 @@ Näitä noudattamalla saadaan vähennettyä ainakin yksi tarkastuskierros.
 
 
 Neutron stars are some of the densest and most massive objects in the
-universe. Typical mass of a neutron star ($M$) is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius ($R$) on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 fm^{-3}$ of neutrons and protons found in laboratory nuclei ~\cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear.
+universe. Typical mass of a neutron star ($M$) is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius ($R$) on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 \mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei ~\cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the fermions are in any case excepted inside the star. 
 
  
 Neutron stars are created after the gravitational collapse of the core of a
-massive star (>8$M_{\odot}$) at the end of its life, which triggers a Type II supernova explosion. Too massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
+massive star (>8$M_{\odot}$) at the end of its life, when the collapse triggers a Type II supernova explosion \cite{lattimer}. Too massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
 \begin{equation}
  R > \frac{2GM}{c^{2}},
  \end{equation} 
@@ -248,15 +248,15 @@ where $G$ is the gravitational constant and $c$ is the speed of light, constrain
 
 A more strict upper bound to the compactness (ratio between mass and radius) of the star follows
 the fact ~\cite{rhoades} %(/PhysRevLett.32.324 )
-that the speed of sound in dense matter have to be less than the speed of light. This gives us the so called causality condition
+that the speed of sound in dense matter has to be less than the speed of light. This gives us the so called causality condition
 \begin{equation}
  R \gtrsim \frac{3GM}{c^{2}}.
  \end{equation} 
-Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the neutron star’s origin in a supernova gives a more realistic minimum ~\cite{lattimer}.
+Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the neutron star’s origin in a supernova gives a more realistic minimum ~\cite{lattimer2013}.
 
+%The Oppenheimer-Volkoff general relativistic equations for a spherically symmetric (non-rotating) neutron star
 
-
-Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a spherical object under hydrostatic equilibrium in general relativity these are the the so called Tolman-Oppenheimer-Volkov equations (Tolman,
+Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a general relativistic and spherically symmetric (non-rotating) object under hydrostatic equilibrium these are the the so called Tolman-Oppenheimer-Volkov equations (Tolman,
 1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer}):
 
 
@@ -268,7 +268,7 @@ and
 \begin{equation}
  \frac{dm(r)}{dr} = 4 \pi \rho r^{2},
  \end{equation}
-where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state.
+where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of neutron star and the properties of the nucleonic matter inside it \cite{akmal}. The sample of possible EOS can be reduced by using observations to constrain masses and radii of neutron stars.
 
 %This is "rhoades":
 %http://journals.aps.org/prl/pdf/10.1103/PhysRevLett.32.324 %link works in Tuorla
@@ -768,7 +768,7 @@ For a finite size spot, obviously, integration over the spot surface is required
 %I will not write here any formulae as they are rather trivial. 
 The idea is to split the spot into a number of small sub-spots and compute the profiles from each sub-spot separately. One should be careful to include time delays correctly. For this problem it is actually good to compute the time delays relative to the photons emitted from the point directly under the observer. Integration over the spot surface is done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. The surface element of the spot is 
 \be \label{eq:surf_element}
-\d S(\theta) = R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi ,
+\d S'(\theta) = \gamma R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi ,
 \ee
 where the factor $[1+f^{2}(\theta)]^{1/2}$ takes care of the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
 
