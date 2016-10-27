@@ -417,7 +417,7 @@ In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured
 
 Besides the geometry of the star itself, we also need to know relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (for a similar derivation see e.g. \cite{poutabelo}). 
 The star is assumed to be rotating  with a frequency $\nu=P^{-1}$ (seen by a distant observer).
-The velocity of the spot in units of $c$ as measured by a local observer is 
+The velocity of the spot in units of $c$ (as measured by an inertial observer observer at the star) is 
 \begin{equation}
 \label{beta2}
 \beta = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta =\beta_{\rm eq}(\theta) \sin\theta,
@@ -623,30 +623,41 @@ where $D$ is the distance to the source and $\varphi$ is the azimuthal
 angle corresponding to rotation around line of sight (vector $\bmath{k}$).
 The impact parameter $b$ depends only on the bending angle $\psi$, but not on $\varphi$.
 
-The apparent area of the spot as measured by photon beams
-in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
-(see Terrell 1959; Lightman et al. 1975; Ghisellini 1999) 
-and the relation between $\sigma$ and $\sigma'$ is described 
-by the relativistic aberration formula \ref{eq:aberr2} (for motions parallel to the 
-spot surface). Thus the spot area projected on to the plane perpendicular 
-to the photon propagation direction, i.e. a photon beam cross-section,
-is Lorentz invariant (see e.g.  Lightman et al. 1975; %Problem book in relativity and gravitation?
-Lind \& Blandford 1985 \cite{lindbland85}): 
+%The apparent area of the spot as measured by photon beams
+%in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
+
+The apparent area of the infinitesimal spot measured by the observer in the non-rotating frame near the stellar surface (but also at infinity) is $\d S=\Dop\ \d S'$
+(see Terrell 1959 \cite{terrell} or Lightman et al. 1975 \cite{lightman75}). %; Ghisellini 1999) %http://journals.aps.org/pr/pdf/10.1103/PhysRev.116.1041 (terrell)
+%lightman75 = problem book in relativity and gravitation (found in Tuorla)
+%didin't found $\d S=\Dop\ \d S'$
+We also know the relation between $\sigma$ and $\sigma'$ from the relativistic aberration formula \ref{eq:aberr2} (for motions parallel to the spot surface) $\cos\sigma' =   \Dop \ \cos\sigma$. Thus 
 \be \label{eq:Salpha2}
-\d S\ \cos\sigma = \d S'\ \cos\sigma' . 
+\d S\ \cos\sigma = \d S'\ \cos\sigma', 
 \ee
+which shows that the spot area projected on to the plane perpendicular to the photon direction is Lorentz invariant (see e.g.  Lightman et al. 1975 \cite{lightman75} or 
+%Problem book in relativity and gravitation
+Lind \& Blandford 1985 \cite{lindbland85}). This area is also called a photon beam cross-section.
+The infinitesimal spot area measured in the frame comoving with the spot may be calculated as (Morsink et al. 2007 \cite{morsink})
+\be \label{eq:surf_element}
+\d S'(\theta) = R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi,
+\ee
+where the factor $[1+f^{2}(\theta)]^{1/2}$ takes account the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
+%which shows that the spot area projected on to the plane perpendicular 
+%to the photon propagation direction, i.e. a photon beam cross-section,
+%is Lorentz invariant (see e.g.  Lightman et al. 1975 \cite{lightman75} or %Problem book in %relativity and gravitation
+%Lind \& Blandford 1985 \cite{lindbland85}). 
 %Using equation~(\ref{eq:impact2}) and
 %the facts that $\d S=R^2\ \d\cos\psi\  \d\varphi$  (THIS IS NOT CORRECT %NOW) one gets... (see Morsink)
-The solid angle measured at infinity is then (Morsink et al. 2007 \cite{morsink})
+The solid angle measured at infinity is then \cite{morsink}
 \be\label{eq:omega2}
  \d\Omega=\frac{\d S' \cos \sigma'}{D^2} \frac{1}{1-u} \frac{\d\cos\alpha}{\d\cos\psi}.
 \ee
-In the limit of weak gravity $u\ll 1$, this gives
+In case of stars with lower compactness (weak gravity) $\rg \ll R$, so $u\ll 1$, and this gives
 the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$. 
 
 The combined effect of the gravitational redshift and Doppler effect
 results in the following  relation between the monochromatic
-observed and local intensities \cite{mtw}%\citep[see e.g.][]{mtw73,rl79}:
+observed and local intensities (see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
 I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
 \ee
