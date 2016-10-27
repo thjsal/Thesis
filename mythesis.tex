@@ -598,7 +598,7 @@ p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
 \ee
 
 
-Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ corresponding different $\alpha$ and $r$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
+Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ corresponding different $\alpha$ and $R$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
 
 
 
@@ -714,7 +714,7 @@ Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=spectrum_numflux0.pdf,width=10.0cm}}
-\caption{The two-component power-law compared to a blackbody at 2 keV temperature. The spectra are calculated using the time-averaged fluxes at different energies of the pulse profile model with physical parameters. 
+\caption{The two-component power-law compared to a blackbody at 2 keV temperature. The spectra are calculated using the time-averaged fluxes at different energies of the pulse profile model with some physical parameters. 
 \label{fig:spectrum}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -723,30 +723,29 @@ Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) w
 In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission and with e.g. a linear dependence on the beaming angle $\sigma'$ (representing the accretion shock). The spots may have different shapes and sizes. This model will be added to the pulse profile code in the near future.
 
 
-In the calculations of this thesis we use spectral number fluxes, since those are the fluxes we get from the observations. We must thus divide the fluxes we get from equation (\ref{eq:fluxspot2}) with the observed energy $E$. When calculating the flux, we make again a grid of values of the derivatives $\frac{\d\cos\psi}{\d\cos\alpha}$ (same as $(\frac{\d\cos\alpha}{\d\cos\psi})^{-1}$) with different $\alpha$ and $r$. The derivatives for each point are found by interpolating. 
+In the calculations of this thesis we use spectral number fluxes, since those are the fluxes we get from the observations. We must thus divide the fluxes we get from equation (\ref{eq:fluxspot2}) with the observed energy $E$. When calculating the flux we make again a grid of values of the derivatives $\frac{\d\cos\psi}{\d\cos\alpha}$ (same as $(\frac{\d\cos\alpha}{\d\cos\psi})^{-1}$) with different $\alpha$ and $R$. The derivatives for each point are found by interpolating. 
 
 
 \subsubsection{Time delays}
 
 
 
-Expressions (\ref{eq:fluxspot2}), (\ref{eq:fluxbolo2}) and (\ref{eq:fluxplaw2}) 
-contain the pulsar phase $\phi$, but the flux actually corresponds to a different 
-observed phase $\phiobs$, which is different from $\phi$ due to light travel delays.  
-The delays become significant only for rapidly rotating pulsars.
-In Schwarzschild metric the maximum time delay for a neutron star
-of $M=1.4\msun$ is $\Delta t\sim 7\times 10^{-2}$ ms (almost independent
-of compactness of the star $M/R$). This gives at most 
-a 5 per cent correction to the arrival phase for a rotational period $P=1.5$~ms.
+The previous expressions (\ref{eq:fluxspot2}), (\ref{eq:fluxbolo2}) and (\ref{eq:fluxplaw2}) for calculating the flux of an infinitesimal spot
+contain the pulsar phase $\phi$ (e.g. in $\cos\sigma$). However we should realize that photons are not necesserily observed in the same order as they are emitted due to the different light travel times when the position of the emitting spot is different. For this reason the flux actually corresponds to an observed phase $\phiobs$, which is different from $\phi$. The delays between light travel times become significant only for rapidly rotating pulsars. %In Schwarzschild metric the maximum time delay for a neutron star
+%of $M=1.4\msun$ is $\Delta t\sim 7\times 10^{-2}$ ms (almost independent
+%of compactness of the star $M/R$). This gives at most 
+%a 5 per cent correction to the arrival phase for a rotational period $P=1.5$~ms.
 %citate here to JP pulse profile comparisons paper?
 
    
-The delay is caused by different travel times of emitted
-photons to the observer, depending on the position of the emitting spot.
-A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
-is lagging the photon originating from a reference radius $r_{\mathrm{ref}}$ (which can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by \cite{pechenick}%\citep{pfc83}:
-:
+%The delay is caused by different travel times of emitted
+%photons to the observer, depending on the position of the emitting spot.
 
+The different light travel times in Schwarzschild metric may be calculated and substracted to get the time delay between the photon from the point in interest and a photon from a reference point (we call this reference photon). We choose the reference point to locate at a reference radius $r_{\mathrm{ref}}$ from the center of the star (can be chosen arbitrarily as long as it exceeds $\rg$) and assume that the reference photon is emitted exactly to the radial direction (meaning that $\alpha$ = 0 and thus impact parameter $b = 0$). Now a photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$) is lagging the reference photon by 
+%A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
+%is lagging the photon originating from a reference radius $r_{\mathrm{ref}}$ (which %can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by 
+(Pechenick et al. \cite{pechenick})%\citep{pfc83}:
+:
 \be \label{eq:delay2}
 c\Delta t_{p}(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{\mathrm{ref}},R),
 \ee
@@ -771,28 +770,32 @@ c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\lef
 \end{split}
 \ee
 
-The integral in equation \ref{eq:delayint} is again not very easy to solve numerically. That is why we use again a variable substitution (...) before using Simpson quadrature. We also make a grid of time delays corresponding for different $\alpha$ and $r$, which we later interpolate, to make the code run faster.
+The integral in equation \ref{eq:delayint} is not very easy to solve numerically. That is why we use again a variable substitution before using Simpson quadrature. We also make a grid of time delays corresponding for different $\alpha$ and $R$, which we later interpolate, to make the code run faster.
 
-For a given pulsar phase $\phi$, we compute angle $\psi$, then
-we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter
-using  formulae (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}), and
-  compute the corresponding  delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$
-with equations  (\ref{eq:delay2}) and (\ref{eq:delay22}).
-We then construct a one-to-one
-correspondence between the pulsar phase $\phi$ and
-the photon arrival phase to the observer $\phiobs=\phi+ \Delta\phi$,
-with the phase delays
+We are now able to compute the bending angle $\psi$, the emission angles $\alpha$ and $\sigma$, and the impact parameter $b$ using equations (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}) for a given pulsar phase $\phi$. The corresponding delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$ we can find using formulae (\ref{eq:delay2}) and (\ref{eq:delay22}). When these time delays are knwon we compute the delays in phase with 
+%For a given pulsar phase $\phi$, we compute angle $\psi$, then
+%we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter $b$
+%using  formulae (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}), and
+%  compute the corresponding  delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$
+%with equations  (\ref{eq:delay2}) and (\ref{eq:delay22}).
+%We then construct a one-to-one
+%correspondence between the pulsar phase $\phi$ and
+%the photon arrival phase to the observer $\phiobs=\phi+ \Delta\phi$,
+%with the phase delays
 \be \label{eq:deltaphi2}
-\Delta \phi(\phi) =2\pi\nu \Delta t[b(\phi)] .
+\Delta \phi(\phi) =2\pi\nu \Delta t[b(\phi)],
 \ee
+and the arrival phase to the observer is then $\phiobs=\phi+ \Delta\phi$. We have thus created a one-to-one correspondence between $\phi$ and $\phiobs$
 
 The flux at observed phase $\phiobs$ is
-${F}_{\rm obs}(\phiobs)=F(\phiobs-\Delta\phi)$ with
+${F}_{\rm obs}(\phiobs)=F(\phi-\Delta\phi)$ with
 phase delay  $\Delta \phi=2\pi\nu\Delta t$
-computed using (\ref{eq:delay2}), (\ref{eq:delay22}) and (\ref{eq:deltaphi2}).
-The effect of the photon arrival time contraction (or stretching) on
-the observed flux is already accounted for by one of the Doppler factors, 
-so there is no need to multiply again flux by $\delta$.
+calculated using (\ref{eq:delay2}), (\ref{eq:delay22}) and (\ref{eq:deltaphi2}).
+The contraction (or stretching) of the arrival times of photons is already taken account by one of the Doppler factors in the previous section, se we don't need to multiply flux again by $\delta$. 
+
+%The effect of the photon arrival time contraction (or stretching) on
+%the observed flux is already accounted for by one of the Doppler factors, 
+%so there is no need to multiply again flux by $\delta$.
 
 
 
