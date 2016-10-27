@@ -538,7 +538,7 @@ and $\bmath{k}_0$:
 
 %But also $\bmath{\beta}$ (y-axis) and $\bmath{n}$ (z-axis)should be perpendicular???? Okey, I think it is both same time .. +if you choose $\bmath{r}$ as z-axis, then the z-component of $\bmath{k_{0}}$ will be $\cos\alpha$)
 
-Next we can consider otherwise a similar frame but instead of static instantaneous we express the direction of the emitted light in a frame, which is corotating with the spot. Emission angle in the corotating frame relative to the surface normal is denoted by
+Next we can consider otherwise a similar frame but instead of static and instantaneous we express the direction of the emitted light in a frame, which is corotating with the spot. Emission angle in the corotating frame relative to the surface normal is denoted by
 $\sigma'$.  It differs from $\sigma$ because of relativistic aberration. The rays of light are tilted towards the direction of the spot motion relative to the observer.
 In this frame comoving with the spot 
 (with $y$-axis again along the spot motion and $z$-axis along the local normal), 
@@ -588,9 +588,6 @@ where $b$ is impact parameter,
 \be \label{eq:impact2}
   b=\frac{R}{\sqrt{1-u}} \sin\alpha .
 \ee
-
-
-
 The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is 
 \be 
 \psi(R,\alpha)=2\psi_{\max}-\psi_{p}(R,\pi-\alpha),
@@ -601,12 +598,12 @@ p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
 \ee
 
 
-Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ values with different $\alpha$ and $r$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
+Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ corresponding different $\alpha$ and $r$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
 
 
 
 The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
-The visibility of the spot is thus defined by the condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might be possible for an oblate star). This check is not yet included in the current pulse profile code.
+The visibility of the spot is thus defined by the condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
 
 
 \subsubsection{Observed flux}
@@ -616,22 +613,21 @@ Next we can consider the flux originating from the small spot. The observed flux
 \label{eq:dF_E2}
   \d F_E=I_E\ \d\Omega,
 \ee
-where $I_E$ is the specific   intensity of radiation
-at infinity and $\d\Omega$ is
-the solid angle occupied by spot with area $\d S'$ on the observer's sky.
+where $I_E$ is the specific intensity of radiation at infinity and $\d\Omega$ is
+the solid angle covered by the spot (with area $\d S'$ in the corotating frame) on the observer's sky.
 The solid angle can be expressed in terms of the impact parameter
 \be
 \d\Omega=b\ \d b\ \d\varphi/D^2,
 \ee
 where $D$ is the distance to the source and $\varphi$ is the azimuthal
 angle corresponding to rotation around line of sight (vector $\bmath{k}$).
-The impact parameter $b$ depends on $\psi$ only, but not on $\varphi$.
+The impact parameter $b$ depends only on the bending angle $\psi$, but not on $\varphi$.
 
 The apparent area of the spot as measured by photon beams
 in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
 (see Terrell 1959; Lightman et al. 1975; Ghisellini 1999) 
 and the relation between $\sigma$ and $\sigma'$ is described 
-by the relativistic aberration formula (\ref{eq:aberr2}) (for motions parallel to the 
+by the relativistic aberration formula \ref{eq:aberr2} (for motions parallel to the 
 spot surface). Thus the spot area projected on to the plane perpendicular 
 to the photon propagation direction, i.e. a photon beam cross-section,
 is Lorentz invariant (see e.g.  Lightman et al. 1975; %Problem book in relativity and gravitation?
