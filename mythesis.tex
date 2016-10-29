@@ -252,7 +252,7 @@ that the speed of sound in dense matter has to be less than the speed of light. 
 \begin{equation}
  R \gtrsim \frac{3GM}{c^{2}}.
  \end{equation} 
-Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the neutron star’s origin in a supernova gives a more realistic minimum ~\cite{lattimer2013}.
+Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the origin of neutron star in a supernova gives a more realistic minimum ~\cite{lattimer2013}.
 
 %The Oppenheimer-Volkoff general relativistic equations for a spherically symmetric (non-rotating) neutron star
 
@@ -311,7 +311,7 @@ It provided a confirmation of the "recycling scenario", which states that AMXPs 
 %SAX J1808.4–3658 went into outburst again in 2000, 2002, 2005, 2008 and 2011,
 %with an approximate recurrence time of about 1.6-3.3 yr, and is the best sampled and
 
-After the two first outbursts SAX J1808.4–3658 has gone into outburst several times reoccurring approximately every two or three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they can in principle be partially explained with the disk instability model.
+After the two first outbursts SAX J1808.4–3658 has gone into outburst several times reoccurring approximately every two or three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they can in principle be partially explained with a so called instability model.
 
 %The typical outburst can be split in five phases: a
 %fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow
@@ -572,12 +572,12 @@ Making use of equation (\ref{eq:k02}) the zenith angle has the value
 \ee
 where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\theta\sin\psi\cos\delta$ (where $\delta$ is the angle between spot-observer and spot-spin-axis planes) and the equation (\ref{eq:psi2}) are used. With small bending angles the approximation $\frac{\sin \alpha}{\sin \psi} \approx \sqrt{(1-u)}$ may be used (based on Beloborodov's approximation \cite{beloborodov}). 
 %if $\sin\psi\sin\theta \ne 0$. If $\sin\psi\sin\theta = 0$, then $\cos\sigma = \cos\alpha\cos\gamma$.
-The equation \ref{eq:cossigma2} is useful, since we need to know the emission angle relative to the spot normal ($\sigma$) in order to calculate fluxes and visibility conditions. 
+The equation (\ref{eq:cossigma2}) is useful, since we need to know the emission angle relative to the spot normal ($\sigma$) in order to calculate fluxes and visibility conditions. 
 
 
 \subsubsection{Light bending}
 
-Before we can get the angle $\sigma$ from equation \ref{eq:cossigma2} we also need first to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation \ref{eq:psi2}. In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6) we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
+Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also need first to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6) we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
 
 The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by (e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
@@ -603,12 +603,12 @@ Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic e
 
 
 The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
-The visibility of the spot is thus defined by the condition $\cos \sigma>0$. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
+The condition $\cos \sigma>0$ is used to define the visibility of the spot. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
 
 
 \subsubsection{Observed flux}
 
-Next we can consider the flux originating from the small spot. The observed flux from the spot at photon energy $E$ is
+Next we can consider the flux originating from our small spot. The observed flux from the spot at photon energy $E$ is
 \be
 \label{eq:dF_E2}
   \d F_E=I_E\ \d\Omega,
@@ -659,7 +659,7 @@ the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
 %results in the following  relation between the monochromatic
 %observed and local intensities
 
-We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation \ref{eq:dF_E2}. However we still need to find out a expression for intensity $I_{E}$. Also the intensity is different in the static frame (of the distant observer) and in the local frame comoving with the spot due to both gravitational redshift and Doppler effect. The relation between monochromatic observed and local intensities is (see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
+We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However we still need to find out a expression for intensity $I_{E}$. Also the intensity is different in the static frame (of the distant observer) and in the local frame comoving with the spot due to both gravitational redshift and Doppler effect. The relation between monochromatic observed and local intensities is (see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
 I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
 \ee
@@ -695,7 +695,7 @@ may be then expressed by
 We can notice that the equation for the bolometric flux (\ref{eq:fluxbolo2})
 can be obtained as a special case of Eq.~(\ref{eq:fluxplaw2}) by setting $\Gamma=2$. 
 
-Let us look the expression (\ref{eq:fluxbolo2}) for bolometric flux more carefully. We see that there is a difference by a factor $\Dop^5$ between the flux from a rapidly rotating star and that from a slowly rotating star. One power of the Doppler factor came from the change in the projected area due to aberration as we have already mentioned. From the four other powers of Doppler factor (appearing in the equation \ref{eq:bolointensity}) two comes from the solid angle transformation, one from the energy and one from the time contraction of photon arrival (Rybicki \& Lightman 1979 \cite{rybicki}). In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler factor from the energy and thus one power less.
+Let us look the expression (\ref{eq:fluxbolo2}) for bolometric flux more carefully. We see that there is a difference by a factor $\Dop^5$ between the flux from a rapidly rotating star and that from a slowly rotating star. One power of the Doppler factor came from the change in the projected area due to aberration as we already mentioned. From the four other powers of Doppler factor (appearing in the equation \ref{eq:bolointensity}) two comes from the solid angle transformation, one from the energy and one from the time contraction of photon arrival (Rybicki \& Lightman 1979 \cite{rybicki}). In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler factor from the energy and thus in total one power less.
 
 
 %Two powers of $\Dop$ come
@@ -731,7 +731,7 @@ In the calculations of this thesis we use spectral number fluxes, since those ar
 
 
 The previous expressions (\ref{eq:fluxspot2}), (\ref{eq:fluxbolo2}) and (\ref{eq:fluxplaw2}) for calculating the flux of an infinitesimal spot
-contain the pulsar phase $\phi$ (e.g. in $\cos\sigma$). However we should realize that photons are not necesserily observed in the same order as they are emitted due to the different light travel times when the position of the emitting spot is different. For this reason the flux actually corresponds to an observed phase $\phiobs$, which is different from $\phi$. The delays between light travel times become significant only for rapidly rotating pulsars. %In Schwarzschild metric the maximum time delay for a neutron star
+contain the pulsar phase $\phi$ (e.g. in $\cos\sigma$). However we should realize that photons are not necessarily observed in the same order as they are emitted due to the different light travel times when the position of the emitting spot is different. For this reason the flux actually corresponds to an observed phase $\phiobs$, which is different from $\phi$. The delays between light travel times become significant only for rapidly rotating pulsars. %In Schwarzschild metric the maximum time delay for a neutron star
 %of $M=1.4\msun$ is $\Delta t\sim 7\times 10^{-2}$ ms (almost independent
 %of compactness of the star $M/R$). This gives at most 
 %a 5 per cent correction to the arrival phase for a rotational period $P=1.5$~ms.
@@ -741,7 +741,7 @@ contain the pulsar phase $\phi$ (e.g. in $\cos\sigma$). However we should realiz
 %The delay is caused by different travel times of emitted
 %photons to the observer, depending on the position of the emitting spot.
 
-The different light travel times in Schwarzschild metric may be calculated and substracted to get the time delay between the photon from the point in interest and a photon from a reference point (we call this reference photon). We choose the reference point to locate at a reference radius $r_{\mathrm{ref}}$ from the center of the star (can be chosen arbitrarily as long as it exceeds $\rg$) and assume that the reference photon is emitted exactly to the radial direction (meaning that $\alpha$ = 0 and thus impact parameter $b = 0$). Now a photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$) is lagging the reference photon by 
+The different light travel times in Schwarzschild metric may be calculated and subtracted to get the time delay between the photon from the point in interest and a photon from a reference point (we call this reference photon). We choose the reference point to locate at a reference radius $r_{\mathrm{ref}}$ from the center of the star (can be chosen arbitrarily as long as it exceeds $\rg$) and assume that the reference photon is emitted exactly to the radial direction (meaning that $\alpha$ = 0 and thus impact parameter $b = 0$). Now a photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$) is lagging the reference photon by 
 %A photon following the trajectory with an impact parameter $b$ (and $\alpha < \pi/2$)
 %is lagging the photon originating from a reference radius $r_{\mathrm{ref}}$ (which %can be chosen arbitrarily as long as it exceeds $\rg$) with $b=0$ by 
 (Pechenick et al. \cite{pechenick})%\citep{pfc83}:
@@ -770,9 +770,9 @@ c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\lef
 \end{split}
 \ee
 
-The integral in equation \ref{eq:delayint} is not very easy to solve numerically. That is why we use again a variable substitution before using Simpson quadrature. We also make a grid of time delays corresponding to different $\alpha$ and $R$, which we later interpolate, to make the code run faster.
+The integral in equation (\ref{eq:delayint}) is not very easy to solve numerically. That is why we use again a variable substitution before using Simpson quadrature. We also make a grid of time delays corresponding to different $\alpha$ and $R$, which we later interpolate, to make the code run faster.
 
-We are now able to compute the bending angle $\psi$, the emission angles $\alpha$ and $\sigma$, and the impact parameter $b$ using equations (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}) for a given pulsar phase $\phi$. The corresponding delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$ we can find using formulae (\ref{eq:delay2}) and (\ref{eq:delay22}). When these time delays are knwon we compute the delays in phase with 
+We are now able to compute the bending angle $\psi$, the emission angles $\alpha$ and $\sigma$, and the impact parameter $b$ using equations (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}) for a given pulsar phase $\phi$. The corresponding delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$ we can find using formulae (\ref{eq:delay2}) and (\ref{eq:delay22}). When these time delays are known we compute the delays in phase with 
 %For a given pulsar phase $\phi$, we compute angle $\psi$, then
 %we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter $b$
 %using  formulae (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}), and
@@ -791,7 +791,7 @@ The flux at observed phase $\phiobs$ is
 ${F}_{\rm obs}(\phiobs)=F(\phi-\Delta\phi)$ with
 phase delay  $\Delta \phi=2\pi\nu\Delta t$
 calculated using (\ref{eq:delay2}), (\ref{eq:delay22}) and (\ref{eq:deltaphi2}).
-The contraction (or stretching) of the arrival times of photons is already taken account by one of the Doppler factors in the previous section, se we don't need to multiply flux again by $\delta$. 
+The contraction (or stretching) of the arrival times of photons is already taken account by one of the Doppler factors in the previous section, so we don't need to multiply flux again by $\delta$. 
 
 %The effect of the photon arrival time contraction (or stretching) on
 %the observed flux is already accounted for by one of the Doppler factors, 
@@ -801,10 +801,10 @@ The contraction (or stretching) of the arrival times of photons is already taken
 
 \subsubsection{Profiles from a large spot} 
 
-In all the previous sections we assumed the spot to be infinitesimallly small. If the spot have a finite size we need of course to integrate over the spot surface. It may be done by splitting the spot into a number of small sub-spots and computing the fluxes to each sub-spot separately. Integration over the spot surface is then done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. 
+In all the previous sections we assumed the spot to be infinitesimally small. If the spot have a finite size we need of course to integrate over the spot surface. It may be done by splitting the spot into a number of small sub-spots and computing the fluxes to each sub-spot separately. Integration over the spot surface is then done using Gaussian quadrature in (cosine of) colatitude and trapezoidal rule for integration over the azimuth inside the spot. 
 
 One important thing is to include the time delays correctly for each sub-spot. Because of this it was a good idea to compute the delays relative to the photons emitted from a point directly under the observer (with $b=0$ as said in the previous section). %miksi juuri b=0 hyvä valinta sub-spottien kannalta?
-A more tricky problem is to find out what is the exact relation between the area of the finite spot in the rotating and non-rotating frames ($\d S=\Dop\ \d S'$ was true for an infinitesimal spot). This problem is still under discussion.
+A more tricky problem is to find out what is the exact relation between the area of the finite spot in the rotating and non-rotating frames ($\d S=\Dop\ \d S'$ was true for an infinitesimal spot). This problem has still to be studied.
 
 %For a finite size spot, obviously, integration over the spot surface is required. 
 %%I will not write here any formulae as they are rather trivial. 
@@ -897,7 +897,7 @@ The next step is to decide whether the likelihood ratio is high enough in order 
 %If the probability distribution function (PDF) has greater value at that point, then the walk always moves there. If the PDF has a smaller value, then the move is accepted with probability dependent on how much less likely.
 
 It may be noticed that the acceptance rule simplifies significantly when the
-proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change considerably when adding new members to the chain. The statistical representativity of the sample can be verified
+proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change considerably when adding new members to the chain. The statistical representativeness of the sample can be verified
 %Whether the obtained samples are statistically representative of the posterior can be verified 
 if multiple chains with different initial states result in the same posterior density. It is also necessary to remove perhaps tens of thousands of the first iterations ("burn-in"), since the probability distribution has not yet converged in those. There is no general theory for how long burn-on is required.%length of burn-in required. 
 
@@ -914,7 +914,7 @@ C(t) = \lim_{t'\to\infty}\mathrm{Cov}(V(X_{t+t'}),V(X_{t})).
 \ee
 Here $V(X_{t})$ is an observable. Basically this measures how related the series of numbers $V(X_{t})$ is with itself. 
 
-One way to compute the autocorrelation time is to use the weights (log-likelihoods) of the fits as a function sample as $V(X_{t})$. If the  weights with different lags are correlated strongly $\tau$ will be large. Of course most of the correlation is originated from samples close to each other. This can be seen by plotting the autocovariance as function of lag (see Figure \ref{fig:acexample} in Results). There is no way to get completely rid of autocorrelation, but at least some of the problem may be solved by making the sequence of samples thinner. In principle the number of samples which should be independent is $N/\tau$, where $N$ is the total number of steps \cite{kaiser}. However especially with Metropolis the $\tau$ is typically high (unless a very carefully designed proposal densities) meaning that very high fraction of the samples should be removed.
+One way to compute the autocorrelation time is to use the weights (log-likelihoods) of the fits as a function sample as $V(X_{t})$. If the  weights with different lags are correlated strongly $\tau$ will be large. Of course most of the correlation is originated from samples close to each other. This can be seen by plotting the autocovariance as function of lag (see Figure \ref{fig:acexample} in Results). There is no way to get completely rid of autocorrelation, but at least some of the problem may be solved by making the sequence of samples thinner. In principle the number of samples which should be independent is $N/\tau$, where $N$ is the total number of steps \cite{kaiser}. However especially with Metropolis $\tau$ is typically high (unless a very carefully designed proposal densities) meaning that very high fraction of the samples should be removed.
 
 One other major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution. One example of such is a two dimensional skewed probability distribution is given by (shown in figure \ref{fig:skewed})
 \be \label{eq:skew} 
@@ -1074,7 +1074,7 @@ All the parameters presented in the Table \ref{table:params} except temperature,
 
 We also use only one spherically symmetric hot spot. The oblate shape of the star is described by the function in equation (\ref{rtheta2}). Some parameters affecting on the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
 
-To exploit all possible computational power we have also made the ensemble sampler code to run parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor had its own ensemble (or chain). The number of walkers was set to 20 in each ensemble. 
+To exploit all possible computational power we have also made the ensemble sampler code to run parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor had its own ensemble (or also called chain). The number of walkers was set to 20 in each ensemble. 
  
 The choice of the reference radius $r_{\mathrm{ref}}$ needed in time delay calculation effects only on the phase shift of the waveform. Since we want to simulate a realistic situation where the phase shift is unknown, we use different $r_{\mathrm{ref}}$ in the generation of the data and in the fitting procedure of the ensemble sampler.  
 
@@ -1121,9 +1121,9 @@ Other prior probabilities of the parameters are kept always uniform inside their
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Before obtaining the final posterior probabibility distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we have still left approximately 50 000 samples belonging to each ensemble.  Figure (\ref{fig:wexample}) shows one example of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble, which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time.
+Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we have still left approximately 50 000 samples belonging to each ensemble.  Figure (\ref{fig:wexample}) shows one example of log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble, which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
 
-The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of autocorrelation. In that Figure we plot autocorrelations of all six ensembles from one simulation using the weights as observables (see equation \ref{eq:autocovariance}). The plot shows autocorrelation only approximatively, since one should make sure that the ensamble averaged weights are calculated for walkers at a same state. We may however see that in general correlation is not very bad, and we may reduce it using a thinning of...(?) %... Thinning we used is .... (TBD)  
+The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of autocorrelation. In that Figure we plot autocorrelations of all six ensembles from one simulation using the weights as observables (see equation \ref{eq:autocovariance}). The plot shows autocorrelation only approximatively, since one should make sure that the ensamble averaged weights are calculated for walkers being at a same state of their sequence. We may however see that in general correlation is not very bad, and we may reduce it using a thinning of...(?) %... Thinning we used is .... (TBD)  
 
 The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\theta$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). 
 
