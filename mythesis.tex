@@ -655,7 +655,7 @@ The impact parameter $b$ depends only on the bending angle $\psi$, but not on $\
 %in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
 
 The apparent area of the infinitesimal spot measured by the observer in the non-rotating frame near the stellar surface %(but also at infinity) %not true? .. note: dS*cos(sigma) = Lorentz invariant
-is $\d S=\Dop\ \d S'$ \cite{terrell}\cite{lightman75}
+is $\d S=\Dop\ \d S'$ \cite{terrell}\cite{lightman75}.
 %(see Terrell 1959 \cite{terrell} or Lightman et al. 1975 \cite{lightman75}). %; Ghisellini 1999) %http://journals.aps.org/pr/pdf/10.1103/PhysRev.116.1041 (terrell)
 %lightman75 = problem book in relativity and gravitation (found in Tuorla)
 %didin't found $\d S=\Dop\ \d S'$
@@ -678,7 +678,7 @@ where the factor $[1+f^{2}(\theta)]^{1/2}$ takes into account the oblateness of 
 %Lind \& Blandford 1985 \cite{lindbland85}). 
 %Using equation~(\ref{eq:impact2}) and
 %the facts that $\d S=R^2\ \d\cos\psi\  \d\varphi$  (THIS IS NOT CORRECT %NOW) one gets... (see Morsink)
-The solid angle measured at a distance $D$ is then \cite{morsink}
+The solid angle measured at a distance $D$ from the star is then \cite{morsink}
 \be\label{eq:omega2}
  \d\Omega=\frac{\d S' \cos \sigma'}{D^2} \frac{1}{1-u} \frac{\d\cos\alpha}{\d\cos\psi}.
 \ee
@@ -689,7 +689,7 @@ the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
 %results in the following  relation between the monochromatic
 %observed and local intensities
 
-We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However we still need to find out a expression for intensity $I_{E}$. Also the intensity is different in the static frame (of the distant observer) and in the local frame comoving with the spot due to both gravitational redshift and Doppler effect. The relation between monochromatic observed and local intensities is (see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
+We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However we still need to find out a expression for intensity $I_{E}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effect. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
 I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
 \ee
@@ -711,21 +711,22 @@ The bolometric flux reads:
 \d F= (1-u)\ \Dop^5 \
 I'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
 \ee
-The radiation spectrum can be e.g. a blackbody or a power-law spectrum. We can take for example a power-law $I'_{E'}(\sigma') \propto E '^{-(\Gamma-1)}$, which does not depend on the angle $\sigma'$. Here $\Gamma$ is the photon spectral index. With this spectrum we get
+The radiation spectrum can be e.g., a blackbody or a power-law spectrum. We can take for example a power-law $I'_{E'}(\sigma') \propto E '^{-(\lambda-1)}$, which does not depend on the angle $\sigma'$. Here $\lambda$ is the photon spectral index. With this spectrum we get
 \be \label{eq:int_trans2}
 I'_{E'}(\sigma') = I'_{E}(\sigma')
-\left( \Dop \sqrt{1-u} \right)^{\Gamma-1} .
+\left( \Dop \sqrt{1-u} \right)^{\lambda-1} .
 \ee
 The observed spectral flux %at a distance $D$ from the star 
-may be then expressed by 
+may be then expressed as
 \be\label{eq:fluxplaw2}
-\d F_{E}= (1-u)^{\Gamma/2}\ \Dop^{\Gamma+3} I'_E(\sigma')
+\d F_{E}= (1-u)^{\lambda/2}\ \Dop^{\lambda+3} I'_E(\sigma')
 \cos\sigma\ \frac{\d\cos\alpha}{\d\cos\psi}\ \frac{\d S'}{D^2}.
 \ee
-We can notice that the equation for the bolometric flux (\ref{eq:fluxbolo2})
-can be obtained as a special case of Eq.~(\ref{eq:fluxplaw2}) by setting $\Gamma=2$. 
+We note that the equation for the bolometric flux (\ref{eq:fluxbolo2})
+can be obtained as a special case of Eq.~(\ref{eq:fluxplaw2}) by setting $\lambda=2$. 
 
-Let us look the expression (\ref{eq:fluxbolo2}) for bolometric flux more carefully. We see that there is a difference by a factor $\Dop^5$ between the flux from a rapidly rotating star and that from a slowly rotating star. One power of the Doppler factor came from the change in the projected area due to aberration as we already mentioned. From the four other powers of Doppler factor (appearing in the equation \ref{eq:bolointensity}) two comes from the solid angle transformation, one from the energy and one from the time contraction of photon arrival (Rybicki \& Lightman 1979 \cite{rybicki}). In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler factor from the energy and thus in total one power less.
+Let us look the expression (\ref{eq:fluxbolo2}) for the bolometric flux more carefully. We see that there is a difference by a factor $\Dop^5$ between the flux from a rapidly rotating star and that from a slowly rotating star. One power of the Doppler factor came from the change in the projected area due to aberration as we already mentioned. From the four other powers of Doppler factor (appearing in the equation \ref{eq:bolointensity}) two comes from the solid angle transformation, one from the energy and one from the time contraction of photon arrival \cite{rybicki}. %(Rybicki \& Lightman 1979 \cite{rybicki}). 
+In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler factor from the energy and thus there is one power less.
 
 
 %Two powers of $\Dop$ come
@@ -735,7 +736,7 @@ Let us look the expression (\ref{eq:fluxbolo2}) for bolometric flux more careful
 %Aberration may also change the specific intensity since it has to be computed
 %for angle $\sigma'$ in the comoving frame. 
 
-As mentioned the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a multiplication of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes what are directions where most of the intensity is emitted and the function might have e.g. a polynomial shape.  
+As mentioned, in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a product of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes what are the directions where most of the intensity is emitted and the function might have e.g. a polynomial shape.  
 
 
 Thanks to the observed AMXPs (e.g. SAX J1808.4-3658 \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e. the energy-dependence of $I'_{E'}(\sigma')$ ) might be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of SAX J1808.4-3658 the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which are near the lowest observed energies) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with a temperature of 2 keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law and above the cut-off a descending power-law. The power-law is normalized to be equal with the named blackbody at 1 keV. This model of spectrum is shown in the Figure \ref{fig:spectrum}.
