@@ -157,17 +157,30 @@ from pulse shape modeling}
 
 
 \tableofcontents %Sisällysluettelo
+
 \newpage
+
+
+
+%\pagenumbering{gobble}
+%\section*{Acknowledgement}
+%\newpage
+%\pagenumbering{arabic}
+
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 %Näin tehtynä Johdannolle ei tule numeroa sisälllysluetteloon
 
-Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from a neutron star is emitted towards the Earth.  This emission is thought be created when matter is accreted to a hot spot on a magnetic pole at the surface of the pulsar. These pulses or light curves can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray portions of the electromagnetic spectrum.
+Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  This emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray bands of the electromagnetic spectrum.
 
-The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in neutron star astrophysics. This information could provide tight constraints on the equation of state of ultra-dense matter located inside the neutron star \cite{lattimer2007}, \cite{hebeler}. This high densities of cold matter is otherwise unattainable. Studies of the light curves of pulsars can therefore help determine the properties of such matter. It is also not overstated to say that the properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
+The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in astrophysics. This information could provide tight constraints on the equation of state of the ultra-dense matter located inside neutron stars \cite{lattimer2007}, \cite{hebeler}. Densities of this high of a cold matter is otherwise unattainable.
+%This high densities of cold matter is otherwise unattainable. 
+Studies of the light curves of pulsars can therefore help to determine the properties of such matter. The properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
 
 
-One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms. The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
+%One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms.
+One way to constrain masses and radii is to use X-ray oscillation produced by the rotation of some accreting millisecond pulsars. Models of these oscillations can be compared to observed waveforms.  
+The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
 
 
 
@@ -235,29 +248,34 @@ Näitä noudattamalla saadaan vähennettyä ainakin yksi tarkastuskierros.
 \section{Neutron stars}
 
 
-Neutron stars are some of the densest and most massive objects in the
-universe. Typical mass of a neutron star ($M$) is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius ($R$) on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 \mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei \cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the fermions are in any case excepted inside the star. 
+Neutron stars are some of the most dense and massive objects in the
+universe. Typical mass of a neutron star $M$ is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius $R$ on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 \mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei \cite{lattimer}. Neutrons dominate the nucleonic component of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities also more exotic baryons, mesons or quarks may appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the matter %fermions are
+is in any case excepted inside the star. 
 
  
 Neutron stars are created after the gravitational collapse of the core of a
-massive star (>8$M_{\odot}$) at the end of its life, when the collapse triggers a Type II supernova explosion \cite{lattimer}. Too massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
+massive star (>8$M_{\odot}$) at the end of its life. The collapse also triggers a Type II supernova explosion \cite{lattimer}. More massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
 \begin{equation}
  R > \frac{2GM}{c^{2}},
  \end{equation} 
-where $G$ is the gravitational constant and $c$ is the speed of light, constrains the possible mass and radius of neutron stars.
+where $G$ is the gravitational constant and $c$ is the speed of light, %constrains the possible mass %and radius of neutron stars.
+differentiates neutron stars from black holes. More compact objects (for which $R < 2GM/c^{2}$) are inside the event horizon, which means that the light cannot escape the object.
 
-A more strict upper bound to the compactness (ratio between radius and mass) of the star follows
+
+A more strict upper bound to the compactness (ratio between the radius and mass) of a neutron star follows
 the fact \cite{rhoades} %(/PhysRevLett.32.324 )
 that the speed of sound in dense matter has to be less than the speed of light. This gives us the so called causality condition
 \begin{equation}
  R \gtrsim \frac{3GM}{c^{2}}.
  \end{equation} 
-Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the origin of neutron star in a supernova gives a more realistic minimum ~\cite{lattimer2013}.
+Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the origin of neutron star in a supernova gives a more realistic minimum (on the order of 1.1 $M_{\odot}$) ~\cite{lattimer2013}.
 
 %The Oppenheimer-Volkoff general relativistic equations for a spherically symmetric (non-rotating) neutron star
 
-Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a general relativistic and spherically symmetric (non-rotating) object under hydrostatic equilibrium these are the the so called Tolman-Oppenheimer-Volkov equations (Tolman,
-1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer}):
+Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a general relativistic and spherically symmetric (non-rotating) object %under hydrostatic equilibrium 
+these are the the so called Tolman-Oppenheimer-Volkov equations %(Tolman,
+%1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer})
+\cite{tolman}\cite{oppenheimer}:
 
 
 \begin{equation}
@@ -268,7 +286,7 @@ and
 \begin{equation}
  \frac{dm(r)}{dr} = 4 \pi \rho r^{2},
  \end{equation}
-where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. The relation we call the equation of state (EOS). For a realistic EOS the previous equations must be numerically solved to obtain M-R relation. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of neutron star and the properties of the nucleon matter inside it \cite{akmal}. The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce.
+where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. This relation we call the equation of state (EOS). For realistic EOSs the previous equations must be numerically solved to obtain M-R relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce.
 
 
 %using observations to constrain masses and radii of neutron stars.
@@ -297,21 +315,22 @@ where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and
 
 
 Rotating neutron stars were first detected as radio pulsars in 1967 \cite{gold68}. %http://adsabs.harvard.edu/abs/1968Natur.218..731G
-After that many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXB is a system in which the neutron accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim  M_{\odot}$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) is a subgroup of the LMXBs, in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. This gives rise to the X-ray pulsations typically with periods of a few milliseconds corresponding the spin frequency of the neutron star. By definition AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$) ~\cite{patruno}. 
+After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim  M_{\odot}$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs, in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. 
 
-The transfer of mass occurs in all known AMXPs via Roche lobe overflow from the donor star. The equipotential surface of the binary systems gravitational and centrifugal forces (surrounding the star) is known as Roche lobe. Both the neutron star and the companion have their own lobes that  only join at a inner Lagrangian point $L_{1}$ \cite{frank85}. %http://adsabs.harvard.edu/abs/1985Sci...230.1269F (book in Tuorla)
-In the case when the Roche lobe of the companion is fulfilled by matter, the gas starts to flow through to the Lagrangian point. An accretion disk is formed because of the rotation of the pulsar.
+The transfer of mass occurs in all known AMXPs via a Roche lobe overflow from the donor star. The equipotential surface of the binary systems gravitational and centrifugal forces (surrounding the star) is known as Roche lobe. Both the neutron star and the companion have their own lobes that  only join at a inner Lagrangian point $L_{1}$ \cite{frank85}. %http://adsabs.harvard.edu/abs/1985Sci...230.1269F (book in Tuorla)
+In the case when the Roche lobe of the companion star is full of matter, the gas left outside the companion's Roche Lobe starts to flow towards neutron star through $L_{1}$. An accretion disk is formed because of the rotation of the system of two stars.
  
 
-The first AMXP discovered was SAX J1808.4–3658. It is also the main observed target in this thesis. The source was first found in 1996 by the Italian-Dutch BeppoSAX satellite cite{zandsax1808}. %http://adsabs.harvard.edu/abs/1998A%26A...331L..25I
-The first coherent pulsations (at 401 Hz) were detected during the second outburst with Rossi X-ray Timing Explorer (RXTE) in 1998 \cite{wijnandssax1808}. %http://adsabs.harvard.edu/abs/1998Natur.394..344W
-It provided a confirmation of the "recycling scenario", which states that AMXPs are the evolutionary progenitors of recycled radio millisecond pulsars. They are responsible for the conversion of slowly rotating neutron stars with high magnetic field ($B \sim 10^{12}$), into a rapidly spinning objects with a relatively weak magnetic field ($B \sim 10^{8}$) \cite{patruno}. The idea is that a weakening magnetic field allows accretion to happen, which results in a increase of the spin frequency of the pulsar.
+The first AMXP discovered was SAX J1808.4–3658. It is also used as a reference target in this thesis. %It is also the main observed target in this thesis. 
+The source was first found in 1996 by the Italian-Dutch BeppoSAX satellite \cite{zandsax1808}. %http://adsabs.harvard.edu/abs/1998A%26A...331L..25I
+The first coherent pulsations (at 401 Hz) were detected during the second outburst with NASA's Rossi X-ray Timing Explorer (RXTE) in 1998 \cite{wijnandssax1808}. %http://adsabs.harvard.edu/abs/1998Natur.394..344W
+It provided a confirmation of the "recycling scenario", which states that AMXPs are the evolutionary progenitors of recycled radio millisecond pulsars. They are responsible for the conversion of slowly rotating neutron stars with high magnetic field ($B \sim 10^{12}$ G), into a rapidly spinning objects with a relatively weak magnetic field ($B \sim 10^{8}$ G) \cite{patruno}. The idea is that a weakening magnetic field allows accretion to happen. The angular momentum of the accreting matter is transferred to the pulsar, which results in the increase of its spin frequency.% of the pulsar.
 
 
 %SAX J1808.4–3658 went into outburst again in 2000, 2002, 2005, 2008 and 2011,
 %with an approximate recurrence time of about 1.6-3.3 yr, and is the best sampled and
 
-After the two first outbursts SAX J1808.4–3658 has gone into outburst several times reoccurring approximately every two or three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they can in principle be partially explained with a so called instability model.
+After the two first outbursts, SAX J1808.4–3658 has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they can in principle be partially explained with a so-called instability model.
 
 %The typical outburst can be split in five phases: a
 %fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow
@@ -350,18 +369,22 @@ have revealed the possible presence of jets.
 
 \fi
 
+\clearpage
+
 \section{Methods}
 
-There have been many different attempts to constrain the masses and radii of neutron stars and thus also the possible equations of state. For example one approach is the so called cooling tail method, where the observed cooling tracks of thermonuclear X-ray bursts are compared to the accurate theoretical atmosphere model calculations \cite{nattila_bayes}. One other approach to measure $M$ and $R$ is to fit detailed spectral models to high-precision measurements of X-ray burst spectra \cite{madej}. %http://adsabs.harvard.edu/abs/2005AcA....55..349M
-This however requires very high-precision spectral data. 
+%There have been many different attempts to constrain the masses and radii of neutron stars and thus also the possible equations of state. For example one approach is the so called cooling tail method, where the observed cooling tracks of thermonuclear X-ray bursts are compared to the accurate theoretical atmosphere model calculations \cite{nattila_bayes}. One other approach to measure $M$ and $R$ is to fit detailed spectral models to high-precision measurements of X-ray burst spectra \cite{madej}. %http://adsabs.harvard.edu/abs/2005AcA....55..349M
+%This however requires very high-precision spectral data. 
 
-The approach we use here is to fit pulse profile models to observations of these pulses during a X-ray burst. In this section we first present our waveform model and then the Bayesian methods we use to get constraints for the parameters of the model. The final aim is to combine constraints obtained with different approaches.
+There have been many different attempts to constrain the masses and radii of neutron stars and thus also the possible equations of state. The approach we use here is to fit a pulse profile model to the observed X-ray oscillations of accretion-powered millisecond pulsars. In this section we first present our waveform model and then the Bayesian methods we use to get constraints for the parameters of the model. %The final aim is to combine constraints obtained with different approaches.
 
 \subsection{Pulse profile modeling}
 
 
-The oscillations in the flux during the outbursts (the light curves) of accreting millisecond pulsars (described in the first chapter) can be modeled with different models. The model presented here assumes that the radiation is originated from one or two polar spots locating at the polar caps of the stars. General and special relativistic effects have been taken account using so called Schwarzschild-Doppler (S+D) approximation (Miller, Lamb 1998 \cite{millerlamb98}%http://adsabs.harvard.edu/abs/1998ApJ...499L..37M
-, Poutanen, Gierlinski 2003 \cite{poutagierlinskisax}). In the S+D approximation the effects of general relativity (gravitational light-bending) are modeled as though the star is not rotating using the Schwarzschild metric and the formalism specified by
+The oscillations in the flux during the outbursts (the light curves) of accreting millisecond pulsars (described in the first chapter) can be modeled with different models. The model presented here assumes that the radiation is originated from one or two of the polar caps of the star. General and special relativistic effects have been taken account using so-called Schwarzschild-Doppler (S+D) approximation %(Miller, Lamb 1998   
+\cite{millerlamb98}%http://adsabs.harvard.edu/abs/1998ApJ...499L..37M
+%, Poutanen, Gierlinski 2003 
+\cite{poutagierlinskisax}. In the S+D approximation the effects of general relativity (gravitational light-bending) are modeled as though the star is not rotating using the Schwarzschild metric and the formalism specified by
 Pechenick, Ftaclas and Cohen (1983) \cite{pechenick}. Rotational effects have been approximated by using special relativistic Doppler transformations as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
 
 %Rotational effects are added by introducing Doppler terms as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
@@ -370,7 +393,8 @@ The observed pulse profiles from AMXPs appear to be rather close to sinusoidal w
 \be \label{eq:amplitude}
 A = \frac{F_{\mathrm{max}} - F_{\mathrm{min}}} {F_{\mathrm{max}} - F_{\mathrm{min}}}
 \ee %https://arxiv.org/pdf/astro-ph/0510038v2.pdf
- between 4 and 12 per cent \cite{poutarew2006}. Light bending tend to reduce the variability amplitude. The amplitude depends only weakly on energy and the spectrum may be fitted with a two-component model (blackbody and Comptonization). At higher energies the amplitude deviate more from a sine wave because of the different emission pattern. The weak energy dependence and a fairly constant spectral shape as a function of pulse phase, support also the idea that the bulk of the observed X-ray emission originates from polar caps (where the gas stream channeled by the neutron star magnetic field impacts the stellar surface forming a shock). Any additional source of radiation would have to have a spectrum identical to that of the shock.
+ between 4 and 12 per cent \cite{poutarew2006}, where $F_{\mathrm{max}}$ is the maximum observed flux and $F_{\mathrm{min}}$ is the minimum observed flux. Light bending tend %error, where?
+to reduce the variability amplitude. The amplitude depends only weakly on energy and the spectrum may be fitted with a two-component model (blackbody and Comptonization). At higher energies the amplitude deviate more from a sine wave because of the different emission pattern. The weak energy dependency and a fairly constant spectral shape as a function of pulse phase, support also the idea that the bulk of the observed X-ray emission originates from polar caps (where the gas stream channeled by the neutron star magnetic field impacts the stellar surface forming a shock). Any additional source of radiation would have to have a spectrum identical to that of the shock.
 
 
 \subsubsection{Oblateness}
@@ -410,14 +434,15 @@ x = \frac{M}{R_{\mathrm{eq}}},
 \end{equation}
 
 
-In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii in this thesis.
+In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
 
 
 \subsubsection{Geometry}
 
-Besides the geometry of the star itself, we also need to know relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (for a similar derivation see e.g. \cite{poutabelo}). 
+Besides the geometry of the star itself, we also need to know the relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (for a similar derivation see e.g. \cite{poutabelo}). 
 The star is assumed to be rotating  with a frequency $\nu=P^{-1}$ (seen by a distant observer).
-The velocity of the spot in units of $c$ (as measured by an inertial observer observer at the star) is 
+The velocity of the spot in units of $c$ (as measured by an non-rotating observer near the star)  %<- correct now?
+is 
 \begin{equation}
 \label{beta2}
 \beta = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta =\beta_{\rm eq}(\theta) \sin\theta,
@@ -426,7 +451,7 @@ where $\beta_{\rm eq}$ would be constant if the star were spherical, $u\equiv\rg
 $\rg=2GM/c^2$ is the Schwarzschild radius, $M$ is mass and $R(\theta)$ is
 radius of the star at spot location (given by equation \ref{rtheta2}). The pulsar frequency has been corrected for the gravitational redshift $1/\sqrt{1-u}=1+z$, since the rotation frequency seen by distant observer is reduced in the gravitational field of the star due to the gravitational time dilation. The corresponding Lorentz factor for the velocity of the spot is $\Gamma=(1-\beta^2)^{-1/2}$.
 
-Because of the fast rotation and special relativistic effects, spot area measured in a corotating frame $\d S^\prime$ is not same as the area measured in a non-rotating frame $dS$. The instantaneous position of the spot in the fixed lab frame is described by the unit vector 
+Because of the fast rotation and special relativistic effects, spot area $\d S^\prime$ measured in a corotating frame is not same as the area $\d S$ measured in a non-rotating frame. The instantaneous position of the spot in the fixed lab frame is described by the unit vector 
 \begin{equation}
 \bmath{r}=(\sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta),
 \end{equation}
@@ -458,7 +483,7 @@ In case of a spherical star $\frac{dR}{d\theta} = 0$ and thus $\bmath{n} = \bmat
 
 %We will start the waveform with the center of the spot in the plane defined... 
 The computation of the waveform is started from the center of the spot in the plane defined by the spin axis and the direction to the observer 
-(when the spot crosses the plane defined by $\bmath{z}$ and $\bmath{k}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g. the equator radius of the star) is used to define the zero of the observer's time coordinate. The time is set to zero when this photon arrives at the observer. 
+(when the spot crosses the plane defined by $\bmath{z}$ and $\bmath{k}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g., the equator radius of the star) is used to define the zero of the observer's time coordinate. Measuring of the time $t$ is started when this photon arrives at the observer (hence fixing $t=0$). %The time is set to zero when this photon arrives at the observer. 
 
 
 
@@ -467,12 +492,12 @@ We denote the unit vector along the line of sight by
 \bmath{k}=(\sin i, 0, \cos i), 
 \ee 
 where $i$ is the inclination angle of the spin axis to the line of sight. 
-Thus 
+Thus (see Fig. \ref{fig:geom2})
 \be \label{eq:psi2}
   \cos\psi=\bmath{k}\cdot \bmath{r} = \cos i\ \cos\theta+\sin i\ \sin \theta\ \cos\phi,
 \ee
 
-Angle $\psi$ measures the angle between the line of sight and the position vector $\bmath{r}$ of the spot. The initial angle of the emitted photon with respect to
+The lensing angle $\psi$ measures the angle between the line of sight and the position vector $\bmath{r}$ of the spot. The initial angle of the emitted photon with respect to
  ${\mathbf r}$ differs from $\psi$ because of the light bending.
 
 %Angle $\psi$ measures the apparent inclination of the spot to the line of
@@ -507,7 +532,7 @@ The relation between $\bmath{k}_0$ and $\bmath{k}$ may be written as
 %$x$-axis along the meridian towards the equator, and 
 %$z$-axis along the normal  to the spot.
 %In this static frame
-We would like to express this vector in the frame of the spot instead of the frame shown in Fig 1. As a first step we do the coordinate transformation to an instantaneous non-rotating frame $x,y,z$ with the $y$-axis along the direction of the spot motion, $x$-axis along the meridian towards the equator, and $z$-axis along the normal  to the spot. This frame can be introduced in any moment of time. In this static frame
+We would like to express this vector in the rest frame of the spot instead of the non-rotating static frame. As a first step we do the coordinate transformation to an instantaneous non-rotating frame $x,y,z$ with the $y$-axis along the direction of the spot motion, $x$-axis along the meridian towards the equator, and $z$-axis along the normal of the spot. This frame can be introduced in any moment of time. In this static frame
 \be 
 \bmath{k}_0=
 \left( 
@@ -517,17 +542,17 @@ We would like to express this vector in the frame of the spot instead of the fra
 \cos\sigma
 \right) ,
 \ee 
-where $\xi$ is the angle  between the spot velocity and $\bmath{k}_0$ :   
+where $\xi$ is the angle  between the spot velocity and the direction of the emitted photon $\bmath{k}_0$. It is given as   
 \be \label{eq:cosxi22}
 \cos\xi=\frac{\bmath{\beta}}{\beta} \cdot \bmath{k}_0
 =\frac{\sin\alpha}{\sin\psi} \frac{\bmath{\beta}}{\beta} \cdot \bmath{k}=
 - \frac{\sin\alpha}{\sin\psi}\sin i\ \sin\phi\ ,
 \ee
-since $\bmath{\beta} = \beta(-\sin\phi,\cos\phi,0)$ in the lab frame. And $\epsilon$ is the angle between the meridian 
+since $\bmath{\beta} = \beta(-\sin\phi,\cos\phi,0)$ in the lab frame. Angle between the meridian % And $\epsilon$ is the angle between the meridian 
 \be
  \bmath{m} = (\cos(\theta - \gamma)\cos \phi ,\cos (\theta -\gamma)\sin \phi, -\sin (\theta -\gamma))
 \ee
-and $\bmath{k}_0$: 
+and $\bmath{k}_0$ is $\epsilon$, which is obtained from 
 
 \be \label{eq:kx-comp}
 \begin{split}
@@ -538,7 +563,7 @@ and $\bmath{k}_0$:
 
 %But also $\bmath{\beta}$ (y-axis) and $\bmath{n}$ (z-axis)should be perpendicular???? Okey, I think it is both same time .. +if you choose $\bmath{r}$ as z-axis, then the z-component of $\bmath{k_{0}}$ will be $\cos\alpha$)
 
-Next we can consider otherwise a similar frame but instead of static and instantaneous we express the direction of the emitted light in a frame, which is corotating with the spot. Emission angle in the corotating frame relative to the surface normal is denoted by
+Next we can consider a frame which have the same axes as previously but which is also corotating with the spot. We want to express the direction of the emitted light also in this frame. Emission angle relative to the surface normal in this frame is denoted by
 $\sigma'$.  It differs from $\sigma$ because of relativistic aberration. The rays of light are tilted towards the direction of the spot motion relative to the observer.
 In this frame comoving with the spot 
 (with $y$-axis again along the spot motion and $z$-axis along the local normal), 
@@ -554,7 +579,7 @@ obtained from the Lorentz transformation:
 \end{array}
 \right) ,
 \ee 
-where is the Doppler factor 
+where $\delta$ is the Doppler factor formulated as
 \be \label{eq:dop2}
 \Dop=\frac{1}{\Gamma(1-\beta\cos\xi)} .
 \ee
@@ -566,25 +591,28 @@ Using equation (\ref{eq:k0prime2}), we obtain
 Making use of equation (\ref{eq:k02}) the zenith angle has the value
 \be\label{eq:cossigma2}
 \begin{split}
-\cos\sigma = \bmath{k_{0}}\cdot\bmath{n} = \cos\alpha\cos\gamma+\sin\alpha\sin\gamma\cos\delta = \\
+\cos\sigma = \bmath{k_{0}}\cdot\bmath{n} = \cos\alpha\cos\gamma+\sin\alpha\sin\gamma\cos\zeta = \\
 \cos \alpha  \cos \gamma + \frac{\sin \alpha}{\sin \psi} \sin \gamma (\cos i \sin \theta - \sin i \cos \theta \cos \phi),
 \end{split}
 \ee
-where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\theta\sin\psi\cos\delta$ (where $\delta$ is the angle between spot-observer and spot-spin-axis planes) and the equation (\ref{eq:psi2}) are used. With small bending angles the approximation $\frac{\sin \alpha}{\sin \psi} \approx \sqrt{(1-u)}$ may be used (based on Beloborodov's approximation \cite{beloborodov}). 
+where the spherical trigonometric identity $\cos i = \cos\theta\cos\psi+\sin\theta\sin\psi\cos\zeta$ (where $\zeta$ is the angle between the spot-observer and the spot-spin-axis planes) and the equation (\ref{eq:psi2}) are used. With small bending angles the approximation $\frac{\sin \alpha}{\sin \psi} \approx \sqrt{(1-u)}$ may be used. This is based on the Beloborodov's approximation  \cite{beloborodov}
+\be \label{eq:beloborodov}
+1-\cos \alpha = (1 - \cos \psi)(1 - u).
+\ee
 %if $\sin\psi\sin\theta \ne 0$. If $\sin\psi\sin\theta = 0$, then $\cos\sigma = \cos\alpha\cos\gamma$.
 The equation (\ref{eq:cossigma2}) is useful, since we need to know the emission angle relative to the spot normal ($\sigma$) in order to calculate fluxes and visibility conditions. 
 
 
 \subsubsection{Light bending}
 
-Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also need first to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6) we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
+Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also first need to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ we know (for every point at every phase) directly from the geometry, since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6) we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined, since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
 
-The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by (e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
+The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e. light bending) is given by \cite{mtw}%(e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
   \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
        \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
 \ee
-where $b$ is impact parameter,
+where $b$ is the impact parameter,
 \be \label{eq:impact2}
   b=\frac{R}{\sqrt{1-u}} \sin\alpha .
 \ee
@@ -592,18 +620,18 @@ The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is
 \be 
 \psi(R,\alpha)=2\psi_{\max}-\psi_{p}(R,\pi-\alpha),
 \ee 
-where $\psi_{\max} = \psi_{p}(p,\alpha=\pi/2)$ and p is the distance of closest approach, given by
+where $\psi_{\max} = \psi_{p}(p,\alpha=\pi/2)$ and $p$ is the distance of closest approach, given by
 \be
-p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}r_{s}/(2b))+2\pi]/3).
+p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}\rg/(2b))+2\pi]/3).
 \ee
 
 
-Numerical calculations using directly integral \ref{eq:bend2} lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using e.g. Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ corresponding different $\alpha$ and $R$ and then find the correct $\alpha$ at different phases of the rotation of the star by interpolating. 
+Numerical calculations using directly integral (\ref{eq:bend2}) lead to dramatic errors, but after making a variable substitution $x = \sqrt{1-R/r}$ the integral can be computed without problems using for example Simpson quadratures. Even though it is not possible to obtain $\alpha$ as an exact function of $\psi$, we can still use the previous equations to form a two-dimensional grid of $\psi$ corresponding to different $\alpha$ and $R$. Then we find the correct $\alpha$ at different phases of the rotation of the star by interpolation. 
 
 
 
 The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
-The condition $\cos \sigma>0$ is used to define the visibility of the spot. In addition one should also check that the photon won't hit the surface of the star in any later phase of it's trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
+The condition $\cos \sigma>0$ is used to define the visibility of the spot. In addition one should also check that the photon won't hit the surface of the star in any later phase of its trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
 
 
 \subsubsection{Observed flux}
@@ -615,7 +643,7 @@ Next we can consider the flux originating from our small spot. The observed flux
 \ee
 where $I_E$ is the specific intensity of radiation at infinity and $\d\Omega$ is
 the solid angle covered by the spot (with area $\d S'$ in the corotating frame) on the observer's sky.
-The solid angle can be expressed in terms of the impact parameter
+The solid angle can be expressed in terms of the impact parameter \cite{pechenick}
 \be
 \d\Omega=b\ \d b\ \d\varphi/D^2,
 \ee
@@ -626,29 +654,31 @@ The impact parameter $b$ depends only on the bending angle $\psi$, but not on $\
 %The apparent area of the spot as measured by photon beams
 %in the non-rotating frame near the stellar surface is $\d S=\Dop\ \d S'$
 
-The apparent area of the infinitesimal spot measured by the observer in the non-rotating frame near the stellar surface (but also at infinity) is $\d S=\Dop\ \d S'$
-(see Terrell 1959 \cite{terrell} or Lightman et al. 1975 \cite{lightman75}). %; Ghisellini 1999) %http://journals.aps.org/pr/pdf/10.1103/PhysRev.116.1041 (terrell)
+The apparent area of the infinitesimal spot measured by the observer in the non-rotating frame near the stellar surface %(but also at infinity) %not true? .. note: dS*cos(sigma) = Lorentz invariant
+is $\d S=\Dop\ \d S'$ \cite{terrell}\cite{lightman75}
+%(see Terrell 1959 \cite{terrell} or Lightman et al. 1975 \cite{lightman75}). %; Ghisellini 1999) %http://journals.aps.org/pr/pdf/10.1103/PhysRev.116.1041 (terrell)
 %lightman75 = problem book in relativity and gravitation (found in Tuorla)
 %didin't found $\d S=\Dop\ \d S'$
 We also know the relation between $\sigma$ and $\sigma'$ from the relativistic aberration formula \ref{eq:aberr2} (for motions parallel to the spot surface) $\cos\sigma' =   \Dop \ \cos\sigma$. Thus 
 \be \label{eq:Salpha2}
 \d S\ \cos\sigma = \d S'\ \cos\sigma', 
 \ee
-which shows that the spot area projected on to the plane perpendicular to the photon direction is Lorentz invariant (see e.g.  Lightman et al. 1975 \cite{lightman75} or 
+which shows that the spot area projected on to the plane perpendicular to the photon direction is Lorentz invariant \cite{lightman75}\cite{lindbland85}%(see e.g.  Lightman et al. 1975 \cite{lightman75} or 
 %Problem book in relativity and gravitation
-Lind \& Blandford 1985 \cite{lindbland85}). This area is also called a photon beam cross-section.
-The infinitesimal spot area measured in the frame comoving with the spot may be calculated as (Morsink et al. 2007 \cite{morsink})
+%Lind \& Blandford 1985 \cite{lindbland85}). 
+This area is also called a photon beam cross-section.
+The infinitesimal spot area measured in the frame comoving with the spot may be calculated as \cite{morsink} %(Morsink et al. 2007 \cite{morsink})
 \be \label{eq:surf_element}
 \d S'(\theta) = R^{2}(\theta) [1+f^{2}(\theta)]^{1/2} \sin \theta \d \theta \d \phi,
 \ee
-where the factor $[1+f^{2}(\theta)]^{1/2}$ takes account the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
+where the factor $[1+f^{2}(\theta)]^{1/2}$ takes into account the oblateness of the spot surface (function $f(\theta)$ is given in equation \ref{eq:ftheta}).
 %which shows that the spot area projected on to the plane perpendicular 
 %to the photon propagation direction, i.e. a photon beam cross-section,
 %is Lorentz invariant (see e.g.  Lightman et al. 1975 \cite{lightman75} or %Problem book in %relativity and gravitation
 %Lind \& Blandford 1985 \cite{lindbland85}). 
 %Using equation~(\ref{eq:impact2}) and
 %the facts that $\d S=R^2\ \d\cos\psi\  \d\varphi$  (THIS IS NOT CORRECT %NOW) one gets... (see Morsink)
-The solid angle measured at infinity is then \cite{morsink}
+The solid angle measured at a distance $D$ is then \cite{morsink}
 \be\label{eq:omega2}
  \d\Omega=\frac{\d S' \cos \sigma'}{D^2} \frac{1}{1-u} \frac{\d\cos\alpha}{\d\cos\psi}.
 \ee
