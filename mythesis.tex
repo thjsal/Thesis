@@ -854,13 +854,13 @@ In the model in this thesis we assumed a spherically symmetric spot (the angle m
 
 \subsubsection{Comparison of the profiles}
 
-The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. The profiles of oblate pulsars have also been compared to profiles obtained from light-ray tracing methods (Figures?), which correspond each other well. 
+The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. The profiles of oblate pulsars have also been compared to profiles obtained from light-ray tracing methods (Figures?), which have a good correspondece.%correspond each other well. 
 
 %Show here some profiles..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=mor3test.eps,width=12.0cm}}
-\caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with parameters given in the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of Morsink and the black solid line is our result.
+\caption{Light curves (bolometric flux) for light emitted from one infinitesimal spot with $M = 1.4 \msun$, $R_{\mathrm{eq}} = 16.4 \mathrm{km}$... . Results are compared with the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of \cite{morsink} and the black solid line is our result.
 \label{fig:mor3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -891,37 +891,41 @@ The new versions of the waveform code have been tested by comparing the pulse pr
 
 %http://math.nyu.edu/~mjlewis/foo.pdf %about Monte Carlo
 
-The model presented in the previous section can be used to constrain parameters of neutron stars by using Bayesian methods. We can fit observed data to the model and use Markov Chain Monte Carlo  (MCMC) methods to sample over the parameter space and find the most probable values for the parameters of the model \cite{mc_methods_book}. The data can also be synthetic (as in this thesis) in order to test if the sampler will actually find the same values that were used when generating the data. Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller} (for future space missions). More about the synthetic data of this thesis is presented in the Results section. 
+The model presented in the previous section can be used to constrain parameters of neutron stars by using Bayesian inference. We can fit the observed data to the model and use Markov Chain Monte Carlo (MCMC) methods to integrate over the parameter space to find the most probable values for the parameters of the model \cite{mc_methods_book}. The data can also be synthetic (as in this thesis) in order to test our methods and tools. %if the sampler will actually find the same values that were used when generating the data. 
+Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g. by Ka Ho Lo et al, 2013 \cite{miller}. %(for future space missions).   
+More about the synthetic data of this thesis is presented in the Results section. 
 
-The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" waveform, and the confidence regions for the values of these parameters. The goal is also to study the effect of polarization measurements on to the posterior probability distributions. Probabilities are calculated using Bayes's theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a quite new ensemble sampler (used in this thesis) are discussed in the two following sections. 
+The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" \ 
+waveform, and the confidence regions for the values of these parameters. The goal is also to study the effect of polarization measurements on to the posterior probability distributions. Probabilities are calculated using Bayes' theorem, which is presented in the next section. The standard Metropolis sampling method of the parameter space and a modern ensemble sampler (used in this thesis) are discussed in the following three sections. 
 
 \subsubsection{Bayesian analysis}
 
-We are interested in the probability distributions of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability is marked $p(\textbf{y}|D)$, where D is the energy- and oscillation phase-resolved waveform data (synthetic in our case). According to the Bayes's theorem this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values \cite{nattila_bayes}:
+We are interested in the probability of the parameters $\textbf{y}$ of the waveform model when the observed waveform is known. The probability distribution of the parameters given the data is $p(\textbf{y}|\mathcal{D})$, where $\mathcal{D}$ is the energy- and oscillation phase-resolved waveform data (synthetic in our case). According to the Bayes' theorem this (posterior) probability distribution can be obtained from the likelihood of the data, given the parameter values as \cite{nattila_bayes}
 
 
 \be \label{eq:bayes}
 p(\textbf{y}|D) \propto p(D|\textbf{y})p(\textbf{y}).
 \ee
 
-In the previous equation $p(D|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The next factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior, which is the most uninformative prior. Later we take account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to see how or if it is improving the fits. The constant of proportionality is the inverse of the normalization factor, but it is irrelevant when estimating the values of the parameters in a given model. 
+In the previous equation $p(\mathcal{D}|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior, which is the most uninformative prior. Later we take in to account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to study their impact on the fit. The constant of proportionality is the inverse of the normalization factor, but it is irrelevant when estimating the values of the parameters in a given model. 
 
 
 \subsubsection{Metropolis-Hastings}
 
-The original, standard MCMC algorithm is called the Metropolis algorithm (Metropolis et al., 1953 \cite{metropolis53}; Hastings, 1970 \cite{hastings70}). It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates random samples by moving in a random walk; that is some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so called Markov property. It means that the conditional probability distribution of $X_{t+1}$, given all past elements, is independent of all the other states but not the previous state \cite{kaiser}:
+The original standard MCMC algorithm is called the Metropolis algorithm \cite{metropolis53}\cite{hastings70}. %(Metropolis et al., 1953 \cite{metropolis53}; Hastings, 1970 \cite{hastings70}). 
+It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates these random samples by moving in a random walk; that is in some sequence $X_{1}...X_{t}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfy the so-called Markov property. It means that the conditional probability distribution of $X_{t+1}$, given all the past elements, is independent of all the other states except the previous state \cite{kaiser}:
 
  \be \label{eq:markov_prop}
 P(X_{t+1} = x|X_{t}. . . X_{1}) = P(X_{t+1} = x|X_{t}).
 \ee
-A Markov chain is a random walk with Markov property.
+So generally we can conclude that a Markov chain is a random walk with Markov property.
  
 The Metropolis algorithm works by taking an arbitrary move near the current
-point in the sequence. If $X_{t}$ is the sample at time t, then the new sample Y is proposed from the proposal distribution $q(Y|X_{t})$. In the original Metropolis algorithm this distribution must be symmetric, meaning that $q(X_{t}|Y)$ = $q(Y|X_{t})$. However in Metropolis-Hastings algorithm it may be non-symmetric. The likelihood of the new sample is then in any case compared to that of the previous sample. The likelihood ratio $\alpha$ between the to states is calculated with the following equation \cite{tuomi}:
+point in the sequence. If $X_{t}$ is the sample at time t, then the new sample Y is proposed from the proposal distribution $q(Y|X_{t})$. In the original Metropolis algorithm this distribution must be symmetric, meaning that $q(X_{t}|Y)$ = $q(Y|X_{t})$. However, in Metropolis-Hastings algorithm it may be non-symmetric. The likelihood of the new sample is then in both cases compared to that of the previous sample. The likelihood ratio $\alpha$ between the two states is calculated from the following equation \cite{tuomi}:
 \be \label{eq:likely_ratio} 
-\alpha = \frac{p(Y|D)q(X_{t}|Y)}{p(X_{t}|D)q(Y|X_{t})}.
+\alpha = \frac{p(Y|\mathcal{D})q(X_{t}|Y)}{p(X_{t}|\mathcal{D})q(Y|X_{t})}.
 \ee
-The conditional probabilities given the data are calculated using the Bayesian formula (\ref{eq:bayes}). The ratio of these probabilities is multiplied with the ratio of proposal distributions (sometimes called transition kernels) so that the algorithm satisfy condition called detailed balance. It is an important property for proving the convergence of the chain. It states that a step from $X_{t}$ must have the same probability as a step from $Y$ to $X_{t}$.  The proposal density $q(X_{t}|Y)$ describes the probability of a transition from $Y$ j to $X_{t}$ in the parameter space.
+The conditional probabilities given the data are calculated using the Bayes formula (\ref{eq:bayes}). The ratio of these probabilities is multiplied with the ratio of proposal distributions (sometimes called transition kernels) so that the algorithm satisfies a detailed balance condition. It is an important property for proving the convergence of the chain. It states that the number of transitions from $X_{t}$ to $Y$ must be the same as from $Y$ to $X_{t}$.  The proposal density $q(X_{t}|Y)$ describes the probability of a transition from $Y$ to $X_{t}$ in the parameter space.
 
 The next step is to decide whether the likelihood ratio is high enough in order to accept the new step. In Metropolis(-Hastings) algorithm, we automatically accept a step, if $\alpha \ge 1$, but otherwise with a probability $\alpha$ (if $\alpha$ is greater than a random number between 0 and 1). If the new state is accepted, we repeat the first steps using now $Y$ as the current point. Otherwise we propose a new sample using again the same $X_{t}$. 
 
@@ -931,12 +935,14 @@ The next step is to decide whether the likelihood ratio is high enough in order 
 It may be noticed that the acceptance rule simplifies significantly when the
 proposal density is indeed symmetric ($q(X_{t}|Y)$=$q(Y|X_{t})$). The algorithm is typically repeated until the obtained chains are long enough in the sense that their statistics do not change considerably when adding new members to the chain. The statistical representativeness of the sample can be verified
 %Whether the obtained samples are statistically representative of the posterior can be verified 
-if multiple chains with different initial states result in the same posterior density. It is also necessary to remove perhaps tens of thousands of the first iterations ("burn-in"), since the probability distribution has not yet converged in those. There is no general theory for how long burn-on is required.%length of burn-in required. 
+if multiple chains with different initial states result in the same posterior density. It is also necessary to remove the so-called initial warm-up period ("burn-in"), %perhaps tens of thousands of the first iterations ("burn-in"),
+since the probability distribution has not yet converged in that case. %those. 
+There is no general theory to decide the optimal burn-in period.%for how long burn-on is required.%length of burn-in required. 
 
 
 \subsubsection{Autocorrelation and difficulties with Metropolis}
 
-Metropolis(-Hastings) algorithm has also some limitations. The samples are not independent (what we would them like to be), since they are generated in a chain (concerns though also other MCMC methods). The correlation between the samples can be measured by the autocorrelation time (also called integrated autocorrelation time) \cite{ensemble1}: 
+Metropolis(-Hastings) algorithm has also some limitations. The samples are not independent (as we would like them to be), since they are generated in a chain (concerns though also other MCMC methods). The correlation between the samples can be measured by the autocorrelation time (also called integrated autocorrelation time) \cite{ensemble1}: 
 \be \label{eq:autocorr_time}
 \tau = \sum_{t=-\infty}^{\infty} \frac{C(t)}{C(0)} ,
 \ee
@@ -946,19 +952,19 @@ C(t) = \lim_{t'\to\infty}\mathrm{Cov}(V(X_{t+t'}),V(X_{t})).
 \ee
 Here $V(X_{t})$ is an observable. Basically this measures how related the series of numbers $V(X_{t})$ is with itself. 
 
-One way to compute the autocorrelation time is to use the weights (log-likelihoods) of the fits as a function sample as $V(X_{t})$. If the  weights with different lags are correlated strongly $\tau$ will be large. Of course most of the correlation is originated from samples close to each other. This can be seen by plotting the autocovariance as function of lag (see Figure \ref{fig:acexample} in Results). There is no way to get completely rid of autocorrelation, but at least some of the problem may be solved by making the sequence of samples thinner. In principle the number of samples which should be independent is $N/\tau$, where $N$ is the total number of steps \cite{kaiser}. However especially with Metropolis $\tau$ is typically high (unless a very carefully designed proposal densities) meaning that very high fraction of the samples should be removed.
+One way to compute the autocorrelation time is to use the weights (log-likelihoods) of the fits as the observable $V(X_{t})$. If the weights are strongly correlated with many different lags, $\tau$ will be large. Of course most of the correlation is originated from samples close to each other (small lags). This can be seen by inspecting the autocovariance as function of the lag (see Figure \ref{fig:acexample} in Results). There is no way to get completely rid of autocorrelation, but at least some of the problem may be solved by making the sequence of samples thinner. In principle the number of samples which should be independent is $N_{\mathrm{step}}/\tau$, where $N_{\mathrm{step}}$ is the total number of steps \cite{kaiser}. However especially with Metropolis $\tau$ is typically high (unless very carefully designed proposal densities) meaning that very high fraction of the samples should be removed.
 
-One other major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution. One example of such is a two dimensional skewed probability distribution is given by (shown in figure \ref{fig:skewed})
+One other major disadvantage is that the Metropolis algorithm may work poorly for skewed, or anisotropic, distributions, depending on the proposal distribution. One example of such is a two dimensional skewed probability distribution (shown in figure \ref{fig:skewed})
 \be \label{eq:skew} 
-f(\vec{x}) = \exp(-\frac{(x_{1}-x_{2})^{2}}{2\epsilon}-\frac{(x_{1}+x_{2})^{2}}{2}).
+f(\vec{x}) = \exp(-\frac{(x_{1}-x_{2})^{2}}{2\epsilon_{c}}-\frac{(x_{1}+x_{2})^{2}}{2}),
 \ee
-Metropolis (like many other MCMC strategies too) would be forced to make perturbations of order $\sqrt{\epsilon}$ and would have slow equilibration. A better MCMC sampler would use larger perturbations in (-1,1) than in (1,1) direction. However the problem is worse in high dimensions, where it would be difficult to tune all the step sizes correctly. As we encountered this problem, we  moved to use the ensemble sampler, which is presented in the next section. 
+where $\epsilon_{c}$ is a constant. Metropolis (like many other MCMC strategies too) would be forced to make perturbations of order $\sqrt{\epsilon_{c}}$ and would have slow equilibration. A better MCMC sampler would use larger perturbations in (-1,1) than in (1,1) direction. However, the problem gets worse in high dimensions, where it is difficult to tune all the step sizes correctly. As a next step to address this issue we can use the ensemble sampler, which is presented in the next section. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=skewed.png,width=10.0cm}}
-\caption{Contours of the Gaussian density defined in expression \ref{eq:skew}. Figure 1 from Goodman and Weare (2010) \cite{ensemble1}.
+\caption{Contours of the Gaussian density defined in expression (\ref{eq:skew}). Figure 1 from Goodman and Weare (2010) \cite{ensemble1}.
 \label{fig:skewed}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -966,8 +972,9 @@ Metropolis (like many other MCMC strategies too) would be forced to make perturb
 
 \subsubsection{Ensemble sampler}
 
-The affine invariant ensemble sampler is a novel MCMC method developed a few years ago (Goodman and Weare, 2010 \cite{ensemble1}). The algorithm has a similar structure to Metropolis, and still uses a proposal and accept/reject step. But instead of only one sequence $X_{1}...X_{t}$, we use now a group or ensemble of sequences. Each member of the group is called a walker. On each iteration the algorithm generates a new sample for every walker using the  current positions of all of the other walkers in
-the ensemble. However each walker is independent of the other walkers. They are correlated only with the previous states of other walkers and their own previous state. After burn-in the distribution of each walker has converged to the invariant posterior probability distribution.
+The affine invariant ensemble sampler is a novel MCMC method developed a few years ago \cite{ensemble1}. %(Goodman and Weare, 2010 \cite{ensemble1}). 
+The algorithm has a similar structure to Metropolis scheme, and still uses a proposal and accept/reject step. But instead of only one sequence $X_{1}...X_{t}$, we use now a group or ensemble of sequences. Each member of the group is called a walker. On each iteration the algorithm generates a new sample for every walker using the  current positions of all of the other walkers in
+the ensemble. However, each walker is independent of the other walkers. They are correlated only with the previous states of other walkers and their own previous state. After burn-in the distribution of each walker should be converged to the invariant posterior probability distribution.
 
 %each walker is also distributed according to the invariant posterior probability distribution.
 
@@ -977,11 +984,11 @@ the ensemble. However each walker is independent of the other walkers. They are 
 %https://arxiv.org/pdf/1202.3665v4.pdf
 
 
-The ensemble sampler is called affine invariant, since its performance is unaffected by affine transformations of space. This means that one can sample a PDF $g(x) = Af(x) + b$ either directly or sample first $f$ and then apply $A$ and $b$ after. 
+The ensemble sampler is called affine invariant, since its performance is unaffected by affine transformations of space. This means that one can sample a probability distribution function $g(x) = Af(x) + b$ either directly or sample first $f$ and then apply $A$ and $b$ afterwords. 
 %sampling a PDF g(x) = Af(x) + b is equivalent to sampling f then applying A and b %after. 
 For this reason the algorithm is particularly useful for sampling badly scaled distributions. Computational tests show that the affine invariant methods can be significantly faster than standard MCMC methods on highly skewed distributions.
 
-In ensemble sampler the  Markov chain is evolved by moving one walker at time. Each walker $X_{k}$ is updated using the current positions of all of the other walkers in
+In the ensemble sampler the  Markov chain is evolved by moving one walker at time. Each walker $X_{k}$ is updated using the current positions of all of the other walkers in
 the ensemble. We call them a complementary ensemble. The motivation is that the distribution of the walkers in the complementary ensemble carries useful information about the probability density of the parameters. This way the trial move can be adapted to the target density.  
 
 
@@ -995,15 +1002,15 @@ the ensemble. We call them a complementary ensemble. The motivation is that the 
 %In this algorithm, we use a group or ensemble of sequences. Each member of
 %the ensemble is called a walker.
 
-One of the simplest affine invariant trial moves, and the move we use here, is so called stretch-move. In a stretch-move each walker is moved using only one randomly selected complementary walker (see fig. \ref{fig:smove}). The move of current walker k is proposed along a line between the walker itself and the complementary walker j according to the distribution \cite{emceehammer}
+One of the simplest affine invariant trial moves, and the move we use here, is the so-called stretch-move. In a stretch-move algorithm each walker is moved using only one randomly selected complementary walker (see fig. \ref{fig:smove}). The move of current walker $k$ is proposed along a line between the walker itself and the complementary walker $j$ according to the distribution \cite{emceehammer}
 \be \label{eq:smove}
 Y = X(j) + Z(X(k)-X(j)),
 \ee
-where the scaling variable $Z$ satisfy the symmetry condition
+where the scaling variable $Z$ satisfies the symmetry condition
 \be \label{eq:symmetry_condition}
 g(1/z) = zg(z).
 \ee
-This ensures that the move (\ref{eq:smove}) is symmetric in the usual informal way Metropolis is discussed (detailed balance is satisfied).
+This ensures that the move (\ref{eq:smove}) is symmetric in the usual informal way Metropolis is discussed.% i.e, detailed balance is satisfied.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1015,29 +1022,32 @@ This ensures that the move (\ref{eq:smove}) is symmetric in the usual informal w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-When deciding whether the new sample is good enough, the Metropolis-Hastings selection rules are again applied. However instead of equation (\ref{eq:likely_ratio}) the likelihood ratio is now calculated (for a given walker)
+When deciding whether the new sample is accepted or not, the Metropolis-Hastings selection rules are again applied. However, instead of equation (\ref{eq:likely_ratio}) the likelihood ratio is now calculated (for a given walker) as
 \be \label{eq:likely_ratio_smove} 
-\alpha = Z^{N-1}\frac{p(Y|D)}{p(X_{t}|D)},
+\alpha = Z^{N-1}\frac{p(Y|\mathcal{D})}{p(X_{t}|\mathcal{D})},
 \ee
-where N is now the number of parameters sampled \cite{ensemble1}. %=dimension of the parameter space
+where $N$ is now the number of parameters sampled \cite{emceehammer}. The transition probabilities $q$ are not needed, since in the case of symmetric move (\ref{eq:smove}) the acceptance ratio (\ref{eq:likely_ratio_smove}) can be shown to satisfy the detailed balance condition. 
 
 
+%=dimension of the parameter space
 
 %\subsubsection{Implementation}
 
+\clearpage
+
 \section{Results}
 
-As mentioned already the aim of this work is to determine the probability distributions of the parameters in the pulse profile model (especially mass and radius), given the synthetic pulse profile, and study the effects of polarization measurements to these. Some details of the data, sampling and constraints obtained are presented in the three following sections. 
+As mentioned earlier the aim of this work is to determine the probability distributions of the parameters in the pulse profile model (especially the mass and radius), given the synthetic pulse profile, and study the effects of polarization measurements to the results. Some details of the data, sampling and constraints obtained are presented in the three following sections. 
 
 
 \subsection{Synthetic data}
 
-The synthetic data in this work is made to resemble to real observations as closely as possible. The X-ray count data from SAX J1808.4-3658 is used as a reference. The amplitude of the modulation in the normalized number fluxes have the same order of magnitude. We use also the same energy intervals and same number of phase points as in the real data. The original data is shown as plotted in Figure \ref{fig:saxdata}.  
+The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from SAX J1808.4-3658 is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same number of phase points as in the real data. The original data is shown in Figure \ref{fig:saxdata}.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=data_sax1808.pdf,width=12.0cm}} 
-\caption{Sax-data (Source?)
+\caption{Normalized number fluxes at different energies as a function of the phase from SAX J1808.4-3658 measured with RXTE . 
 \label{fig:saxdata}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1048,7 +1058,16 @@ The parameters of the pulse profile model are chosen such that their values are 
 A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
 \ee 
 
-We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_incthet}) without affecting the result. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$ (we may call them datasets for polar and equatorial spots even though they are not exactly those). The normalized synthetic spectral fluxes are shown in the Figures \ref{fig:syntpol2} and \ref{fig:synteq2}. They have been created using the pulse profile model and adding random Gaussian noise to fluxes for every phase point. A larger noise was added to the highest energy channel. In our simulation we see how these two $i-\theta$ solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$, and we also show their effect on the constraints of mass and radius. 
+We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_incthet}) without affecting the amplitude. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$. We call them datasets for polar and equatorial spots even though the spots are not exactly at the pole or equator. 
+
+The datasets have been generated using our pulse profile model. Since the observed data always includes noise, we want to have it also in our synthetic data. For this reason a different random number, from a normal distribution with mean equal to zero, is added to the original flux at each phase point. The average size of this random number have been chosen to match closely the known errors of the SAXJ1808.4-3658 data. Thus a relatively larger noise has been added to the highest energy channels, where the count rates are lowest. The normalized synthetic spectral fluxes and their errors (amount of noise added) are shown in the Figures (\ref{fig:syntpol2}) and (\ref{fig:synteq2}).
+
+
+%They have been created using the pulse profile model and adding random Gaussian noise %to the fluxes for every phase point. A larger noise was added to the highest energy %channels. 
+
+
+
+In our simulations we see how the two datasets with different $i-\theta$ solutions can be separated from each other at least with help of the polarization information giving constraints to $i$ to $\theta$. We also show their effect on the constraints of mass and radius, which are our parameters of interest. 
 
 
 
@@ -1085,7 +1104,7 @@ We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_pol2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:syntpol2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1094,7 +1113,7 @@ We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_eq2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as function of phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:synteq2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1102,35 +1121,37 @@ We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_i
 
 \subsection{Sampling methods}
 
-All the parameters presented in the Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not sampled (at least not in this work yet). "Beaming parameter" is set to zero, meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
+All the parameters presented in the Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not currently sampled. %(at least not in this work yet). 
+"Beaming parameter" \ is set to zero, meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
 
-We also use only one spherically symmetric hot spot. The oblate shape of the star is described by the function in equation (\ref{rtheta2}). Some parameters affecting on the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
+We also use only one spherically symmetric hot spot. The oblate shape of the star is described by the function in equation (\ref{rtheta2}). Some parameters affecting the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
 
-To exploit all possible computational power we have also made the ensemble sampler code to run parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of those. Thus each processor had its own ensemble (or also called chain). The number of walkers was set to 20 in each ensemble. 
+To exploit all possible computational power we have also made the ensemble sampler code to run parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of each individual chain. Thus each processor had its own ensemble (or also called the chain). The number of walkers was set to 20 in each ensemble. 
  
-The choice of the reference radius $r_{\mathrm{ref}}$ needed in time delay calculation effects only on the phase shift of the waveform. Since we want to simulate a realistic situation where the phase shift is unknown, we use different $r_{\mathrm{ref}}$ in the generation of the data and in the fitting procedure of the ensemble sampler.  
+The choice of the reference radius $r_{\mathrm{ref}}$ needed in time delay calculation affects only the phase shift of the waveform. Since we want to simulate a realistic situation where the phase shift is unknown, we use different $r_{\mathrm{ref}}$ in the generation of the data than in the fitting procedure of the ensemble sampler.  
 
-The likelihood of the data for each sample ($p(D|\textbf{y})$ in equation \ref{eq:bayes}) is calculated by fitting the data to the pulse profile model. To be more specific, we assume that the probability density of the data fluxes $F_{\mathrm{data}}$ given the modeled fluxes $F_{\mathrm{model}}$  is normally distributed around the $F_{\mathrm{model}}$ with the known errors as standard deviation ($\sigma$ in the following equation): 
+The likelihood of the data for each sample ($p(\mathcal{D}|\textbf{y})$ in equation \ref{eq:bayes}) is calculated by fitting the data to the pulse profile model. To be more specific, we assume that the probability density of the data fluxes $F_{\mathrm{data}}$ given the modeled fluxes $F_{\mathrm{model}}$  is normally distributed around the $F_{\mathrm{model}}$ with the known errors as standard deviation ($\sigma_{\mathrm{E}}$ in the following equation): 
 \be \label{eq:gaussprob}
-p(F_{\mathrm{data}}|F_{\mathrm{model}}) = \exp (\frac{-(F_{\mathrm{data}}-F_{\mathrm{model}})^{2}}{2\sigma^{2}}).
+p(F_{\mathrm{data}}|F_{\mathrm{model}}) \propto \exp (\frac{-(F_{\mathrm{data}}-F_{\mathrm{model}})^{2}}{2\sigma_{\mathrm{E}}^{2}}).
 \ee
 Normalization is not needed, since it will cancel out when calculating likelihood ratios. The total probability density of the data given the sample is the multiplication of $p(F_{\mathrm{data}}|F_{\mathrm{model}})$ from each phase point and at each energy (or the sum of log-probabilities). 
 
-Of course we need also take to account that we have different phase shift in the data and in the model. For that reason we calculate the model with e.g. 5 times higher phase resolution and then calculate the probability densities using all the possible different phase shifts by shifting the values of fluxes in a correct way. The total probability $p(D|\textbf{y})$ (which will be used to calculate likelihood ratio \ref{eq:likely_ratio_smove}) is then the marginalized probability over all phase shifts. 
+Of course we also need to take in account that we have different phase shift in the data and in the model. For that reason we calculate the model with 5 times higher phase resolution than the model. We calculate the probability densities using equation (\ref{eq:gaussprob}) with different phase shifts in order to marginalize over the uncertainty of phase shift. % using all the possible different phase shifts by shifting the values of fluxes in a correct way. 
+The total probability $p(\mathcal{D}|\textbf{y})$ (which will be used to calculate the likelihood ratio given by equation \ref{eq:likely_ratio_smove}) is the marginalized probability over all phase shifts. 
 
-As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y})$) are flat, so that equations (\ref{eq:bayes}) and (\ref{eq:likely_ratio_smove}) give 
+As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y})$) are uniform, so that equations (\ref{eq:bayes}) and (\ref{eq:likely_ratio_smove}) give 
 \be \label{eq:alpha1}
 \alpha = Z^{N-1}\frac{p(D|Y)}{p(D|X_{t})}.
 \ee
 
-As a second step we make the prior probabilities of inclination and spot colatitude non-uniform, so then the previous likelihood ratio is multiplied with the ratio of the prior probabilities:
+As a second step we make the prior probabilities of inclination and spot colatitude non-uniform, so that the previous likelihood ratio is multiplied with the ratio of the prior probabilities, to yield
 \be \label{eq:alpha2}
 \alpha = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{t})}.
 \ee
 
-It is not obvious what kind of prior probabilities one should use. It depends on how tight constraints we can get to the given parameter. Unlike in case of the usual flux, the measured polarization differ significantly if $i$ and $\theta$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilities of $i$ and $\theta$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviation of that distribution is chosen to be $15 \degree$. 
+It is not obvious what kind of prior probabilities one should use. It depends on how informative constraints we are able to get from the observations to the given parameter. Unlike in the case of the usual flux, the measured polarization differ significantly if $i$ and $\theta$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilities of $i$ and $\theta$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviations for these priors are chosen to be $15 \degree$. 
 
-Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same than the sizes of the corresponding axes in the posterior probability plots in the next section. 
+Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same as the sizes of the corresponding axes in the posterior probability Figures in the next section. 
 
 
 
@@ -1139,7 +1160,7 @@ Other prior probabilities of the parameters are kept always uniform inside their
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=ac_fpol.pdf,width=12.0cm}}
-\caption{Autocorrelations of the all the ensembles of the polar spot with only flat priors.
+\caption{Autocorrelations of the all the ensembles of the polar spot with only uniform priors.
 \label{fig:acexample}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1148,22 +1169,22 @@ Other prior probabilities of the parameters are kept always uniform inside their
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=weights_example.pdf,width=12.0cm}}
-\caption{Log-likelihoods after burn-in removed in one ensemble.
+\caption{Log-likelihoods after the burn-in is removed in one ensemble.
 \label{fig:wexample}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we have still left approximately 50 000 samples belonging to each ensemble.  Figure (\ref{fig:wexample}) shows one example of log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble, which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
+Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we still have approximately 50 000 samples left belonging to each ensemble.  Figure (\ref{fig:wexample}) shows one example of the log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble, which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
 
-The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of autocorrelation. In that Figure we plot autocorrelations of all six ensembles from one simulation using the weights as observables (see equation \ref{eq:autocovariance}). The plot shows autocorrelation only approximatively, since one should make sure that the ensamble averaged weights are calculated for walkers being at a same state of their sequence. We may however see that in general correlation is not very bad, and we may reduce it using a thinning of...(?) %... Thinning we used is .... (TBD)  
+The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of the autocorrelation. The autocorrelations of all the six ensembles from one simulation are presented using the weights as observables (see equation \ref{eq:autocovariance}). The Figure shows the autocorrelation only approximatively, since one should make sure that the ensemble averaged weights are calculated for walkers being at a same state of their sequence. We may however see that in general the correlation is not very strong, and we may reduce it using a thinning of...(?) %... Thinning we used is .... (TBD)  
 
 The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\theta$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). 
 
-Without prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\theta$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. The polar and equatorial spots give very similar results compared to each other as excepted (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However they are not identical, which shows that switching $\theta$ and $i$ has a significant (but not very large) effect on the light curves of the pulsar. It seems also slightly easier to find the correct $\theta$-$i$ solution  in the case of equatorial spot (although in the one-dimensional histograms the small angles give always a higher peak in probability density because of the marginalization and the shape of two-dimensional distribution of $\theta$-$i$). 
+Without the prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\theta$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. The polar and equatorial spots give very similar results compared to each other as excepted (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However they are not identical, which shows that switching $\theta$ and $i$ has a significant (but not very large) effect on the light curves of the pulsar. It seems also slightly easier to find the correct $\theta$-$i$ solution  in the case of the equatorial spot (although in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional distribution of $\theta$-$i$). 
 
-In case of non-uniform priors for $\theta$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}) we find correct solutions for $\theta$ and $i$ even though our prior distributions are not centered  around the correct values. The posterior probability distributions for the mass and radius are now also distributed on both sides of the correct values having the maximum near the correct value. Both lower and upper limits can now be determined. 
+In case of non-uniform priors for $\theta$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}) we find the correct solutions for $\theta$ and $i$ even though our prior distributions are not centered  around the correct values. The posterior probability distributions for the mass and radius are now also distributed on both sides of the correct values having the maximum near the correct value. Most importantly both the lower and upper limits can now be determined. 
 
-The angular size of the spot $\rho$ is the best-fitted parameter in our sampling. The highest probability is found to be very close to $10 \degree$, which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between 2 and 3 kpc). For that reason the size of the spot cannot change very much in order to keep to the observed count rate at a correct level. 
+The angular size of the spot $\rho$ is found to be the closest to the correct value of all the  parameters in our sampling. The highest probability is very close to $10 \degree$, which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between 2 and 3 kpc). For that reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level. 
 
 
 
@@ -1205,7 +1226,7 @@ The angular size of the spot $\rho$ is the best-fitted parameter in our sampling
 
 
 
-
+\clearpage
 
 
 \section{Summary and Conclusions}
