@@ -70,6 +70,7 @@
 \def\Dop{\delta}
 \def\taut{\tau_{\rm es}}
 \def\source{SAX J1808.4$-$3658}
+\def\sourceb{SAX J1748.9$-$2021}
 \def\mumin{\mu_{\rm min}}
 \def\mumax{\mu_{\rm max}}
 \def\phiobs{\phi_{\rm obs}}
@@ -259,34 +260,32 @@ is in any case excepted inside the star.
  
 Neutron stars are created after the gravitational collapse of the core of a
 massive star (>8$M_{\odot}$) at the end of its life. The collapse also triggers a Type II supernova explosion \cite{lattimer}. More massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
-\begin{equation}
+\be \label{eq:schw_cond}
  R > \frac{2GM}{c^{2}},
- \end{equation} 
+\ee 
 where $G$ is the gravitational constant and $c$ is the speed of light, %constrains the possible mass %and radius of neutron stars.
 differentiates neutron stars from black holes. More compact objects (for which $R < 2GM/c^{2}$) are inside the event horizon, which means that the light cannot escape the object.
 
 
-A more strict upper bound to the compactness (ratio between the radius and mass) of a neutron star follows
+A more strict upper bound to the compactness (ratio between the mass and radius) of a neutron star follows
 the fact \cite{rhoades} %(/PhysRevLett.32.324 )
 that the speed of sound in dense matter has to be less than the speed of light. This gives us the so called causality condition
-\begin{equation}
+\be \label{eq:causality}
  R \gtrsim \frac{3GM}{c^{2}}.
- \end{equation} 
+\ee 
 Neutron stars have also a minimum stable neutron star mass, which is about 0.1 $M_{\odot}$ , although the origin of neutron star in a supernova gives a more realistic minimum (on the order of 1.1 $M_{\odot}$) ~\cite{lattimer2013}.
+
+A lower limit for the compactness of a neutron star can be obtained from its spin frequency. The radius of the star cannot extend further than the point where the spin frequency equals to the Keplerian frequency (assuming a rigid Newtonian sphere)
+\be \label{eq:keplerian}
+\nu_{\mathrm{K}} = 2 \pi \sqrt{\frac{GM}{r^{3}}},
+\ee 
+where $r$ is the distance from the center of the star. Thus at $r=R$, $\nu_{K}$ has to be higher  than the observed spin frequency and we get a lower limit for $M/R^{3}$. One should also take into account the non-spherical shape and the general relativistic effects but a lower limit is still obtained.
+
+
 
 %https://arxiv.org/pdf/1010.5788v1.pdf %add this to reference......somewhere
  %shapiro 2.0 mass NS...
- 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-%\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
-\centerline{\epsfig{file=eos_mr.png,width=12.0cm}} 
-%or maybe lattimer instead
-\caption{Mass-radius diagram for neutron stars... \cite{lattimer}} 
-\label{fig:eos_mr}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -298,18 +297,50 @@ these are the the so called Tolman-Oppenheimer-Volkov equations %(Tolman,
 \cite{tolman}\cite{oppenheimer}:
 
 
-\begin{equation}
+\be
  \frac{dP}{dr} = -\frac{G[m(r)+4 \pi r^{3}P/c^{2}](\rho + P/c^{2})}{r[r-2Gm(r)/c^{2}]},
- \end{equation} 
+\ee 
 and
 
-\begin{equation}
+\be
  \frac{dm(r)}{dr} = 4 \pi \rho r^{2},
- \end{equation}
-where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. This relation we call the equation of state (EOS). For realistic EOSs the previous equations must be numerically solved to obtain M-R relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce.
+\ee
+where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. This relation we call the equation of state (EOS). 
+
+
+For realistic EOSs the previous equations must be numerically solved to obtain M-R relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or so-called strange quark matter (SQM) depending on the equation of state.  
+
+The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce. Different equations of states are shown in the figure \ref{fig:eos_mr}. The highest measured mass of a neutron star has been close to two solar masses \cite{demorest}, which rules out all equations of state which cannot produce so high masses. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar (641 Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS much reach. This constraint and also constraints from general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radii $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$ since the light bending makes the star look larger and it is given by \cite{lattimer2001}
+\be \label{eq:rinfty}
+R_{\infty} = \frac{R}{\sqrt{1-2GM/Rc^{2}}}.
+\ee  
+
+Knowing the relation between the mass and radius of any particular neutron star gives also limits to the possible EOSs. For example, suddenly increased spin rates of pulsars ("glitches") have been used to get mass-radius relations \cite{lattimer2001}. It has been strong indication that the star's moment of inertia $I$ acts as an angular momentum reservoir for the sudden spin-ups \cite{link1999}. The measured $\Delta I / I = 0.014$  for Vela pulsar gives us the mass as a function of radius and it is also shown as a dashed line in the figure \ref{fig:eos_mr}. The correct EOS of neutron star has to cross this line. In our work we like to find out independent knowledge (in terms of probability distributions) of both mass and radius of observed pulsars using pulse profile modeling. 
 
 
 %using observations to constrain masses and radii of neutron stars.
+
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+%\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
+\centerline{\epsfig{file=eos_mr.png,width=12.0cm}} 
+%or maybe lattimer instead
+\caption{Mass-radius diagram for neutron stars \cite{lattimer}. Black curves are for normal matter and green curves for SQM equations of state. Regions excluded by general relativity (GR), causality and rotation constraints are indicated. The orange curves shows the contours of constant radiation radii $R_{\infty}$. The dashed line $\Delta I / I = 0.014$ is a limit estimated from the glitches of Vela pulsar \cite{lattimer2001}. Figure 2 from Lattimer and Prakash (2004) \cite{lattimer}.}  
+\label{fig:eos_mr}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
 
 %This is "rhoades":
 %http://journals.aps.org/prl/pdf/10.1103/PhysRevLett.32.324 %link works in Tuorla
@@ -331,17 +362,32 @@ where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and
 \subsection{Accreting millisecond pulsars}
 
 
+
+
 %https://arxiv.org/pdf/1206.2727v4.pdf
 
 
 Rotating neutron stars were first detected as radio pulsars in 1967 \cite{gold68}. %http://adsabs.harvard.edu/abs/1968Natur.218..731G
 After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim  M_{\odot}$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs, in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+%\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
+\centerline{\epsfig{file=schematic.jpg,width=12.0cm}} 
+%or maybe lattimer instead
+\caption{Schematic.....}% The green star represents
+%the epoch of the XMM-Newton observation \cite{outburst}.}  
+\label{fig:shcematic}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%ROMANOCVA : http://iopscience.iop.org/article/10.1086/421867/pdf
+
 The transfer of mass occurs in all known AMXPs via a Roche lobe overflow from the donor star. The equipotential surface of the binary systems gravitational and centrifugal forces (surrounding the star) is known as Roche lobe. Both the neutron star and the companion have their own lobes that  only join at a inner Lagrangian point $L_{1}$ \cite{frank85}. %http://adsabs.harvard.edu/abs/1985Sci...230.1269F (book in Tuorla)
 In the case when the Roche lobe of the companion star is full of matter, the gas left outside the companion's Roche Lobe starts to flow towards neutron star through $L_{1}$. An accretion disk is formed because of the rotation of the system of two stars.
  
 
-The first AMXP discovered was SAX J1808.4–3658. It is also used as a reference target in this thesis. %It is also the main observed target in this thesis. 
+The first AMXP discovered was \source. It is also used as a reference target in this thesis. %It is also the main observed target in this thesis. 
 The source was first found in 1996 by the Italian-Dutch BeppoSAX satellite \cite{zandsax1808}. %http://adsabs.harvard.edu/abs/1998A%26A...331L..25I
 The first coherent pulsations (at 401 Hz) were detected during the second outburst with NASA's Rossi X-ray Timing Explorer (RXTE) in 1998 \cite{wijnandssax1808}. %http://adsabs.harvard.edu/abs/1998Natur.394..344W
 It provided a confirmation of the "recycling scenario", which states that AMXPs are the evolutionary progenitors of recycled radio millisecond pulsars. They are responsible for the conversion of slowly rotating neutron stars with high magnetic field ($B \sim 10^{12}$ G), into a rapidly spinning objects with a relatively weak magnetic field ($B \sim 10^{8}$ G) \cite{patruno}. The idea is that a weakening magnetic field allows accretion to happen. The angular momentum of the accreting matter is transferred to the pulsar, which results in the increase of its spin frequency.% of the pulsar.
@@ -350,7 +396,24 @@ It provided a confirmation of the "recycling scenario", which states that AMXPs 
 %SAX J1808.4–3658 went into outburst again in 2000, 2002, 2005, 2008 and 2011,
 %with an approximate recurrence time of about 1.6-3.3 yr, and is the best sampled and
 
-After the two first outbursts, SAX J1808.4–3658 has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they can in principle be partially explained with a so-called instability model.
+After the two first outbursts, \source \ has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they are typical for several X-ray binaries and can in principle be partially explained with a so-called instability model (see figure \ref{fig:outburst} for a such outburst).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+%\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
+\centerline{\epsfig{file=outburst.png,width=12.0cm}} 
+%or maybe lattimer instead
+\caption{Light curve of the 2015 outburst of \sourceb \ as observed by Swift-XRT (black points) and XMM-Newton (the green star). Figure 1 from Sanna et al. (2016) \cite{outburst}.}% The green star represents
+%the epoch of the XMM-Newton observation \cite{outburst}.}  
+\label{fig:outburst}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 %The typical outburst can be split in five phases: a
 %fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow
@@ -731,7 +794,7 @@ The bolometric flux reads:
 \d F= (1-u)\ \Dop^5 \
 I'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
 \ee
-The radiation spectrum can be e.g., a blackbody or a power-law spectrum. We can take for example a power-law $I'_{E'}(\sigma') \propto E '^{-(\lambda-1)}$, which does not depend on the angle $\sigma'$. Here $\lambda$ is the photon spectral index. With this spectrum we get
+The radiation spectrum can be e.g., a blackbody, with effective temperature $T_{\mathrm{eff}}$ or a power-law spectrum. We can take for example a power-law $I'_{E'}(\sigma') \propto E '^{-(\lambda-1)}$, which does not depend on the angle $\sigma'$. Here $\lambda$ is the photon spectral index. With this spectrum we get
 \be \label{eq:int_trans2}
 I'_{E'}(\sigma') = I'_{E}(\sigma')
 \left( \Dop \sqrt{1-u} \right)^{\lambda-1} .
@@ -756,10 +819,10 @@ In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler f
 %Aberration may also change the specific intensity since it has to be computed
 %for angle $\sigma'$ in the comoving frame. 
 
-As mentioned, in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a product of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes how much intensity is emitted to each direction and the function might have e.g., a polynomial shape.  
+As mentioned, in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a product of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes how much intensity is emitted to each direction and the function might have e.g., a polynomial shape. An atmosphere dominated by electron scattering produces a beaming function called Hopf profile, which is approximately polynomial.  
 
 
-Thanks to the observed AMXPs (e.g., SAX J1808.4-3658 \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e., the energy-dependence of $I'_{E'}(\sigma')$ ) might be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of SAX J1808.4-3658 the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which is near the lowest observed energies with RXTE) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with a temperature of 2 keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law ($I'_{E'}(\sigma') \propto E '^{2}$ and thus $\lambda = -1$) and above the cut-off a descending power-law with the spectral index $\lambda = 1.86$. The power-law is normalized to be equal with the reference blackbody at 1 keV. This spectrum is shown in the Figure \ref{fig:spectrum}.
+Thanks to the observed AMXPs (e.g., \source \ \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e., the energy-dependence of $I'_{E'}(\sigma')$ ) might be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However in the case of \source \ the blackbody contributes only about 30 per cent to the flux even in the 3-5 keV region (which is near the lowest observed energies with RXTE) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with $T_{\mathrm{eff}} = 2 $ keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law ($I'_{E'}(\sigma') \propto E '^{2}$ and thus $\lambda = -1$) and above the cut-off a descending power-law with the spectral index $\lambda = 1.86$. The power-law is normalized to be equal with the reference blackbody at 1 keV. This spectrum is shown in the Figure \ref{fig:spectrum}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -874,9 +937,8 @@ In the model in this thesis we assumed a spherically symmetric spot (the angle m
 
 \subsubsection{Comparison of the profiles}
 
-The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. The profiles of oblate pulsars have also been compared to profiles obtained from light-ray tracing methods (Figures?), which have a good correspondece.%correspond each other well. 
+The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. 
 
-%Show here some profiles..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=mor3test.eps,width=12.0cm}}
@@ -900,6 +962,42 @@ The new versions of the waveform code have been tested by comparing the pulse pr
 \centerline{\epsfig{file=cad4test.eps,width=12.0cm}}
 \caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with parameters given in the Figure 4 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of Cadeau and the black solid line is our result.
 \label{fig:cad4}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The profiles of pulsars have also been compared to profiles obtained from light-ray tracing methods (figures \ref{fig:jpulse1},\ref{fig:jpulse2} and \ref{fig:jpulse3}), which have a good correspondence.%correspond each other well. 
+The number fluxes at 2 keV energy are computed to both spherical ($R(\theta) = R_{eq}$) and oblate stars ($R(\theta)$ from equation \ref{rtheta2}). Angular distribution of radiation corresponds either to a blackbody with isotropic beaming or to a Hopf profile. %so some power-law or what is the energy-dependence then....?
+In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\theta = 50 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we compute the light curves with two different spinning frequencies ($\nu = 1$ Hz and $\nu$ = 400 Hz) and with the spot size $\rho$ = 1 $\degree$ or 30 $\degree$ (figures \ref{fig:jpulse1} and \ref{fig:jpulse2}). In the case of oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we show the light curves with three different spot colatitudes $\theta$  = 18 $\degree$, 35 $\degree$ and 90 $\degree$ for the isotropic blackbody.
+
+
+%Show here some profiles..
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=jpulsec1.pdf,width=17.0cm}}
+\caption{The light curve (monochromatic number flux at 2 keV) comparisons with slowly rotating spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\nu = 1$ Hz, $\theta = 50 \degree$) and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with spot size either 1 or 30 degrees. Black solid line shows the pulse profiles computed using the methods described in this Thesis (S+D) and red dashed line is a profile computed with the light-ray tracing methods (LTM). The residuals are shown in the lower panel as $\Delta = (\mathrm{model}_{\mathrm{S+D}}/\mathrm{model}_{\mathrm{LTM}})*100$ \%. Figure from Nättilä and Pihajoki (in preparation).
+\label{fig:jpulse1}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=jpulsec2.pdf,width=17.0cm}}
+\caption{The light curve (monochromatic number flux at 2 keV) comparisons with rapidly rotating spherical star ($\nu = 400$ Hz). Otherwise the parameters and symbols are the same as in figure \ref{fig:jpulse1}. Figure from Nättilä and Pihajoki (in preparation).
+\label{fig:jpulse2}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=jpulsec3.pdf,width=17.0cm}}
+\caption{The light curve (monochromatic number flux at 2 keV) comparisons with an oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with different spot colatitudes: $\theta$ = 18 $\degree$, 45 $\degree$ and 90 $\degree$. The symbols are the same as in figures \ref{fig:jpulse1} and \ref{fig:jpulse2}. Figure from Nättilä and Pihajoki (in preparation).
+\label{fig:jpulse3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1062,12 +1160,12 @@ As mentioned earlier the aim of this work is to determine the probability distri
 
 \subsection{Synthetic data}
 
-The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from SAX J1808.4-3658 is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same number of phase points as in the real data. The original data is shown in Figure \ref{fig:saxdata}.  
+The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from \source \ is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same number of phase points as in the real data. The original data is shown in Figure \ref{fig:saxdata}.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=data_sax1808.pdf,width=12.0cm}} 
-\caption{Normalized number fluxes at different energies as a function of the phase from SAX J1808.4-3658 measured with RXTE . 
+\caption{Normalized number fluxes at different energies as a function of the phase from \source \ measured with RXTE . 
 \label{fig:saxdata}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1080,7 +1178,7 @@ A \approx \frac{(1-\rg/R)\sin i \sin \theta}{\rg/R+(1-\rg/R)\cos i \cos \theta}.
 
 We see that $i$ and $\theta$ can be changed in the equation (\ref{eq:amplitude_incthet}) without affecting the amplitude. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\theta$. We call them datasets for polar and equatorial spots even though the spots are not exactly at the pole or equator. 
 
-The datasets have been generated using our pulse profile model. Since the observed data always includes noise, we want to have it also in our synthetic data. For this reason a different random number, from a normal distribution with mean equal to zero, is added to the original flux at each phase point. The average size of this random number have been chosen to match closely the known errors of the SAXJ1808.4-3658 data. Thus a relatively larger noise has been added to the highest energy channels, where the count rates are lowest. The normalized synthetic spectral fluxes and their errors (amount of noise added) are shown in the Figures (\ref{fig:syntpol2}) and (\ref{fig:synteq2}).
+The datasets have been generated using our pulse profile model. Since the observed data always includes noise, we want to have it also in our synthetic data. For this reason a different random number, from a normal distribution with mean equal to zero, is added to the original flux at each phase point. The average size of this random number have been chosen to match closely the known errors of the \source \ data. Thus a relatively larger noise has been added to the highest energy channels, where the count rates are lowest. The normalized synthetic spectral fluxes and their errors (amount of noise added) are shown in the Figures (\ref{fig:syntpol2}) and (\ref{fig:synteq2}).
 
 
 %They have been created using the pulse profile model and adding random Gaussian noise %to the fluxes for every phase point. A larger noise was added to the highest energy %channels. 
@@ -1124,7 +1222,7 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_pol2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. The phase is from 0 to 1. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:syntpol2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1133,7 +1231,7 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_eq2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. The phase is from 0 to 1. Other parameters are shown in the Table \ref{table:params}.
 \label{fig:synteq2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
