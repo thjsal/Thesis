@@ -368,7 +368,7 @@ Knowing the relation between the mass and radius of any particular neutron star 
 
 
 Rotating neutron stars were first detected as radio pulsars in 1967 \cite{gold68}. %http://adsabs.harvard.edu/abs/1968Natur.218..731G
-After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim  M_{\odot}$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs, in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. 
+After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim  M_{\odot}$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs, in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. A schematic view of the accretion to the hot spots of the pulsar is shown in the figure \ref{fig:shcematic}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -376,8 +376,7 @@ After that, many different classes of pulsars have been discovered including low
 %\centerline{\epsfig{file=oblate_fig.png,width=8.0cm}}
 \centerline{\epsfig{file=schematic.jpg,width=12.0cm}} 
 %or maybe lattimer instead
-\caption{Schematic.....}% The green star represents
-%the epoch of the XMM-Newton observation \cite{outburst}.}  
+\caption{A view from a magnetohydrodynamical simulation for an accreting compact object with an inclined dipole field. The density of the streaming matter changes exponentially from blue to red. Red lines with arrows show selected magnetic field lines. The magnetic moment, $\bmath{\mu}$, and the rotation axis, $\bmath{\Omega}$, are also shown. Figure 4 from Romanova et. al (2004) \cite{romanova}} 
 \label{fig:shcematic}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -518,6 +517,35 @@ x = \frac{M}{R_{\mathrm{eq}}},
 
 
 In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
+
+One other model we have also used in pulse profile comparison was presented by Morsink et al. (2007) \cite{morsink}. In that model
+
+
+\be\label{eq:rtheta}
+\frac{R(\theta)}{R_{eq}} = 1 + \sum\limits_{n=0}^2 a_{2n}(\zeta_{0},\epsilon_{0})P_{2n}(\cos(\theta)), 
+\ee
+where $P_{n}(\cos(\theta))$ is the Legendre polynomial of order $n$ and parameters $\zeta_{0}$ and $\epsilon_{0}$ are obtained from
+
+\be\label{eq:parzeta}
+\zeta_{0} = \frac{GM}{R_{eq}c^{2}}
+\ee
+
+\be\label{eq:parepsilon}
+\epsilon_{0} = \frac{\Omega^{2}R_{eq}^{3}}{GM}.
+\ee
+The coefficients needed are given as
+
+\be\label{eq:azero}
+a_{0} = -0.18\epsilon_{0}+0.23\zeta_{0}\epsilon_{0}-0.05\epsilon_{0}^{2} 
+\ee
+
+\be\label{eq:atwo}
+a_{2} = -0.39\epsilon_{0}+0.29\zeta_{0}\epsilon_{0}+0.13\epsilon_{0}^{2}
+\ee
+
+\be\label{eq:afour}
+a_{4} = +0.04\epsilon_{0}-0.15\zeta_{0}\epsilon_{0}+0.07\epsilon_{0}^{2}.
+\ee
 
 
 \subsubsection{Geometry}
@@ -1203,8 +1231,8 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
       Inclination $i$ & 5 $\degree$ or 75 $\degree$ \\ \hline
       Spot colatitude $\theta$ & 75 $\degree$ or 5 $\degree$ \\ \hline
       Spot angular size $\rho$ & 10.0 $\degree$  \\ \hline
-      Distance D & 2.5 kpc \\ \hline
-      Temperature $t_{\mathrm{planck}}$ & 2.0 keV \\
+      Distance $D$ & 2.5 kpc \\ \hline
+      Temperature $T_{\mathrm{eff}}$ & 2.0 keV \\
 
     \hline
   \end{tabular}
@@ -1294,7 +1322,7 @@ Other prior probabilities of the parameters are kept always uniform inside their
 
 Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we still have approximately 50 000 samples left belonging to each ensemble.  Figure (\ref{fig:wexample}) shows one example of the log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble, which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
 
-The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of the autocorrelation. The autocorrelations of all the six ensembles from one simulation are presented using the weights as observables (see equation \ref{eq:autocovariance}). The Figure shows the autocorrelation only approximatively, since one should make sure that the ensemble averaged weights are calculated for walkers being at a same state of their sequence. We may however see that in general the correlation is not very strong, and we may reduce it using a thinning of...(?) %... Thinning we used is .... (TBD)  
+The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of the autocorrelation. The autocorrelations of all the six ensembles from one simulation are presented using the weights as observables (see equation \ref{eq:autocovariance}). The Figure shows the autocorrelation only approximatively, since one should make sure that the ensemble averaged weights are calculated for walkers being at a same state of their sequence. We may however see that in general the correlation is not very strong, and we have reduced it by taking every fifth sample from the chain.%... Thinning we used is .... (TBD)  
 
 The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\theta$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). 
 
@@ -1309,7 +1337,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpol.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of the polar spot with only flat priors. The one-dimensional distributions are normalized to give 1 as the total probability.
+\caption{Posterior probability distributions of radius $R$, mass $m$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give 1 as the total probability. The dark orange color shows a one $\sigma_{E}$ and the light orange color a two $\sigma_{E}$ credibility interval. In the 2D posterior distributions the solid contour shows a 95 \% and the dashed contour a 68 \% credibility region.  
 \label{fig:polpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1317,7 +1345,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolpr.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of the polar spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability.
+\caption{Posterior probability distributions of radius $R$, mass $m$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the polar spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability. The dark orange color shows a one $\sigma_{E}$ and the light orange color a two $\sigma_{E}$ credibility interval. In the 2D posterior distributions the solid contour shows a 95 \% and the dashed contour a 68 \% credibility region.
 \label{fig:polpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1327,7 +1355,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feq.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of the equatorial spot with only flat priors.The one-dimensional distributions are normalized to give 1 as the total probability.
+\caption{Posterior probability distributions of radius $R$, mass $m$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give 1 as the total probability. The dark orange color shows a one $\sigma_{E}$ and the light orange color a two $\sigma_{E}$ credibility interval. In the 2D posterior distributions the solid contour shows a 95 \% and the dashed contour a 68 \% credibility region.
 \label{fig:eqpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1337,7 +1365,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqpr.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of the equatorial spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability.
+\caption{Posterior probability distributions of radius $R$, mass $m$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the equatorial spot with non-uniform $i$ and $\theta$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability. The dark orange color shows a one $\sigma_{E}$ and the light orange color a two $\sigma_{E}$ credibility interval. In the 2D posterior distributions the solid contour shows a 95 \% and the dashed contour a 68 \% credibility region.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
