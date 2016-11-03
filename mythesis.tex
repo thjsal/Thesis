@@ -178,14 +178,14 @@ I would like to thank my supervisors Professor Juri Poutanen and Joonas N채ttil�
 
 Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  This emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray bands of the electromagnetic spectrum.
 
-The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in astrophysics. This information could provide tight constraints on the equation of state of the ultra-dense matter located inside neutron stars \cite{lattimer2007}, \cite{hebeler}. Densities of this high of a cold matter is otherwise unattainable.
+The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in astrophysics. This information could provide tight constraints on the equation of state of the ultra-dense matter located inside neutron stars \cite{lattimer2007}, \cite{hebeler}. Densities of this high are otherwise unattainable.
 %This high densities of cold matter is otherwise unattainable. 
 Studies of the light curves of pulsars can therefore help to determine the properties of such matter. The properties of matter at extremely high densities are also among the most important questions in physics and astronomy. 
 
 
 %One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms.
 One way to constrain masses and radii is to use X-ray oscillation produced by the rotation of some accreting millisecond pulsars. Models of these oscillations can be compared to observed waveforms.  
-The mass and radius of neutron star have an effect to the waveform because of the influence e.g. on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
+The mass and radius of neutron star have an effect to the waveform because of the influence e.g., on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
 
 
 
@@ -310,7 +310,7 @@ where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and
 
 For realistic EOSs the previous equations must be numerically solved to obtain M-R relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or so-called strange quark matter (SQM) depending on the equation of state.  
 
-The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce. Different equations of states are shown in the figure \ref{fig:eos_mr}. The highest measured mass of a neutron star has been close to two solar masses \cite{demorest}, which rules out all equations of state which cannot produce so high masses. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar (641 Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS much reach. This constraint and also constraints from general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radii $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$ since the light bending makes the star look larger and it is given by \cite{lattimer2001}
+The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce. Different equations of states are shown in the figure \ref{fig:eos_mr}. The highest measured mass of a neutron star is close to two solar masses \cite{demorest}, which rules out all equations of state which cannot produce so high masses. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar (641 Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS must reach. This constraint and also constraints from general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radii $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$ since the light bending makes the star look larger and it is given by \cite{lattimer2001}
 \be \label{eq:rinfty}
 R_{\infty} = \frac{R}{\sqrt{1-2GM/Rc^{2}}}.
 \ee  
@@ -488,7 +488,7 @@ Due to the fast rotation the millisecond pulsars have an oblate shape instead of
 There are different models describing the exact shape and oblateness of the neutron star (function $R(\theta)$, where $\theta$ is the colatitude measured from the spin axis).
 %The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis).
 One of the most recent ones was presented by Algendy et. al. (2014) \cite{algendy}. 
-It is also the model we use in this thesis. In that model (in geometric units
+It is also the model we use primarily in this thesis. In that model (in geometric units
 where G = c = 1)
 
 \begin{equation}
@@ -550,7 +550,7 @@ a_{4} = +0.04\epsilon_{0}-0.15\zeta_{0}\epsilon_{0}+0.07\epsilon_{0}^{2}.
 
 \subsubsection{Geometry}
 
-Besides the geometry of the star itself, we also need to know the relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (for a similar derivation see e.g. \cite{poutabelo}). 
+Besides the geometry of the star itself, we also need to know the relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (we follow closely the derivation of Poutanen and Beloborodov (2006) \cite{poutabelo}). 
 The star is assumed to be rotating  with a frequency $\nu=P^{-1}$ (seen by a distant observer).
 The velocity of the spot in units of $c$ (as measured by an non-rotating observer near the star)  %<- correct now?
 is 
@@ -965,12 +965,15 @@ In the model in this thesis we assumed a spherically symmetric spot (the angle m
 
 \subsubsection{Comparison of the profiles}
 
-The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very oblate stars and high bending angles. 
+The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In all comparisons we assume the neutron star to be at distance $D = 10$ kpc. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). 
+
+In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The waveforms are computed for one small spot (we use spot angular size $\rho = 1 \degree$), which emits isotropic blackbody radiation ($R = 16.4$ km, $M = 1.4$ $\msun$, $\nu = 600$ Hz and $T_{\mathrm{eff}} = 2$ keV). The oblateness of the star is described with the function (\ref{eq:rtheta}). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3} and \ref{fig:cad4}. They are in good agreement except in cases of some very high bending angles. In the Figure \ref{fig:mor3} ($\theta = 49 \degree$ and $i = 70 \degree$) and in the Figure \ref{fig:cad4} ($\theta = 15 \degree$ and $i = 100 \degree$) we see situations when the spot is on the other side of the pulsar and only photons with high bending angles can reach the observer. Instead in the Figure \ref{fig:cad3} ($\theta = 41 \degree$ and $i = 20 \degree$) most of the spot is all the time observed. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=mor3test.eps,width=12.0cm}}
-\caption{Light curves (bolometric flux) for light emitted from one infinitesimal spot with $M = 1.4 \msun$, $R_{\mathrm{eq}} = 16.4 \mathrm{km}$... . Results are compared with the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of \cite{morsink} and the black solid line is our result.
+\caption{Light curves (bolometric flux) for light emitted from one infinitesimal spot with $R = 16.4$ km, $M = 1.4$ $\msun$, $\nu = 600$ Hz, $\theta = 49 \degree$, $i = 70 \degree$ and $T_{\mathrm{eff}} = 2$ keV . Results are compared with the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of \cite{morsink} and the black solid line is our result.
 \label{fig:mor3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -979,7 +982,7 @@ The new versions of the waveform code have been tested by comparing the pulse pr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=cad3test.eps,width=12.0cm}}
-\caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with parameters given in the Figure 3 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of Cadeau and the black solid line is our result.
+\caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with otherwise similar same parameters as in Fig. \ref{fig:mor3} but with $\theta = 41 \degree$ and $i = 20 \degree$. The results are compared with the Figure 3 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of \cite{cadeau} and the black solid line is our result (almost coinciding).
 \label{fig:cad3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -988,15 +991,15 @@ The new versions of the waveform code have been tested by comparing the pulse pr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=cad4test.eps,width=12.0cm}}
-\caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with parameters given in the Figure 4 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of Cadeau and the black solid line is our result.
+\caption{The light curves (bolometric flux) for light emitted from one infinitesimal spot with otherwise similar same parameters as in Fig. \ref{fig:mor3} but with $\theta = 15 \degree$ and $i = 100 \degree$. The results are compared with the Figure 4 of Cadeau et. al. (2006) \cite{cadeau}. The blue dotted curve is the result of \cite{cadeau} and the black solid line is our result.
 \label{fig:cad4}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The profiles of pulsars have also been compared to profiles obtained from light-ray tracing methods (figures \ref{fig:jpulse1},\ref{fig:jpulse2} and \ref{fig:jpulse3}), which have a good correspondence.%correspond each other well. 
+The profiles of pulsars have also been compared to profiles obtained from light-ray tracing methods (figures \ref{fig:jpulse1},\ref{fig:jpulse2} and \ref{fig:jpulse3}), which show very similar results.%correspond each other well. 
 The number fluxes at 2 keV energy are computed to both spherical ($R(\theta) = R_{eq}$) and oblate stars ($R(\theta)$ from equation \ref{rtheta2}). Angular distribution of radiation corresponds either to a blackbody with isotropic beaming or to a Hopf profile. %so some power-law or what is the energy-dependence then....?
-In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\theta = 50 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we compute the light curves with two different spinning frequencies ($\nu = 1$ Hz and $\nu$ = 400 Hz) and with the spot size $\rho$ = 1 $\degree$ or 30 $\degree$ (figures \ref{fig:jpulse1} and \ref{fig:jpulse2}). In the case of oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we show the light curves with three different spot colatitudes $\theta$  = 18 $\degree$, 35 $\degree$ and 90 $\degree$ for the isotropic blackbody.
+In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\theta = 50 \degree$, $i = 60 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we compute the light curves with two different spinning frequencies ($\nu = 1$ Hz and $\nu$ = 400 Hz) and with the spot size $\rho$ = 1 $\degree$ or 30 $\degree$ (figures \ref{fig:jpulse1} and \ref{fig:jpulse2}). In the case of oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) we show the light curves with three different spot colatitudes $\theta$  = 18 $\degree$, 35 $\degree$ and 90 $\degree$ for the isotropic blackbody.
 
 
 %Show here some profiles..
@@ -1006,7 +1009,7 @@ In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\theta = 50 \deg
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=jpulsec1.pdf,width=17.0cm}}
-\caption{The light curve (monochromatic number flux at 2 keV) comparisons with slowly rotating spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\nu = 1$ Hz, $\theta = 50 \degree$) and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with spot size either 1 or 30 degrees. Black solid line shows the pulse profiles computed using the methods described in this Thesis (S+D) and red dashed line is a profile computed with the light-ray tracing methods (LTM). The residuals are shown in the lower panel as $\Delta = (\mathrm{model}_{\mathrm{S+D}}/\mathrm{model}_{\mathrm{LTM}})*100$ \%. Figure from N채ttil채 and Pihajoki (in preparation).
+\caption{The light curve (monochromatic number flux at 2 keV) comparisons with slowly rotating spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\nu = 1$ Hz, $i = 60 \degree$, $\theta = 50 \degree$ and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with spot size either 1 or 30 degrees. Black solid line shows the pulse profiles computed using the methods described in this Thesis (S+D) and red dashed line is a profile computed with the light-ray tracing methods (LTM). The residuals are shown in the lower panel as $\Delta = (\mathrm{model}_{\mathrm{S+D}}/\mathrm{model}_{\mathrm{LTM}})*100$ \%. Figure from N채ttil채 and Pihajoki (in preparation).
 \label{fig:jpulse1}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1024,7 +1027,7 @@ In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\theta = 50 \deg
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=jpulsec3.pdf,width=17.0cm}}
-\caption{The light curve (monochromatic number flux at 2 keV) comparisons with an oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with different spot colatitudes: $\theta$ = 18 $\degree$, 45 $\degree$ and 90 $\degree$. The symbols are the same as in figures \ref{fig:jpulse1} and \ref{fig:jpulse2}. Figure from N채ttil채 and Pihajoki (in preparation).
+\caption{The light curve (monochromatic number flux at 2 keV) comparisons with an oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$ and $T_{\mathrm{eff}} = 2$ keV) emitting according to blackbody law or Hopf profile with different spot colatitudes: $\theta$ = 18 $\degree$, 45 $\degree$ and 90 $\degree$. The symbols are the same as in figures \ref{fig:jpulse1} and \ref{fig:jpulse2}. Figure from N채ttil채 and Pihajoki (in preparation).
 \label{fig:jpulse3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
