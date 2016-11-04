@@ -176,7 +176,8 @@ I would like to thank my supervisors Professor Juri Poutanen and Joonas Nättil�
 \addcontentsline{toc}{section}{Introduction}
 %Näin tehtynä Johdannolle ei tule numeroa sisälllysluetteloon
 
-Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  This emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example the most rapidly rotating pulsars, called millisecond pulsars, have been detected in the radio, X-ray, and gamma ray bands of the electromagnetic spectrum.
+Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  In some cases this emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example the most rapidly rotating accreting pulsars, called accreting millisecond pulsars, 
+have been detected in the radio, X-ray, and gamma ray bands of the electromagnetic spectrum. %The rapidly rotating pulsars are called millisecond pulsars.
 
 The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in astrophysics. This information could provide tight constraints on the equation of state of the ultra-dense matter located inside neutron stars \cite{lattimer2007}, \cite{hebeler}. Densities of this high are otherwise unattainable.
 %This high densities of cold matter is otherwise unattainable. 
@@ -184,7 +185,7 @@ Studies of the light curves of pulsars can therefore help to determine the prope
 
 
 %One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms.
-One way to constrain masses and radii is to use X-ray oscillation produced by the rotation of some accreting millisecond pulsars. Models of these oscillations can be compared to observed waveforms.  
+One way to constrain masses and radii is to use X-ray oscillation produced by the rotation of accreting millisecond pulsars. Models of these oscillations can be compared to observed waveforms.  
 The mass and radius of neutron star have an effect to the waveform because of the influence e.g., on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
 
 
@@ -291,8 +292,8 @@ where $r$ is the distance from the center of the star. Thus at $r=R$, $\nu_{K}$ 
 
 %The Oppenheimer-Volkoff general relativistic equations for a spherically symmetric (non-rotating) neutron star
 
-Generally the mass-radius (M-R) relation, is determined by the equations of hydrostatic equilibrium. For a general relativistic and spherically symmetric (non-rotating) object %under hydrostatic equilibrium 
-these are the the so called Tolman-Oppenheimer-Volkov equations %(Tolman,
+Generally the mass-radius ($M-R$) relation, is determined by the equations of hydrostatic equilibrium. For a general relativistic and spherically symmetric (non-rotating) object %under hydrostatic equilibrium 
+these are the so called Tolman-Oppenheimer-Volkoff equations %(Tolman,
 %1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer})
 \cite{tolman}\cite{oppenheimer}:
 
@@ -305,10 +306,10 @@ and
 \be
  \frac{dm(r)}{dr} = 4 \pi \rho r^{2},
 \ee
-where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. M-R relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. This relation we call the equation of state (EOS). 
+where $P$ and $\rho$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. $M-R$ relation can now be obtained if the relation between pressure and density $P=P(\rho)$ is known. This relation we call the equation of state (EOS). 
 
 
-For realistic EOSs the previous equations must be numerically solved to obtain M-R relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or so-called strange quark matter (SQM) depending on the equation of state.  
+For realistic EOSs the previous equations must be numerically solved to obtain $M-R$ relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or so-called strange quark matter (SQM) depending on the equation of state.  
 
 The number of possible EOS can be reduced by observing which masses and radii the EOS should be able to produce. Different equations of states are shown in the figure \ref{fig:eos_mr}. The highest measured mass of a neutron star is close to two solar masses \cite{demorest}, which rules out all equations of state which cannot produce so high masses. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar (641 Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS must reach. This constraint and also constraints from general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radii $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$ since the light bending makes the star look larger and it is given by \cite{lattimer2001}
 \be \label{eq:rinfty}
@@ -395,7 +396,7 @@ It provided a confirmation of the "recycling scenario", which states that AMXPs 
 %SAX J1808.4–3658 went into outburst again in 2000, 2002, 2005, 2008 and 2011,
 %with an approximate recurrence time of about 1.6-3.3 yr, and is the best sampled and
 
-After the two first outbursts, \source \ has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they are typical for several X-ray binaries and can in principle be partially explained with a so-called instability model (see figure \ref{fig:outburst} for a such outburst).
+After the two first outbursts, \source \ has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase and the flaring tail. Except the last phase, they are typical for several X-ray binaries and can in principle be partially explained with a so-called instability model \cite{disc-instability} (see figure \ref{fig:outburst} for a such outburst).
 
 
 
@@ -422,7 +423,7 @@ After the two first outbursts, \source \ has gone into outburst several times re
 
 
 The X-ray spectrum of the outbursts have also been analysed and there is evidence for a two component-model, which includes a blackbody at lower energies and a hard Comptonization component at higher energies \cite{twocompmod} %http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?2002MNRAS.331..141G&defaultprint=YES&filetype=.pdf]
-. The heated hot spot on the neutron star surface is interpreted to produce the blackbody flux. The Comptonization is produced above the spot in a accretion shock. This shock is created as the plasma abruptly decelerates close to the neutron star surface at the bottom of the magnetic field lines.
+. The heated hot spot on the neutron star surface is interpreted to produce the blackbody flux. The Comptonization is produced above the spot in an accretion shock. This shock is created as the plasma abruptly decelerates close to the neutron star surface at the bottom of the magnetic field lines.
 
 
 
@@ -463,11 +464,20 @@ There have been many different attempts to constrain the masses and radii of neu
 \subsection{Pulse profile modeling}
 
 
-The oscillations in the flux during the outbursts (the light curves) of accreting millisecond pulsars (described in the first chapter) can be modeled with different models. The model presented here assumes that the radiation is originated from one or two of the polar caps of the star. General and special relativistic effects have been taken account using so-called Schwarzschild-Doppler (S+D) approximation %(Miller, Lamb 1998   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centerline{\epsfig{file=data_sax1808.pdf,width=12.0cm}} 
+\caption{Normalized number fluxes at different energies as a function of the phase from \source \ measured with RXTE . 
+\label{fig:saxdata}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The coherent flux oscillations at the rotational frequency (the light curves) of accreting millisecond pulsars (described in the first chapter) can be modeled with different models. One example of the observed pulse profiles (of \source) is shown in Figure \ref{fig:saxdata}. The model presented here assumes that the radiation is originated from one or two of the polar caps of the star. General and special relativistic effects have been taken account using so-called Schwarzschild-Doppler (S+D) approximation %(Miller, Lamb 1998   
 \cite{millerlamb98}%http://adsabs.harvard.edu/abs/1998ApJ...499L..37M
 %, Poutanen, Gierlinski 2003 
 \cite{poutagierlinskisax}. In the S+D approximation the effects of general relativity (gravitational light-bending) are modeled as though the star is not rotating using the Schwarzschild metric and the formalism specified by
-Pechenick, Ftaclas and Cohen (1983) \cite{pechenick}. Rotational effects have been approximated by using special relativistic Doppler transformations as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
+Pechenick, Ftaclas and Cohen (1983) \cite{pechenick}. Rotational effects have been approximated by using special relativistic Doppler transformations as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape \cite{algendy} \cite{morsink}.
 
 %Rotational effects are added by introducing Doppler terms as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
 
@@ -489,7 +499,7 @@ There are different models describing the exact shape and oblateness of the neut
 %The exact shape and oblateness of the star (function $R(\theta)$) can be chosen from different models ($\theta$ is the colatitude measured from the spin axis).
 One of the most recent ones was presented by Algendy et. al. (2014) \cite{algendy}. 
 It is also the model we use primarily in this thesis. In that model (in geometric units
-where G = c = 1)
+where $G = c = 1$)
 
 \begin{equation}
 \label{rtheta2}
@@ -512,11 +522,11 @@ x = \frac{M}{R_{\mathrm{eq}}},
 
 \begin{equation}
 \label{rtheta2omega}
-\bar{\Omega} = \Omega (\frac{R_{\mathrm{eq}}^{3}}{M})^{1/2}.
+\bar{\Omega} = \Omega \left(\frac{R_{\mathrm{eq}}^{3}}{M} \right)^{1/2}.
 \end{equation}
 
 
-In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where P is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
+In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where $P$ is the spin period. The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
 
 One other model we have also used in pulse profile comparison was presented by Morsink et al. (2007) \cite{morsink}. In that model
 
@@ -552,13 +562,15 @@ a_{4} = +0.04\epsilon_{0}-0.15\zeta_{0}\epsilon_{0}+0.07\epsilon_{0}^{2}.
 
 Besides the geometry of the star itself, we also need to know the relations between different angles in different frames. To derive these we consider a small spot on the stellar surface at colatitude $\theta$ from the rotational pole (we follow closely the derivation of Poutanen and Beloborodov (2006) \cite{poutabelo}). 
 The star is assumed to be rotating  with a frequency $\nu=P^{-1}$ (seen by a distant observer).
-The velocity of the spot in units of $c$ (as measured by an non-rotating observer near the star)  %<- correct now?
+The velocity of the spot in units of $c$ (as measured by a non-rotating observer near the star)  %<- correct now?
 is 
 \begin{equation}
 \label{beta2}
-\beta = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta =\beta_{\rm eq}(\theta) \sin\theta,
+\beta = \frac{v}{c}=\frac{2\pi R(\theta)}{c} \frac{\nu}{\sqrt{1-u}} \sin\theta, 
 \end{equation}
-where $\beta_{\rm eq}$ would be constant if the star were spherical, $u\equiv\rg/R(\theta)$, 
+%=\beta_{\rm eq}(\theta) \sin\theta,
+where %$\beta_{\rm eq}$ would be constant if the star were spherical, 
+$u\equiv\rg/R(\theta)$, 
 $\rg=2GM/c^2$ is the Schwarzschild radius, $M$ is mass and $R(\theta)$ is
 radius of the star at spot location (given by equation \ref{rtheta2}). The pulsar frequency has been corrected for the gravitational redshift $1/\sqrt{1-u}=1+z$, since the rotation frequency seen by distant observer is reduced in the gravitational field of the star due to the gravitational time dilation. The corresponding Lorentz factor for the velocity of the spot is $\Gamma=(1-\beta^2)^{-1/2}$.
 
@@ -605,7 +617,7 @@ We denote the unit vector along the line of sight by
 where $i$ is the inclination angle of the spin axis to the line of sight. 
 Thus (see Fig. \ref{fig:geom2})
 \be \label{eq:psi2}
-  \cos\psi=\bmath{k}\cdot \bmath{r} = \cos i\ \cos\theta+\sin i\ \sin \theta\ \cos\phi,
+  \cos\psi=\bmath{k}\cdot \bmath{r} = \cos i\ \cos\theta+\sin i\ \sin \theta\ \cos\phi.
 \ee
 
 The lensing angle $\psi$ measures the angle between the line of sight and the position vector $\bmath{r}$ of the spot. The initial angle of the emitted photon with respect to
@@ -668,7 +680,9 @@ and $\bmath{k}_0$ is $\epsilon$, which is obtained from
 \be \label{eq:kx-comp}
 \begin{split}
 \cos\epsilon= \bmath{m} \cdot \bmath{k}_0
-=\frac{\sin\alpha}{\sin\psi} (\sin i \cos(\theta -\gamma)\cos \phi -\cos i \sin (\theta -\gamma)) \\ + \frac{\sin (\psi - \alpha)}{\sin \psi}(\sin \theta \cos (\theta -\gamma)-\sin (\theta -\gamma)\cos \theta).
+=\frac{\sin\alpha}{\sin\psi} (\sin i \cos(\theta -\gamma)\cos \phi -\cos i \sin (\theta -\gamma))
++ \frac{\sin (\psi - \alpha)}{\sin \psi}\sin\gamma.
+%+ \frac{\sin (\psi - \alpha)}{\sin \psi}(\sin \theta \cos (\theta -\gamma)-\sin (\theta -\gamma)\cos \theta).
 \end{split}
 \ee
 
@@ -742,7 +756,7 @@ Numerical calculations using directly integral (\ref{eq:bend2}) lead to dramatic
 
 
 The maximum bending angle corresponds to $\sigma=\pi/2$. Otherwise the photon would be directed across the star surface. 
-The condition $\cos \sigma>0$ is used to define the visibility of the spot. In addition one should also check that the photon won't hit the surface of the star in any later phase of its trajectory (it might happen for an oblate star). This check is not yet included in the current pulse profile code.
+The condition $\cos \sigma>0$ is used to define the visibility of the spot. In addition one should also check that the photon won't hit the surface of the star in any later phase of its trajectory (it might happen for an oblate star). This check is not yet been included in the current pulse profile code.
 
 
 \subsubsection{Observed flux}
@@ -1191,15 +1205,7 @@ As mentioned earlier the aim of this work is to determine the probability distri
 
 \subsection{Synthetic data}
 
-The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from \source \ is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same number of phase points as in the real data. The original data is shown in Figure \ref{fig:saxdata}.  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-\centerline{\epsfig{file=data_sax1808.pdf,width=12.0cm}} 
-\caption{Normalized number fluxes at different energies as a function of the phase from \source \ measured with RXTE . 
-\label{fig:saxdata}}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from \source \ is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same number of phase points as in the real data. The original data is shown in the Figure \ref{fig:saxdata}.  
 
 
 The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in the Table \ref{table:params}. The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\theta$ appropriately, since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
@@ -1253,7 +1259,7 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_pol2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. The phase is from 0 to 1. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 75 \deg$ and $\theta = 5 \deg$. The phase is from 0 to 1. Other parameters are shown in Table \ref{table:params}.
 \label{fig:syntpol2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1262,7 +1268,7 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=synt_sax_eq2.png,width=17.0cm}}
-\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. The phase is from 0 to 1. Other parameters are shown in the Table \ref{table:params}.
+\caption{Synthetic data: Normalized number fluxes as a function of the phase at different energies for $i = 5 \deg$ and $\theta = 75 \deg$. The phase is from 0 to 1. Other parameters are shown in Table \ref{table:params}.
 \label{fig:synteq2}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1270,7 +1276,7 @@ In our simulations we see how the two datasets with different $i-\theta$ solutio
 
 \subsection{Sampling methods}
 
-All the parameters presented in the Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not currently sampled. %(at least not in this work yet). 
+All the parameters presented in Table \ref{table:params} except temperature, are sampled using the ensemble sampler. There are also other parameters in the model, which are not currently sampled. %(at least not in this work yet). 
 "Beaming parameter" \ is set to zero, meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
 
 We also use only one spherically symmetric hot spot. The oblate shape of the star is described by the function in equation (\ref{rtheta2}). Some parameters affecting the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
@@ -1285,7 +1291,7 @@ p(F_{\mathrm{data}}|F_{\mathrm{model}}) \propto \exp (\frac{-(F_{\mathrm{data}}-
 \ee
 Normalization is not needed, since it will cancel out when calculating likelihood ratios. The total probability density of the data given the sample is the multiplication of $p(F_{\mathrm{data}}|F_{\mathrm{model}})$ from each phase point and at each energy (or the sum of log-probabilities). 
 
-Of course we also need to take in account that we have different phase shift in the data and in the model. For that reason we calculate the model with 5 times higher phase resolution than the model. We calculate the probability densities using equation (\ref{eq:gaussprob}) with different phase shifts in order to marginalize over the uncertainty of phase shift. % using all the possible different phase shifts by shifting the values of fluxes in a correct way. 
+Of course we also need to take into account that we have different phase shift in the data and in the model. For that reason we calculate the model with 5 times higher phase resolution than the model. We calculate the probability densities using equation (\ref{eq:gaussprob}) with different phase shifts in order to marginalize over the uncertainty of phase shift. % using all the possible different phase shifts by shifting the values of fluxes in a correct way. 
 The total probability $p(\mathcal{D}|\textbf{y})$ (which will be used to calculate the likelihood ratio given by equation \ref{eq:likely_ratio_smove}) is the marginalized probability over all phase shifts. 
 
 As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y})$) are uniform, so that equations (\ref{eq:bayes}) and (\ref{eq:likely_ratio_smove}) give 
