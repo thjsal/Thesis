@@ -158,7 +158,9 @@ from pulse shape modeling}
 	
 In this thesis we present one method that can be used to constrain masses and radii of neutron stars. The method is suitable for accreting millisecond pulsars, where a rapidly rotating neutron star, called pulsar, accretes matter from a relatively low mass companion star, via an accretion disk, onto the magnetic poles of the neutron star. Because of the accretion, we observe radiation from two "hot spots" on the neutron star surface. This radiation is pulsating coherently at the spinning frequency of the neutron star. The exact shape of the pulses can be modeled with  theoretical model that takes into account the general and special relativistic effects via "Schwarzschild-Doppler" approximation and the oblate shape of the star due to the fast rotation. The details of this model are discussed. 
 	
-The pulse profiles carry information about the mass and radius of a neutron star since e.g., the light bending and thus pulse shapes depends much on the compactness of the star. Also other physical parameters and observing angles affects the light curves. Therefore, we use Bayesian analysis and "ensemble sampler" \ to obtain probability distributions of the different parameters, especially mass and radius. We have generated a synthetic data to test our method and fit the pulse profile to this data...  
+The pulse profiles carry information about the mass and radius of a neutron star since e.g., the light bending and thus pulse shapes depends much on the compactness of the star. Also many other physical parameters and observing angles affect the light curves. Therefore, we use Bayesian analysis and "ensemble sampler" \ to obtain probability distributions of the different parameters, especially mass and radius. The ensemble sampler has shown to overcome many difficulties concerning the traditional Metropolis-Hastings sampler. 
+
+We have also generated a synthetic data to test our method and fit the pulse profile to this data...  
 
 	
 	
@@ -189,7 +191,7 @@ for support and encouragement throughout my studies.
 \addcontentsline{toc}{section}{Introduction}
 %Näin tehtynä Johdannolle ei tule numeroa sisälllysluetteloon
 
-Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  In some cases this emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example the most rapidly rotating accreting pulsars, called accreting millisecond pulsars, 
+Rapidly rotating neutron stars, called pulsars, are the lighthouses of the universe. Pulses can be observed when an electromagnetic beam from this neutron star is emitted towards the Earth.  In some cases this emission may be created when matter is accreted onto the magnetic poles at the surface of the pulsar. Light curves from these pulses can be detected in many wavelengths. For example, the most rapidly rotating accreting pulsars, called accreting millisecond pulsars, 
 have been detected in the radio, X-ray, and gamma ray bands of the electromagnetic spectrum. %The rapidly rotating pulsars are called millisecond pulsars.
 
 The exact shape of the pulses may reveal us important information about the properties of the neutron stars. The determination of the mass-radius relation of neutron stars through observations is one of the fundamental problems in astrophysics. This information could provide tight constraints on the equation of state of the ultra-dense matter located inside neutron stars \cite{lattimer2007} \cite{hebeler}. Densities of this high are otherwise unattainable.
@@ -199,7 +201,7 @@ Studies of the light curves of pulsars can therefore help to determine the prope
 
 %One way to constrain masses and radii is to use X-ray burst observations of neutron stars. Models of burst oscillations waveforms (pulses during the burst) can be fit to observations of these waveforms.
 One way to constrain masses and radii is to use X-ray oscillations produced by the rotation of accreting millisecond pulsars. Models of these oscillations can be compared to observed waveforms.  
-The mass and radius of neutron star have an effect on the waveform because of the influence e.g., on the light bending due to general relativity. However many other parameters have also an impact on the light curves making it challenging to get tight constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
+The mass and radius of neutron star have an effect on the waveform because of the influence e.g., on the light bending due to general relativity. However, many other parameters have also an impact on the light curves making it challenging to get more strict constraints to radius and mass. Markov chain Monte Carlo sampling and high-performance computing are necessities when trying to find the correct values for these parameters. 
 
 
 
