@@ -81,8 +81,8 @@
 
 \usepackage[utf8]{inputenc} % Tällä toimii utf-8
 \usepackage[T1]{fontenc}      % Ja tämä liittyy edelliseen
-\usepackage[finnish]{babel} %Suomenkielinen tavutus
-\usepackage{tytiivis} %Tiivistelmäsivun laatimiseksi
+\usepackage[english]{babel} %Suomenkielinen tavutus
+%\usepackage{tytiivis} %Tiivistelmäsivun laatimiseksi
 %\usepackage[dvips]{graphicx}%Saadaan kuvat toimimaan %I commented
 \usepackage{lastpage}
 \usepackage{amsmath}
@@ -177,7 +177,7 @@ University of Turku \\ % Your institution for the title page
 \medskip
 \textit{thjsal@utu.fi} % Your email address
 }
-\date{\today} % Date, can be changed to a custom date
+%\date{\today} % Date, can be changed to a custom date
 
 \begin{document}
 
@@ -185,32 +185,39 @@ University of Turku \\ % Your institution for the title page
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
+%\begin{frame}
+%\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+%\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+%\end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-
-
+%\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{Introduction}
+\frametitle{Aim}
+\begin{itemize}
+\item Determination of masses and radii for rapidly rotating neutron stars 
+\item Constrain the number of possible equations of state
+\item The properties of matter at extremely high densities
+\item Study the effects of polarization measurements on mass and radius constraints
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Contents}
 %\begin{minipage}{0.5\textwidth}
 \begin{itemize}
-\item Aim
+\item Introduction
 \begin{itemize}
-\item Determination of masses and radii of rapidly rotating neutron stars 
-\item Study the effects of polarization measurements on mass and radius constraints
-\item Constrain the number of possible equations of state of neutron stars
+\item Neutron stars
+\item Accreting millisecond pulsars
 \end{itemize}
 \item Methods
 \begin{itemize}
@@ -221,7 +228,7 @@ University of Turku \\ % Your institution for the title page
 \item Results
 \begin{itemize}
 \item Polarization measurements may be used the get
-significantly tighter constraints. 
+significantly tighter constraints for masses and radii. 
 \end{itemize}
 \end{itemize}
 %\end{minipage}%
@@ -261,7 +268,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{eos_mr.png}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 2 from Lattimer and Prakash (2004).}
 \end{figure}
 \end{minipage}
 \end{frame}
@@ -292,7 +299,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{eos_mr.png}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 2 from Lattimer and Prakash (2004).}
 \end{figure}
 \end{minipage}
 \end{frame}
@@ -350,7 +357,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{eos_mr2.png}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure from Demorest et al. (2010).}
 \end{figure}
 
 \end{columns}
@@ -363,7 +370,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 
 \begin{frame}
-\frametitle{Accreting millisecond pulsars (AMXP)}
+\frametitle{Accreting millisecond X-ray pulsars (AMXP)}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
@@ -378,19 +385,19 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{schematic.jpg}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 4 from Romanova et. al (2004).}
 \end{figure}
 
 \end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{Accreting millisecond pulsars (AMXP)}
+\frametitle{Accreting millisecond X-ray pulsars (AMXP)}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
 \begin{itemize}
-\item Roche lobe overflow
+%\item Roche lobe overflow
 \item Recycling scenario
 \begin{itemize}
 \item The evolutionary progenitors of recycled radio millisecond pulsars%From $B \sim 10^{12}$ G to $B \sim 10^{8}$ G
@@ -403,7 +410,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{schematic.jpg}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 4 from Romanova et. al (2004).}
 \end{figure}
 
 \end{columns}
@@ -414,7 +421,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 
 \begin{frame}
-\frametitle{Accreting millisecond pulsars (AMXP)}
+\frametitle{Accreting millisecond X-ray pulsars (AMXP)}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
 \column{.45\textwidth} % Left column and width
@@ -430,7 +437,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{outburst.png}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 1 from Sanna et al. (2016).}
 \end{figure}
 
 \end{columns}
@@ -462,8 +469,8 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 \item Schwarzschild + Doppler approximation (S+D)
 \item Oblate shape of the star taken into account
-\item Light bending
-\item Time delays
+\item Mass and radius affecting the light bending
+\item Time delays different from different locations 
 
 \end{itemize}
 \column{.5\textwidth} 
@@ -521,7 +528,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{spectrum_numflux0.pdf}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 3 from Poutanen and Gierlinski (2003).}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -569,7 +576,13 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 
 
-
+\begin{frame}
+\frametitle{Methods}
+\begin{itemize}
+\item Bayesian analysis
+\item Monte Carlo sampling methods
+\end{itemize}
+\end{frame}
 
 %--------------------------------------------
 
@@ -581,7 +594,10 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \ee
 \begin{itemize}
 \item $\mathcal{D}$ = Data
-\item $\textbf{y}$ = parameters of the pulse profile model
+\item $\textbf{y}$ = Parameters of the pulse profile model
+\item $p(\textbf{y})$ = Prior probability distributions of parameters
+\item $p(\mathcal{D}|\textbf{y})$ = Probability distribution of the data given the parameters 
+\item $p(\textbf{y}|\mathcal{D}|)$ = Probability distribution of the parameters given the data
 
 \end{itemize}
 \end{frame}
@@ -598,8 +614,9 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \column{.45\textwidth} 
 \begin{itemize}
 
+\item Independent walkers moving the parameter space
 \item Stretch-move algorithm instead of Metropolis-Hastings 
-\item Independent walkers
+\item New sample is either accepted or rejected with a certain probability
 
 \end{itemize}
 \column{.5\textwidth} 
@@ -611,10 +628,98 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \end{columns}
 \end{frame}
 
+
+%--------------------------------------------
+
+\begin{frame}
+\frametitle{Results}
+\begin{itemize}
+\item Synthetic data
+\item Posterior probability distributions
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Synthetic data}
+
+\begin{itemize}
+\item We have generated a synthetic data similar to \source \ using the pulse profile model
+\item Parameters assumed to be physically reasonable
+\item The variability amplitude $A$ determined mainly by observer inclination $i$ and spot co-latitude $\thetas$:
+\end{itemize}
+\be \label{eq:amplitude}
+A = \frac{F_{\mathrm{max}} - F_{\mathrm{min}}} {F_{\mathrm{max}} + F_{\mathrm{min}}}
+\ee %https://arxiv.org/pdf/astro-ph/0510038v2.pdf
+\be \label{eq:amplitude_incthet}
+A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas}.
+\ee 
+
+%\item Assume uniform or non-uniform prior probability distributions for parameters
+%\item 
+%\item Obtain posterior probability distributions for the parameters using ensemble sampler
+
+
+%\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Synthetic data}
+
+
+\be \label{eq:amplitude_incthet}
+A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas}.
+\ee 
+\begin{itemize}
+\item Switching $i$ and $\thetas$ has no effect on $A$
+\item However, the variability of polarized flux depends on $i$ and $\thetas$ separately
+\item To study this, we have created two datasets which differ only in $i$ and $\thetas$
+\item We assume either uniform or non-uniform prior probability distributions for parameters
+\item We obtain posterior probability distributions for the parameters using ensemble sampler
+
+
+\end{itemize}
+%\item Assume uniform or non-uniform prior probability distributions for parameters
+%\item 
+%\item Obtain posterior probability distributions for the parameters using ensemble sampler
+
+
+%\end{itemize}
+\end{frame}
+
+
+
 %-----------------------------------------------------
 
+%-----------------------------------------------------
+\begin{frame}
 
+\begin{center}
+\frametitle{Synthetic data}
+\begin{table}
+  \caption{Paramters of the synthetic datasets.}
+\label{table:params}
+\begin{center}
+  \begin{tabular}{| c | c |}
+    \hline
+     Parameter & Value\\ \hline
+      Radius $R$ & 12.0 km  \\ \hline
+      Mass $M$ & 1.5 $\msun$  \\ \hline
+      Inclination $i$ & 5 $\degree$ or 75 $\degree$ \\ \hline
+      Spot colatitude $\thetas$ & 75 $\degree$ or 5 $\degree$ \\ \hline
+      Spot angular size $\rho$ & 10.0 $\degree$  \\ \hline
+      Distance $D$ & 2.5 kpc \\ \hline
+      Temperature $T_{\mathrm{eff}}$ & 2.0 keV \\
 
+    \hline
+  \end{tabular}
+  \end{center} 
+
+  \end{table}
+\end{center}
+
+\end{frame}
 %--------------------------------------------
 
 \begin{frame}
@@ -639,6 +744,7 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 %-----------------------------------------------------
 
 
+\iffalse
 %--------------------------------------------
 
 \begin{frame}
@@ -661,10 +767,121 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \end{frame}
 
 %-----------------------------------------------------
+\fi
+
+\begin{frame}
+\frametitle{Sampling methods}
+\begin{itemize}
+\item Marginalization over different phaseshifts
+\item Four simulations running parallel on 22 processors
+\item In each simulation ~ 70 000 samples out of which 20 000 removed ("burn-in") and thinned with factor 5 (to remove autocorrelation)
+
+\end{itemize}
+
+\end{frame}
+
+
+%--------------------------------------------
+
+\begin{frame}
+\frametitle{Posterior probability distributions}
+
+\begin{figure}
+%\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
+\includegraphics[width=0.5\linewidth]{fpolf.pdf}
+\caption{Polar spot with only uniform priors}
+\end{figure}
+
+\end{frame}
+
+%-----------------------------------------------------
+
+%--------------------------------------------
+
+\begin{frame}
+\frametitle{Posterior probability distributions}
+
+\begin{figure}
+%\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
+\includegraphics[width=0.5\linewidth]{fpolprf.pdf}
+\caption{Polar spot with non-uniform $i$ and $\thetas$ priors}
+\end{figure}
+
+\end{frame}
+
+%-----------------------------------------------------
+
+%--------------------------------------------
+
+\begin{frame}
+\frametitle{Posterior probability distributions}
+
+\begin{figure}
+%\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
+\includegraphics[width=0.5\linewidth]{feqf.pdf}
+\caption{Equatorial spot with only uniform priors}
+\end{figure}
+
+\end{frame}
+
+%-----------------------------------------------------
+
+
+%--------------------------------------------
+
+\begin{frame}
+\frametitle{Posterior probability distributions}
+
+\begin{figure}
+%\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
+\includegraphics[width=0.5\linewidth]{feqprf.pdf}
+\caption{Equatorial spot with non-uniform $i$ and $\thetas$ priors}
+\end{figure}
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}
+\frametitle{Results}
+\begin{itemize}
+\item Only upper limits for masses and radii when only non-uniform priors
+\item Both upper and lower limits when prior information for $i$ and $\thetas$ applied
+\item Correct $i-\thetas$ solution not found without prior information
+\item The size of the spot is well constrained but the distance is not
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Summary}
+\begin{itemize}
+\item AMXPs show coherent oscillations at the spinning frequency of the pulsar.
+\item These oscillations may be used to constrain masses and radii of pulsars.
+\item Tighter constraints for mass and radius from polarization
+\item Future
+\begin{itemize}
+\item Develope the model
+\item From synthetic to real observations
+\end{itemize} 
+
+\end{itemize}
+\end{frame}
 
 
 
 
+
+
+
+
+
+
+
+
+
+\iffalse
 
 %------------------------------------------------
 \section{Second Section}
@@ -722,6 +939,7 @@ Uncomment the code on this slide to include your own image from the same directo
 
 %------------------------------------------------
 
+\fi
 %\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
 %\frametitle{Citation}
 %An example of the \verb|\cite| command to cite within the presentation:\\~
