@@ -1340,10 +1340,60 @@ In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr}
 The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability is very close to $10 \degree$ which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between 2 and 3 kpc). The distance is not constrained what causes problems with a larger interval. An uniform posterior probability distribution for the distance is now obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level. 
 
 
+\begin{center}
+\begin{table}
+  \caption{Confidence limits and peak positions to 4 different simulations}
+\label{table:params}
+\begin{center}
+  \begin{tabular}{| c | c | c | c | c | c |}
+    \hline
+     Parameter & 2 $\sigma_{E}$ low & 1 $\sigma_{E}$ low & peak position &1 $\sigma_{E}$ high & 2 $\sigma_{E}$ high \\ \hline
+     \multicolumn{6}{c}{Polar spot with only uniform priors} \\ \hline
+      Radius $R$ (km) & 8.1 & 8.3 & 9.0 & 12.4 & 13.8  \\ \hline
+      Mass $M$ ($\msun$) & 1.0 & 1.1 & 1.1 & 1.6 & 1.7  \\ \hline
+      Inclination $i$ ($\degree$) & 3.2 & 3.4 & 5.1 & 62.7 & 77.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 3.3 & 3.4 & 6.7 & 70.8 & 76.2 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 6.8 & 8.3 & 9.8 & 11.2 & 12.7 \\ \hline
+      Distance $D$ (kpc) & 2.1 & 2.2 & 2.9 & 3.0 & 3.0 \\   \hline
+      
+      \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
+      Radius $R$ (km) & 8.7 & 10.8 & 13.0 & 14.7 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.1 & 1.4 & 1.5 & 1.8 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 11.6 & 72.8 & 83.0 & 88.6 & 89.5 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 2.8 & 3.6 & 4.4 & 5.5 & 9.4 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 7.4 & 8.4 & 9.9 & 11.4 & 13.0 \\ \hline
+      Distance $D$ (kpc) & 2.1 & 2.2 & 2.7 & 2.9 & 3.0 \\ \hline
+      
+      \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ \hline
+      Radius $R$ (km) & 8.1 & 8.2 & 9.4 & 10.8 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.0 & 1.0 & 1.2 & 1.4 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 3.3 & 3.7 & 6.7 & 18.1 & 79.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.6 & 4.8 & 8.4 & 73.5 & 77.2 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 6.5 & 8.7 & 10.4 & 11.6 & 13.1 \\ \hline
+      Distance $D$ (kpc) &  2.0 & 2.1 & 2.5 & 2.9 & 3.0 \\ \hline
+      
+      \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
+      Radius $R$ (km) & 8.2 & 9.8 & 10.3 & 14.1 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.1 & 1.2 & 1.3 & 1.7 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 2.3 & 3.5 & 4.7 & 6.1 & 67.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.0 & 67.4 & 78.6 & 85.4 & 89.3 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 7.2 & 8.2 & 9.8 & 11.3 & 13.5 \\ \hline
+      Distance $D$ (kpc) & 2.1 & 2.1 & 2.7 & 2.9 & 3.0 \\ 
+
+
+    \hline
+  \end{tabular}
+  \end{center} 
+
+  \end{table}
+\end{center} 
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpol.pdf,width=17.0cm}}
+\centerline{\epsfig{file=fpolf.pdf,width=17.0cm}}
 \caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give 1 as the total probability. The dark orange color shows a 68 \% and the light orange color a 95 \% highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a 95 \% and the dashed contour a 68 \% highest posterior density credible region.  
 \label{fig:polpost}}
 \end{figure}
@@ -1351,7 +1401,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpolpr.pdf,width=17.0cm}}
+\centerline{\epsfig{file=fpolprf.pdf,width=17.0cm}}
 \caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}. 
 \label{fig:polpostpr}}
 \end{figure}
@@ -1361,7 +1411,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feq.pdf,width=17.0cm}}
+\centerline{\epsfig{file=feqf.pdf,width=17.0cm}}
 \caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give 1 as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
 \label{fig:eqpost}}
 \end{figure}
@@ -1371,7 +1421,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feqpr.pdf,width=17.0cm}}
+\centerline{\epsfig{file=feqprf.pdf,width=17.0cm}}
 \caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give 1 as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
 \label{fig:eqpostpr}}
 \end{figure}
@@ -1391,7 +1441,7 @@ The special and general relativistic effects, including light bending, time dela
 
 We also presented our methods to fit observed data to the profiles obtained from the waveform calculation. We use Bayesian inference and the ensemble sampler which is in our case the most efficient way to obtain the probability distributions of pulse profile parameters given the data. Instead of real observations we used synthetic data (discussed in the Results section) to inspect and calibrate our methods and tools. The synthetic data was generated using our pulse profile model, and it was made as similar as possible with the real data of \source. The autocorrelation and burn-in phase of the samples were also discussed.
 
-Finally we obtained posterior probability distributions of the parameters with promising results. We were most interested in the distributions of mass and radius and how to get tighter constraints for those. We found that the ratio between mass and radius is found accurately, but to get independent knowledge of mass and radius is remarkably easier if we have independent knowledge of the spot-colatitude $\thetas$ and the observer inclination $i$. Without prior information we were only able to get upper limits for the mass and radius. Using non-uniform priors for $\thetas$ and $i$ we got both lower and upper limits. Prior information to these angles is excepted to be obtained from polarization measurements of AMXPs.  
+Finally, we obtained posterior probability distributions of the parameters with promising results. We were most interested in the distributions of mass and radius and how to get tighter constraints for those. We found that the ratio between mass and radius is found accurately, but to get independent knowledge of mass and radius is remarkably easier if we have independent knowledge of the spot-colatitude $\thetas$ and the observer inclination $i$. Without prior information we were only able to get upper limits for the mass and radius. Using non-uniform priors for $\thetas$ and $i$ we got both lower and upper limits. Prior information to these angles is excepted to be obtained from polarization measurements of AMXPs.  
 
 The next step to the work of this thesis is to add few more parameters to those that are being sampled and see if the results still remain the same. The pulse profile model may also be developed further e.g., to take into account both the blakcbody and power-law parts of the spectrum. Finally we are able to fit the real observations and hopefully get new constraints to the possible EOSs of neutron star.  
 
