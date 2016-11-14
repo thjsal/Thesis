@@ -1065,7 +1065,7 @@ We are interested in the probability of the parameters $\textbf{y}$ of the wavef
 
 
 \be \label{eq:bayes}
-p(\textbf{y}|D) \propto p(D|\textbf{y})p(\textbf{y}).
+p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y}).
 \ee
 
 In the previous equation $p(\mathcal{D}|\textbf{y})$ is the likelihood or the probability distribution of the data given the parameters. The factor $p(\textbf{y})$ is the prior probability distribution of the parameter values. As a first approximation we use uniform prior which is the most uninformative prior. Later we take into account the information of polarization measurements and make the priors of inclination and spot colatitude non-uniform to study their impact on the fit. The constant of proportionality is the inverse of the normalization factor, but it is irrelevant when estimating the values of the parameters in a given model. 
@@ -1347,38 +1347,38 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 \begin{center}
   \begin{tabular}{| c | c | c | c | c | c |}
     \hline
-     Parameter & 2 $\sigma_{E}$ low & 1 $\sigma_{E}$ low & peak position &1 $\sigma_{E}$ high & 2 $\sigma_{E}$ high \\ \hline
+     Parameter & 2$\sigma_{E}$ low & 1$\sigma_{E}$ low & peak position &1$\sigma_{E}$ high & 2$\sigma_{E}$ high \\ \hline
      \multicolumn{6}{c}{Polar spot with only uniform priors} \\ \hline
       Radius $R$ (km) & 8.1 & 8.3 & 9.0 & 12.4 & 13.8  \\ \hline
-      Mass $M$ ($\msun$) & 1.0 & 1.1 & 1.1 & 1.6 & 1.7  \\ \hline
-      Inclination $i$ ($\degree$) & 3.2 & 3.4 & 5.1 & 62.7 & 77.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 3.3 & 3.4 & 6.7 & 70.8 & 76.2 \\ \hline
+      Mass $M$ ($\msun$) & 1.0 & 1.1 & 1.2 & 1.6 & 1.7  \\ \hline
+      Inclination $i$ ($\degree$) & 3.2 & 3.4 & 6.2 & 62.7 & 77.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 3.3 & 3.4 & 6.8 & 70.8 & 76.2 \\ \hline
       Spot angular size $\rho$ ($\degree$) & 6.8 & 8.3 & 9.8 & 11.2 & 12.7 \\ \hline
-      Distance $D$ (kpc) & 2.1 & 2.2 & 2.9 & 3.0 & 3.0 \\   \hline
+      Distance $D$ (kpc) & 2.1 & 2.2 & 2.5 & 3.0 & 3.0 \\   \hline
       
       \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
-      Radius $R$ (km) & 8.7 & 10.8 & 13.0 & 14.7 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.1 & 1.4 & 1.5 & 1.8 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 11.6 & 72.8 & 83.0 & 88.6 & 89.5 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 2.8 & 3.6 & 4.4 & 5.5 & 9.4 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 7.4 & 8.4 & 9.9 & 11.4 & 13.0 \\ \hline
-      Distance $D$ (kpc) & 2.1 & 2.2 & 2.7 & 2.9 & 3.0 \\ \hline
+      Radius $R$ (km) & 8.7 & 10.8 & 12.8 & 14.7 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.1 & 1.4 & 1.6 & 1.8 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 11.6 & 72.8 & 80.8 & 88.6 & 89.5 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 2.8 & 3.6 & 5.4 & 5.5 & 9.4 \\ \hline %peak bf sm 4.4
+      Spot angular size $\rho$ ($\degree$) & 7.4 & 8.4 & 10.0 & 11.4 & 13.0 \\ \hline
+      Distance $D$ (kpc) & 2.1 & 2.2 & 2.5 & 2.9 & 3.0 \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ \hline
-      Radius $R$ (km) & 8.1 & 8.2 & 9.4 & 10.8 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.0 & 1.0 & 1.2 & 1.4 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 3.3 & 3.7 & 6.7 & 18.1 & 79.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 4.6 & 4.8 & 8.4 & 73.5 & 77.2 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 6.5 & 8.7 & 10.4 & 11.6 & 13.1 \\ \hline
+      Radius $R$ (km) & 8.1 & 8.2 & 9.1 & 10.8 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.0 & 1.0 & 1.1 & 1.4 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 3.3 & 3.7 & 7.9 & 18.1 & 79.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.6 & 4.8 & 8.2 & 73.5 & 77.2 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 6.5 & 8.7 & 10.3 & 11.6 & 13.1 \\ \hline
       Distance $D$ (kpc) &  2.0 & 2.1 & 2.5 & 2.9 & 3.0 \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
-      Radius $R$ (km) & 8.2 & 9.8 & 10.3 & 14.1 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.1 & 1.2 & 1.3 & 1.7 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 2.3 & 3.5 & 4.7 & 6.1 & 67.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 4.0 & 67.4 & 78.6 & 85.4 & 89.3 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 7.2 & 8.2 & 9.8 & 11.3 & 13.5 \\ \hline
-      Distance $D$ (kpc) & 2.1 & 2.1 & 2.7 & 2.9 & 3.0 \\ 
+      Radius $R$ (km) & 8.2 & 9.8 & 10.7 & 14.1 & 16.1  \\ \hline
+      Mass $M$ ($\msun$) & 1.1 & 1.2 & 1.5 & 1.7 & 2.0  \\ \hline
+      Inclination $i$ ($\degree$) & 2.3 & 3.5 & 5.5 & 6.1 & 67.1 \\ \hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.0 & 67.4 & 77.4 & 85.4 & 89.3 \\ \hline
+      Spot angular size $\rho$ ($\degree$) & 7.2 & 8.2 & 9.9 & 11.3 & 13.5 \\ \hline
+      Distance $D$ (kpc) & 2.1 & 2.1 & 2.5 & 2.9 & 3.0 \\ 
 
 
     \hline
