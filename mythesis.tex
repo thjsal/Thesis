@@ -18,6 +18,7 @@
 \usepackage{float}
 \usepackage{epstopdf}
 \usepackage{amsfonts}
+\usepackage{changepage}
 
 \addto\captionsfinnish{%
   \renewcommand{\refname}%
@@ -274,7 +275,7 @@ Näitä noudattamalla saadaan vähennettyä ainakin yksi tarkastuskierros.
 
 
 Neutron stars are some of the most dense and massive objects in the
-Universe. Typical mass $M$ of a neutron star is on the order of 1.5 solar masses ($M_{\odot}$), and typical radius $R$ on the order of 12 km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 ~\mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei \cite{lattimer}. Neutrons dominate the nucleonic content of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities more exotic baryons, mesons or quarks may also appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the matter %fermions are
+Universe. Typical mass $M$ of a neutron star is on the order of $1.5$ solar masses ($M_{\odot}$), and typical radius $R$ on the order of $12$ km. The central density $n_{c}$ can be from 5 to 10 times the nuclear equilibrium density $n_{0} \approx 0.16 ~\mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei \cite{lattimer}. Neutrons dominate the nucleonic content of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities more exotic baryons, mesons or quarks may also appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the matter %fermions are
 is in any case excepted inside the star. 
 
  
@@ -726,7 +727,7 @@ The equation (\ref{eq:cossigma2}) is useful since we need to know the emission a
 
 \subsubsection{Light bending}
 
-Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also first need to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ (for every point at every phase) we know directly from the geometry since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6) we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\thetas$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
+Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also first need to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ (for every point at every phase) we know directly from the geometry since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6), we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\thetas$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
 
 The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e., light bending) is given by \cite{mtw}%(e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
@@ -810,7 +811,7 @@ the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
 %results in the following  relation between the monochromatic
 %observed and local intensities
 
-We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However we still need to find out a expression for intensity $I_{E}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effects. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
+We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However, we still need to find out a expression for intensity $I_{E}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effects. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
 I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
 \ee
@@ -1327,70 +1328,121 @@ Other prior probabilities of the parameters are kept always uniform inside their
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we still have approximately 50 000 samples left belonging to each ensemble.  Figure \ref{fig:wexample} shows one example of the log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
+Before obtaining the final posterior probability distributions we have reduced the burn-in phase from each ensemble by removing the first 20 000 samples from each chain. After that we still have approximately 50 000 samples left belonging to each ensemble.  Figure \ref{fig:wexample} shows one example of the log-likelihoods of a converged chain in one of the simulations. In that Figure we use an averaged step of ensemble which is an average of 20 (number of walkers in the ensemble) consecutive single accepted steps. However, for many ensembles we found few walkers which didn't seem to achieve convergence even after a long time (they appeared as sharp peaks in the log-likelihood plots).
 
 The same averaged steps are also used in Figure \ref{fig:acexample} where we show an example of the autocorrelation. The autocorrelations of all the six ensembles from one simulation are presented using the weights as observables (see equation \ref{eq:autocovariance}). The Figure shows the autocorrelation only approximatively since one should make sure that the ensemble averaged weights are calculated for walkers being at a same state of their sequence. We may, however, see that in general the correlation is not very strong, and we have reduced it by taking every fifth sample from the chain.%... Thinning we used is .... (TBD)  
 
 The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\thetas$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). However, the correct ratio between mass and radius (and thus the gravitational redshift) seems to be in every case well found.
 
-Without the prior information we get the highest probabilities for the lowest masses and radii since those correspond to more possible solutions in  $\thetas$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. In case of the polar spot the radius is below 14 km and the mass is below 1.7 $\msun$ with 95 \% probabilities. In case of the equatorial spot the radius is below 16 km  with 95 \% probability, but for mass the 95 \% highest posterior probability credible interval extends until the upper limit of the sampling interval (2.0 $\msun$).
+Without the prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\thetas$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. All calculated confidence limits and most probable values are shown in Table \ref{table:conflimits}. The limits are calculated using the highest posterior probability credible intervals. In case of the polar spot, the radius is below 14 km and the mass is below 1.7 $\msun$ with 95 \% probabilities. The most probable value for radius is 9 km and for mass 1.2 $\msun$. In case of the equatorial spot, the radius is below 16 km with a 95 \% probability, but for the mass the 95 \% credible interval extends until the upper limit of the sampling interval (2.0 $\msun$). The most probable value for radius is 9 km and for mass 1.1 $\msun$. 
 
-The polar and equatorial spots give quite similar results compared to each other as excepted (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However, they are not identical which shows that switching $\thetas$ and $i$ has a small but significant effect on the light curves of the pulsar. It seems also slightly easier to find out the correct $\thetas-i$ solution  in the case of the equatorial spot. Although, in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional distribution of $\thetas-i$. For the polar spot and $i$ the 95 \% highest posterior probability credible interval is between 3 $\degree$ and 68 $\degree$ even though the correct value is 75 $\degree$. For $\thetas$ this interval is between 3 $\degree$ and 66 $\degree$, when correct value is 5 $\degree$. For the equatorial spot these limits are exactly the same (and correct values are switched), but we see that the probability density of $\thetas$ is distributed towards higher angles compared to results of the polar spot. Inclination is now also better constrained. It is between 3 $\degree$ and 18 $\degree$ with 68 \% probability.
+The polar and equatorial spots give quite similar results compared to each other as expected (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However, they are not identical which shows that switching $\thetas$ and $i$ has a small but significant effect on the light curves of the pulsar. It seems also slightly easier to find out the correct $\thetas-i$ solution in the case of the equatorial spot. Although, in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional probability distribution of $\thetas-i$. For the polar spot and $i$, the 95 \% credible interval is between 3 $\degree$ and 77 $\degree$, when the correct value is 75 $\degree$. However, the 68 \% confidence limits are from 3 $\degree$ to 63 $\degree$. The 95 \% interval for $\thetas$ is between 3 $\degree$ and 76 $\degree$, when the correct value is 5 $\degree$. In this case the 68 \% confidence limits are from 3 $\degree$ to 71 $\degree$. For the equatorial spot, the 95 \% limits are almost the same (and the correct values are switched), but we see that the probability density of $\thetas$ is distributed more towards the higher angles compared to results of the polar spot. Inclination is now also better constrained. It is between 3 $\degree$ and 18 $\degree$ with a 68 \% probability.
 
-In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}) we find the correct solutions for $\thetas$ and $i$ even though our prior distributions are not centered  around the correct values. In case of the polar spot $\thetas$ is now between 2 $\degree$ and 10 $\degree$ with a 95 \% probability and $i$ larger than 72 $\degree$ with a 68 \% probability. In case of the equatorial spot $i$ is between 2 $\degree$ and 10 $\degree$ with a 95 \% probability and $\thetas$ is larger than 67 $\degree$ with a 68 \% probability.
+In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}), we find the correct solutions for $\thetas$ and $i$ even though our prior distributions are not centered  around the correct values. In case of the polar spot, $\thetas$ is now between 3 $\degree$ and 9 $\degree$ with a 95 \% probability, and $i$ is larger than 73 $\degree$ with a 68 \% probability. In case of the equatorial spot, $i$ is between 4 $\degree$ and 6 $\degree$ with a 68 \% probability, and $\thetas$ is larger than 67 $\degree$ with a 68 \% probability. In both cases the most probable values are close to the correct values (see the Table \ref{table:conflimits}), especially for the smaller one of the angles. The posterior probability distribution for the larger angle is almost entirely determined by the assumed prior probability distribution.  
 
-The non-uniform priors for $\thetas$ and $i$ have also a strong effect on the posterior probability distributions for the mass and the radius. They are now also distributed on both sides of the correct values having the maximum near the correct value. The prior information shifts the probability densities of mass and radius towards higher masses and radii since the incorrect $\thetas - i$ solutions are then not contributing the small masses and radii so much. Most importantly both the lower and upper limits can now be determined. In case of the polar spot the radius (correct value 12 km) is between 9 km and 16 km and the mass (correct value 1.5 $\msun$) is between 1.1 $\msun$ and 2.0 $\msun$ with 95 \% probabilities. In case of the equatorial spot and with same the probabilities the radius is between 8 km and 16 km and the mass is between 1.1 $\msun$ and 2.0 $\msun$.
+The non-uniform priors for $\thetas$ and $i$ have also a strong effect on the posterior probability distributions for the mass and the radius. They are now also distributed on both sides of the correct values having the maximum near the correct value. The prior information shifts the probability densities of mass and radius towards higher masses and radii, since the incorrect $\thetas - i$ solutions are in this case not contributing the small masses and radii so much. Most importantly both the lower and upper limits can now be determined. In case of the polar spot, the radius (correct value 12 km) is between 11 km and 15 km and the mass (correct value 1.5 $\msun$) is between 1.4 $\msun$ and 1.8 $\msun$ with 68 \% probabilities. The most probable values are 13 km and 1.6 $\msun$. In case of the equatorial spot and with same the confidence limits, the radius is between 10 km and 14 km, and the mass is between 1.2 $\msun$ and 1.7 $\msun$. The most probable values are 11 km and 1.5 $\msun$. 
 
-The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability density is very close to $10 \degree$ ($\rho$ is between 6 $\degree$ and 14 $\degree$ with a 95 \% probability in every simulation) which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between 2 and 3 kpc). The distance is not constrained what causes problems with a larger interval. An uniform posterior probability distribution for the distance is now obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level.
+The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability density is very close to $10 \degree$ ($\rho$ is between 6 $\degree$ and 14 $\degree$ with at least a 95 \% probability in every simulation) which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between $2$ and $3$ kpc). The distance is not constrained, and that causes problems with a larger interval. An uniform posterior probability distribution for the distance is obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level.
 
 
 \begin{center}
-\begin{table}
-  \caption{Confidence limits and peak positions to 4 different simulations}
-\label{table:params}
+\begin{table*}
+  \caption{Most probable values and $68\%$ and $95\%$ confidence limits for 4 different simulations.}
+\label{table:conflimits}
+%\centering
+\begin{footnotesize}
 \begin{center}
-  \begin{tabular}{| c | c | c | c | c | c |}
+ \begin{adjustwidth}{-3cm}{}
+  \begin{tabular}[c]{l c c c c c}
     \hline
-     Parameter & 2$\sigma_{E}$ low & 1$\sigma_{E}$ low & peak position &1$\sigma_{E}$ high & 2$\sigma_{E}$ high \\ \hline
-     \multicolumn{6}{c}{Polar spot with only uniform priors} \\ \hline
-      Radius $R$ (km) & 8.1 & 8.3 & 9.0 & 12.4 & 13.8  \\ \hline
-      Mass $M$ ($\msun$) & 1.0 & 1.1 & 1.2 & 1.6 & 1.7  \\ \hline
-      Inclination $i$ ($\degree$) & 3.2 & 3.4 & 6.2 & 62.7 & 77.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 3.3 & 3.4 & 6.8 & 70.8 & 76.2 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 6.8 & 8.3 & 9.8 & 11.2 & 12.7 \\ \hline
+    \hline
+      Quantity & $95\%$ lower limit & $68\%$ lower limit & Most probable value / median & $68\%$ upper limit & $95\%$ upper limit \\ \hline
+     \multicolumn{6}{c}{Polar spot with only uniform priors} \\ %\hline
+      Radius $R$ (km) & 8.1 & 8.3 & 9.0 & 12.4 & 13.8  \\ %\hline
+      Mass $M$ ($\msun$) & 1.0 & 1.1 & 1.2 & 1.6 & 1.7  \\ %\hline
+      Inclination $i$ ($\degree$) & 3.2 & 3.4 & 6.2 & 62.7 & 77.1 \\ %\hline
+      Spot colatitude $\thetas$ ($\degree$) & 3.3 & 3.4 & 6.8 & 70.8 & 76.2 \\ %\hline
+      Spot angular size $\rho$ ($\degree$) & 6.8 & 8.3 & 9.8 & 11.2 & 12.7 \\ %\hline
       Distance $D$ (kpc) & 2.1 & 2.2 & 2.5 & 3.0 & 3.0 \\   \hline
       
-      \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
-      Radius $R$ (km) & 8.7 & 10.8 & 12.8 & 14.7 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.1 & 1.4 & 1.6 & 1.8 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 11.6 & 72.8 & 80.8 & 88.6 & 89.5 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 2.8 & 3.6 & 5.4 & 5.5 & 9.4 \\ \hline %peak bf sm 4.4
-      Spot angular size $\rho$ ($\degree$) & 7.4 & 8.4 & 10.0 & 11.4 & 13.0 \\ \hline
+      \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
+      Radius $R$ (km) & 8.7 & 10.8 & 12.8 & 14.7 & 16.1  \\ %\hline
+      Mass $M$ ($\msun$) & 1.1 & 1.4 & 1.6 & 1.8 & 2.0  \\ %\hline
+      Inclination $i$ ($\degree$) & 11.6 & 72.8 & 80.8 & 88.6 & 89.5 \\ %\hline
+      Spot colatitude $\thetas$ ($\degree$) & 2.8 & 3.6 & 5.4 & 5.5 & 9.4 \\ %\hline %peak bf sm 4.4
+      Spot angular size $\rho$ ($\degree$) & 7.4 & 8.4 & 10.0 & 11.4 & 13.0 \\ %\hline
       Distance $D$ (kpc) & 2.1 & 2.2 & 2.5 & 2.9 & 3.0 \\ \hline
       
-      \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ \hline
-      Radius $R$ (km) & 8.1 & 8.2 & 9.1 & 10.8 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.0 & 1.0 & 1.1 & 1.4 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 3.3 & 3.7 & 7.9 & 18.1 & 79.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 4.6 & 4.8 & 8.2 & 73.5 & 77.2 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 6.5 & 8.7 & 10.3 & 11.6 & 13.1 \\ \hline
+      \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ %\hline
+      Radius $R$ (km) & 8.1 & 8.2 & 9.1 & 10.8 & 16.1  \\ %\hline
+      Mass $M$ ($\msun$) & 1.0 & 1.0 & 1.1 & 1.4 & 2.0  \\ %\hline
+      Inclination $i$ ($\degree$) & 3.3 & 3.7 & 7.9 & 18.1 & 79.1 \\ %\hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.6 & 4.8 & 8.2 & 73.5 & 77.2 \\ %\hline
+      Spot angular size $\rho$ ($\degree$) & 6.5 & 8.7 & 10.3 & 11.6 & 13.1 \\ %\hline
       Distance $D$ (kpc) &  2.0 & 2.1 & 2.5 & 2.9 & 3.0 \\ \hline
       
-      \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ \hline
-      Radius $R$ (km) & 8.2 & 9.8 & 10.7 & 14.1 & 16.1  \\ \hline
-      Mass $M$ ($\msun$) & 1.1 & 1.2 & 1.5 & 1.7 & 2.0  \\ \hline
-      Inclination $i$ ($\degree$) & 2.3 & 3.5 & 5.5 & 6.1 & 67.1 \\ \hline
-      Spot colatitude $\thetas$ ($\degree$) & 4.0 & 67.4 & 77.4 & 85.4 & 89.3 \\ \hline
-      Spot angular size $\rho$ ($\degree$) & 7.2 & 8.2 & 9.9 & 11.3 & 13.5 \\ \hline
+      \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
+      Radius $R$ (km) & 8.2 & 9.8 & 10.7 & 14.1 & 16.1  \\ %\hline
+      Mass $M$ ($\msun$) & 1.1 & 1.2 & 1.5 & 1.7 & 2.0  \\ %\hline
+      Inclination $i$ ($\degree$) & 2.3 & 3.5 & 5.5 & 6.1 & 67.1 \\ %\hline
+      Spot colatitude $\thetas$ ($\degree$) & 4.0 & 67.4 & 77.4 & 85.4 & 89.3 \\ %\hline
+      Spot angular size $\rho$ ($\degree$) & 7.2 & 8.2 & 9.9 & 11.3 & 13.5 \\ %\hline
       Distance $D$ (kpc) & 2.1 & 2.1 & 2.5 & 2.9 & 3.0 \\ 
 
 
     \hline
   \end{tabular}
+    \end{adjustwidth}
   \end{center} 
-
-  \end{table}
+  \end{footnotesize}
+  \end{table*}
 \end{center} 
+
+%table example from Joonas:
+\iffalse
+\begin{table*}[!ht]
+\caption{Most probable values and $68\%$ and $95\%$ confidence limits
+  for the EoS parameters.}
+\centering
+\begin{footnotesize}
+  \begin{tabular}[c]{l c c c c c}
+    \hline
+    \hline
+  Quantity & $95\%$ lower limit & $68\%$ lower limit & Most probable value / median & $68\%$ upper limit & $95\%$ upper limit \\
+  \hline
+  \multicolumn{6}{c}{QMC parameters (with Model A)}\\
+  $\mathcal{S}$ (MeV) & 29.6 & 30.4 & 32.2 & 33.3 & 35.0 \\
+  $\mathcal{L}$ (MeV) & 32.1 & 42.1 & 54.9 & 67.7 & 69.4 \\
+  \hline
+  \multicolumn{6}{c}{Model A parameters}\\
+  $n_1$ & 0.36 & 0.45 & 0.55 & 0.66 & 0.68 \\
+  $\epsilon_1$ (MeV fm$^{-3}$) & 156 & 164 & 712 & 865 & 1020 \\
+  $n_2$ & 0.25 & 0.25 & 0.47 & 4.80 & 7.55 \\
+  $\epsilon_2$ (MeV fm$^{-3}$) & 531 & 794 & 1190 & 1510 & 1560 \\
+  $n_3$ & 0.95 & 0.99 & 1.41 & 6.80 & 7.76 \\
+  \hline
+  \hline
+  \multicolumn{6}{c}{QMC parameters (with Model C)}\\
+  $\mathcal{S}$ (MeV) & 29.7 & 30.4 & 31.8 & 33.6 & 35.2 \\
+  $\mathcal{L}$ (MeV) & 32.0 & 41.4 & 54.9 & 68.4 & 69.4 \\
+  \hline
+  \multicolumn{6}{c}{Model C parameters}\\
+  $\Delta P_1$ (MeV/fm$^{3}$) & 5.0 & 9.9 & 15 & 23 & 31 \\
+  $\Delta P_2$ (MeV/fm$^{3}$) & 59 & 122 & 176 & 194 & 195 \\
+  $\Delta P_3$ (MeV/fm$^{3}$) & 44 & 186 & 345 & 386 & 390 \\
+  $\Delta P_4$ (MeV/fm$^{3}$) & 12 & 26 & 199 & 372 & 385 \\
+  \hline
+ \end{tabular}
+\end{footnotesize}
+\label{tab:param_posteriors}
+\begin{center}
+  {\small{
+      Notes: For the $\mathcal{L}$ and $\Delta P_4$ parameters we give the median value of the flat distribution between the $1\sigma$ limits.
+}}
+   \end{center}
+\end{table*}
+\fi
+
 
 
 
