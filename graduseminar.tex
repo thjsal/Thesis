@@ -459,6 +459,21 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 %-----------------------------------------------------
 
+
+
+\begin{frame}
+\frametitle{Methods}
+\begin{itemize}
+\item Pulse shape modeling
+\item Bayesian analysis
+\item Monte Carlo sampling methods
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------
+
+
+
 %--------------------------------------------
 
 \begin{frame}
@@ -528,7 +543,6 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=1.1\linewidth]{spectrum_numflux0.pdf}
-\caption{Figure 3 from Poutanen and Gierlinski (2003).}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -548,6 +562,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=0.8\linewidth]{spectrum_sax.png}
+\caption{Figure 3 from Poutanen and Gierlinski (2003).}
 \end{figure}
 
 \end{frame}
@@ -558,7 +573,7 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 
 
 
-
+\iffalse
 %--------------------------------------------
 
 \begin{frame}
@@ -573,18 +588,10 @@ massive star ($> 8 M_{\odot}$) at the end of its life.
 \end{frame}
 
 %-----------------------------------------------------
+\fi
 
 
 
-\begin{frame}
-\frametitle{Methods}
-\begin{itemize}
-\item Bayesian analysis
-\item Monte Carlo sampling methods
-\end{itemize}
-\end{frame}
-
-%--------------------------------------------
 
 \begin{frame}
 \frametitle{Bayesian inference}
@@ -595,9 +602,9 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \begin{itemize}
 \item $\mathcal{D}$ = Data
 \item $\textbf{y}$ = Parameters of the pulse profile model
-\item $p(\textbf{y})$ = Prior probability distributions of parameters
+\item $p(\textbf{y})$ = Prior probability distributions of the parameters
 \item $p(\mathcal{D}|\textbf{y})$ = Probability distribution of the data given the parameters 
-\item $p(\textbf{y}|\mathcal{D}|)$ = Probability distribution of the parameters given the data
+\item $p(\textbf{y}|\mathcal{D})$ = Probability distribution of the parameters given the data
 
 \end{itemize}
 \end{frame}
@@ -623,7 +630,7 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
 \includegraphics[width=0.8\linewidth]{stretchmove.png}
-%\caption{Figure 2 from Lattimer and Prakash (2004)}
+\caption{Figure 2 from Goodman and Weare (2010).}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -644,7 +651,7 @@ p(\textbf{y}|\mathcal{D}) \propto p(\mathcal{D}|\textbf{y})p(\textbf{y})
 \frametitle{Synthetic data}
 
 \begin{itemize}
-\item We have generated a synthetic data similar to \source \ using the pulse profile model
+\item We have generated a synthetic data similar to \source \ using the pulse profile model.
 \item Parameters assumed to be physically reasonable
 \item The variability amplitude $A$ determined mainly by observer inclination $i$ and spot co-latitude $\thetas$:
 \end{itemize}
@@ -672,11 +679,11 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas}.
 \ee 
 \begin{itemize}
-\item Switching $i$ and $\thetas$ has no effect on $A$
-\item However, the variability of polarized flux depends on $i$ and $\thetas$ separately
-\item To study this, we have created two datasets which differ only in $i$ and $\thetas$
-\item We assume either uniform or non-uniform prior probability distributions for parameters
-\item We obtain posterior probability distributions for the parameters using ensemble sampler
+\item Switching $i$ and $\thetas$ has no effect on $A$.
+\item However, the variability of polarized flux depends on $i$ and $\thetas$ separately.
+\item To study this, we have created two datasets which differ only in $i$ and $\thetas$.
+\item We assume either uniform or non-uniform prior probability distributions for parameters.
+\item We obtain posterior probability distributions for the parameters using the ensemble sampler.
 
 
 \end{itemize}
@@ -728,13 +735,13 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 \column{.45\textwidth} 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=1.1\linewidth]{synt_sax_eq2.png}
+\includegraphics[width=1.2\linewidth]{synt_sax_eq2.png}
 \caption{Equatorial spot}
 \end{figure}
 \column{.45\textwidth} 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=1.1\linewidth]{synt_sax_pol2.png}
+\includegraphics[width=1.2\linewidth]{synt_sax_pol2.png}
 \caption{Polar spot}
 \end{figure}
 \end{columns}
@@ -767,20 +774,19 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 \end{frame}
 
 %-----------------------------------------------------
-\fi
 
 \begin{frame}
 \frametitle{Sampling methods}
 \begin{itemize}
-\item Marginalization over different phaseshifts
+%\item Marginalization over different phaseshifts
 \item Four simulations running parallel on 22 processors
-\item In each simulation ~ 70 000 samples out of which 20 000 removed ("burn-in") and thinned with factor 5 (to remove autocorrelation)
+\item In each chain (processor) ~ 70 000 samples out of which 20 000 removed ("burn-in") and thinned with factor 5 (to remove autocorrelation)
 
 \end{itemize}
 
 \end{frame}
 
-
+\fi
 %--------------------------------------------
 
 \begin{frame}
@@ -788,8 +794,8 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=0.5\linewidth]{fpolf.pdf}
-\caption{Polar spot with only uniform priors}
+\includegraphics[width=0.55\linewidth]{fpolf.pdf}
+\caption{Polar spot with only uniform priors.}
 \end{figure}
 
 \end{frame}
@@ -803,8 +809,8 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=0.5\linewidth]{fpolprf.pdf}
-\caption{Polar spot with non-uniform $i$ and $\thetas$ priors}
+\includegraphics[width=0.55\linewidth]{fpolprf.pdf}
+\caption{Polar spot with non-uniform $i$ and $\thetas$ priors (blue lines).}
 \end{figure}
 
 \end{frame}
@@ -818,8 +824,8 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=0.5\linewidth]{feqf.pdf}
-\caption{Equatorial spot with only uniform priors}
+\includegraphics[width=0.55\linewidth]{feqf.pdf}
+\caption{Equatorial spot with only uniform priors.}
 \end{figure}
 
 \end{frame}
@@ -834,8 +840,8 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 
 \begin{figure}
 %\includegraphics[width=0.7\linewidth]{neutron-star-magnetic-field.jpg}
-\includegraphics[width=0.5\linewidth]{feqprf.pdf}
-\caption{Equatorial spot with non-uniform $i$ and $\thetas$ priors}
+\includegraphics[width=0.55\linewidth]{feqprf.pdf}
+\caption{Equatorial spot with non-uniform $i$ and $\thetas$ priors (blue lines).}
 \end{figure}
 
 \end{frame}
@@ -847,8 +853,8 @@ A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas
 \begin{itemize}
 \item Only upper limits for masses and radii when only non-uniform priors
 \item Both upper and lower limits when prior information for $i$ and $\thetas$ applied
-\item Correct $i-\thetas$ solution not found without prior information
-\item The size of the spot is well constrained but the distance is not
+\item Correct $i-\thetas$ solution not found without prior information.
+\item The size of the spot is well constrained but the distance is not.
 \end{itemize}
 
 \end{frame}
