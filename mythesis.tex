@@ -80,6 +80,9 @@
 \def\ani{h}
 \def\thetas{\theta_{s}}
 \def\tstep{\mathsf{t}}
+\def\bolo{\mathrm{B}}
+\def\ene{\mathrm{E}}
+\def\lratio{\mathcal{R}}
 %###
 
 %
@@ -301,7 +304,7 @@ A lower limit for the compactness of a neutron star can be obtained from its spi
 \be \label{eq:keplerian}
 \nu_{\mathrm{K}} = 2 \pi \sqrt{\frac{GM}{r^{3}}},
 \ee 
-where $r$ is the distance from the center of the star. Thus at $r=R$, $\nu_{K}$ has to be higher than the observed spin frequency, and we get a lower limit for $M/R^{3}$. One should also take into account the non-spherical shape and the general relativistic effects but a lower limit is still obtained.
+where $r$ is the distance from the center of the star. Thus at $r=R$, $\nu_{\mathrm{K}}$ has to be higher than the observed spin frequency, and we get a lower limit for $M/R^{3}$. One should also take into account the non-spherical shape and the general relativistic effects but a lower limit is still obtained.
 
 
 
@@ -318,13 +321,13 @@ these are the so-called Tolman-Oppenheimer-Volkoff equations %(Tolman,
 %1934 \cite{tolman}; Oppenheimer \& Volkoff, 1939 \cite{oppenheimer})
 \cite{tolman}\cite{oppenheimer}:
 \be
- \frac{\d \mathcal{P}}{\d r} = -\frac{G[m(r)+4 \pi r^{3}\mathcal{P}/c^{2}](\rho_{m} + \mathcal{P}/c^{2})}{r[r-2Gm(r)/c^{2}]},
+ \frac{\d \mathcal{P}}{\d r} = -\frac{G[m(r)+4 \pi r^{3}\mathcal{P}/c^{2}](\rho_{\mathrm{m}} + \mathcal{P}/c^{2})}{r[r-2Gm(r)/c^{2}]},
 \ee 
 and
 \be
- \frac{\d m(r)}{\d r } = 4 \pi \rho_{m} r^{2},
+ \frac{\d m(r)}{\d r } = 4 \pi \rho_{\mathrm{m}} r^{2},
 \ee
-where $\mathcal{P}$ and $\rho_{m}$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. $M-R$ relation can now be obtained if the relation between the pressure and the density $\mathcal{P}=\mathcal{P}(\rho_{m})$ is known. This relation is called the EOS. 
+where $\mathcal{P}$ and $\rho_{\mathrm{m}}$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. $M-R$ relation can now be obtained if the relation between the pressure and the density $\mathcal{P}=\mathcal{P}(\rho_{\mathrm{m}})$ is known. This relation is called the EOS. 
 
 
 For realistic EOSs the previous equations must be numerically solved to obtain $M-R$ relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate, and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or a so-called strange quark matter (SQM) depending on the EOS.  
@@ -378,7 +381,7 @@ of both mass and radius of observed pulsars using pulse profile modeling.
 
 
 Rotating neutron stars were first detected as radio pulsars in 1967 \cite{gold68}. %http://adsabs.harvard.edu/abs/1968Natur.218..731G
-After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim \msun$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 \, \mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. A schematic view of the accretion to the hot spots of the pulsar is shown in figure \ref{fig:shcematic}.
+After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim \msun$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 ~\mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. A schematic view of the accretion to the hot spots of the pulsar is shown in figure \ref{fig:shcematic}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,7 +503,7 @@ to reduce this variability amplitude. The amplitude depends only weakly on energ
 
 \subsubsection{Oblateness}
 
-Due to the fast rotation, the millisecond pulsars have an oblate shape instead of spherical. The difference between an oblate and a spherical star is significant when the rotation frequency $\nu \ge 300 \, \mathrm{Hz}$ \cite{cadeau}%a place for a reference..
+Due to the fast rotation, the millisecond pulsars have an oblate shape instead of spherical. The difference between an oblate and a spherical star is significant when the rotation frequency $\nu \ge 300 ~\mathrm{Hz}$ \cite{cadeau}%a place for a reference..
 . The most important effect is purely geometrical: The directions that the light can be emitted into are different in the cases of an oblate and a spherical star. Thus there are certain spot locations on the star where the spot is invisible if the surface is oblate but would be visible if the surface were purely spherical (and vice versa).
 
 
@@ -635,7 +638,7 @@ and the true emission angle (relative to $\bmath{r}$) by $\alpha$ so that
 \ee
 The zenith angle $\sigma$ between the $\bmath{n}$ and $\bmath{k_{0}}$ is defined by 
 \be
-\cos\sigma = \bmath{k_{0}}\cdot\bmath{n}.
+\cos\sigma = \bmath{k}_{0}\cdot\bmath{n}.
 \ee
 
 The direction of the photon changes from $\bmath{k}_0$ near the stellar surface to $\bmath{k}$ at infinity as it propagates to infinity so that $\cos\alpha=\bmath{k}_0\cdot\bmath{r}$
@@ -732,7 +735,7 @@ Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also 
 
 The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e., light bending) is given by \cite{mtw}%(e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
-  \psi_{p}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
+  \psi_{\mathrm{p}}(R,\alpha)=\int_R^{\infty} \frac{dr}{r^2} \left[ \frac{1}{b^2} -
        \frac{1}{r^2}\left( 1- \frac{\rg}{r}\right)\right]^{-1/2} ,
 \ee
 where $b$ is the impact parameter,
@@ -741,11 +744,11 @@ where $b$ is the impact parameter,
 \ee
 The relation between  $\alpha$ and $\psi$, when $\alpha > \pi/2$, is 
 \be 
-\psi(R,\alpha)=2\psi_{\max}-\psi_{p}(R,\pi-\alpha),
+\psi(R,\alpha)=2\psi_{\max}-\psi_{\mathrm{p}}(R,\pi-\alpha),
 \ee 
-where $\psi_{\max} = \psi_{p}(p,\alpha=\pi/2)$ and $p$ is the distance of closest approach, given by
+where $\psi_{\max} = \psi_{\mathrm{p}}(\mathsf{p},\alpha=\pi/2)$ and $\mathsf{p}$ is the distance of closest approach, given by
 \be
-p = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}\rg/(2b))+2\pi]/3).
+\mathsf{p} = -\frac{2}{\sqrt{3}}b\cos([\arccos(3\sqrt{3}\rg/(2b))+2\pi]/3).
 \ee
 
 
@@ -762,9 +765,9 @@ The condition $\cos \sigma>0$ is used to define the visibility of the spot. In a
 Next we can consider the flux originating from our small spot. The observed flux from the spot at photon energy $E$ is
 \be
 \label{eq:dF_E2}
-  \d F_E=I_E\ \d\Omega,
+  \d F_{\ene}=I_{\ene}\ \d\Omega,
 \ee
-where $I_E$ is the specific intensity of radiation at infinity and $\d\Omega$ is
+where $I_{\ene}$ is the specific intensity of radiation at infinity and $\d\Omega$ is
 the solid angle covered by the spot (with area $\d S'$ in the corotating frame) on the observer's sky.
 The solid angle can be expressed in terms of the impact parameter \cite{pechenick}
 \be
@@ -812,37 +815,37 @@ the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
 %results in the following  relation between the monochromatic
 %observed and local intensities
 
-We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However, we still need to find out a expression for intensity $I_{E}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effects. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
+We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However, we still need to find out a expression for intensity $I_{\ene}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effects. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
-I_{E} = \left (\frac{E}{E'}\right )^3 I'_{E '} (\sigma')
+I_{\ene} = \left (\frac{E}{E'}\right )^3 I'_{\ene'} (\sigma')
 \ee
-where $E/E'=\Dop \sqrt{1-u}$. Here $I'_{E'}(\sigma')$ is the intensity computed in the corotating frame. The dependency of redshift ($1+z = 1/\sqrt{1-u}$) to the power of -3 can be understood by noting that $I_{E} \propto \nu^{3}$ and $\nu = \nu'(1+z)^{-1}$.
+where $E/E'=\Dop \sqrt{1-u}$. Here $I'_{\ene'}(\sigma')$ is the intensity computed in the corotating frame. The dependency of redshift ($1+z = 1/\sqrt{1-u}$) to the power of -3 can be understood by noting that $I_{\ene} \propto \nu^{3}$ and $\nu = \nu'(1+z)^{-1}$.
 For the bolometric intensity the relation to frequency goes as $\nu^{4}$ and one gets
 \be \label{eq:bolointensity}
-I_{B}= \left (\Dop \sqrt{1-u} \right )^4 I_{B}'(\sigma') .
+I_{\bolo}= \left (\Dop \sqrt{1-u} \right )^4 I_{\bolo}'(\sigma') .
 \ee
 
 The observed spectral flux (eq.~\ref{eq:dF_E2}) is now given by
 \be \label{eq:fluxspot2}
-\d F_{E}=(1-u)^{1/2} \Dop^{4} I'_{E'}(\sigma') \cos\sigma
+\d F_{\ene}=(1-u)^{1/2} \Dop^{4} I'_{\ene'}(\sigma') \cos\sigma
 \frac{\d \cos\alpha}{\d\cos\psi}
  \frac{\d S'}{D^2} ,
 \ee
 where we have used the aberration formula (\ref{eq:aberr2}).
 The bolometric flux reads
 \be  \label{eq:fluxbolo2}
-\d F_{B}= (1-u)\ \Dop^5 \
-I_{B}'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
+\d F_{\bolo}= (1-u)\ \Dop^5 \
+I_{\bolo}'(\sigma')  \cos\sigma \frac{\d\cos\alpha}{\d\cos\psi} \frac{\d S'}{D^2} .
 \ee
-The radiation spectrum can be e.g., a blackbody, with effective temperature $T_{\mathrm{eff}}$ or a power-law spectrum. We can take for example a power-law $I'_{E'}(\sigma') \propto E '^{-(\lambda-1)}$ which does not depend on the angle $\sigma'$. Here $\lambda$ is the photon spectral index. With this spectrum we get
+The radiation spectrum can be e.g., a blackbody, with effective temperature $T_{\mathrm{eff}}$ or a power-law spectrum. We can take for example a power-law $I'_{\ene'}(\sigma') \propto E '^{-(\lambda-1)}$ which does not depend on the angle $\sigma'$. Here $\lambda$ is the photon spectral index. With this spectrum we get
 \be \label{eq:int_trans2}
-I'_{E'}(\sigma') = I'_{E}(\sigma')
+I'_{\ene'}(\sigma') = I'_{\ene}(\sigma')
 \left( \Dop \sqrt{1-u} \right)^{\lambda-1} .
 \ee
 The observed spectral flux %at a distance $D$ from the star 
 may be then expressed as
 \be\label{eq:fluxplaw2}
-\d F_{E}= (1-u)^{\lambda/2}\ \Dop^{\lambda+3} I'_E(\sigma')
+\d F_{\ene}= (1-u)^{\lambda/2}\ \Dop^{\lambda+3} I'_{\ene}(\sigma')
 \cos\sigma\ \frac{\d\cos\alpha}{\d\cos\psi}\ \frac{\d S'}{D^2}.
 \ee
 We note that the equation for the bolometric flux (\ref{eq:fluxbolo2})
@@ -859,22 +862,22 @@ In the case of spectral flux (equation \ref{eq:fluxspot2}) there is no Doppler f
 %Aberration may also change the specific intensity since it has to be computed
 %for angle $\sigma'$ in the comoving frame. 
 
-As mentioned, in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a product of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes how much intensity is emitted to each direction and the function might have e.g., a polynomial shape. An atmosphere dominated by electron scattering produces a beaming function called Hopf profile, which is approximately polynomial.  
+As mentioned, in the most simple model we may assume that the intensity is independent of $\sigma'$ ("isotropic beaming"). In a little more general case one can assume the intensity to be a product of an angle-dependent ("beaming function") and an energy-dependent function. The beaming function describes how much intensity is emitted to each direction, and the function might have e.g., a polynomial shape. An atmosphere dominated by electron scattering produces a beaming function called Hopf profile, which is approximately polynomial.  
 
 
-Thanks to the observed AMXPs (e.g., \source \ \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e., the energy-dependency of $I'_{E'}(\sigma')$) might be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However, in the case of \source \ the blackbody contributes only about $30$ per cent to the flux even in the $3-5$ keV region (which is near the lowest observed energies with RXTE) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with $T_{\mathrm{eff}} = 2 $ keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law ($I'_{E'}(\sigma') \propto E '^{2}$ and thus $\lambda = -1$) and above the cut-off a descending power-law with the spectral index $\lambda = 1.86$. The power-law is normalized to be equal with the reference blackbody at 1 keV. This spectrum is shown in the Figure \ref{fig:spectrum}.
+Thanks to the observed AMXPs (e.g., \source \ \cite{poutagierlinskisax}) we know that the spectrum of the pulsar (i.e., the energy-dependency of $I'_{\ene'}(\sigma')$) might be fitted with a blackbody component at lower energies and with a power-law component at higher energies. However, in the case of \source \ the blackbody contributes only about $30$ per cent to the flux even in the $3-5$ keV region (which is near the lowest observed energies with RXTE) \cite{poutagierlinskisax}. Thus we can approximate the spectrum with two different power-laws on both sides of a cut-off energy, which is defined to be at the maximum flux of a blackbody with $T_{\mathrm{eff}} = 2 $ keV (in the frame of the spot). Below the cut-off energy we use Rayleigh-Jeans law ($I'_{\ene'}(\sigma') \propto E '^{2}$ and thus $\lambda = -1$) and above the cut-off a descending power-law with the spectral index $\lambda = 1.86$. The power-law is normalized to be equal with the reference blackbody at 1 keV. This spectrum is shown in Figure \ref{fig:spectrum}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=spectrum_numflux0.pdf,width=12.0cm}}
-\caption{The two-component power-law compared to the reference blackbody at 2 keV temperature. The spectra are calculated using the time-averaged fluxes at different energies of the pulse profile model with some physical parameters. 
+\caption{The two-component power-law compared to the reference blackbody at $2$ keV temperature. The spectra are calculated using the time-averaged fluxes at different energies of the pulse profile model with some physical parameters. 
 \label{fig:spectrum}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission with e.g., a linear dependence on the beaming angle $\sigma'$ (representing the accretion shock). The spots may have different shapes and sizes. %This model will be added to the pulse profile code in the near future.
+In a more realistic model we would calculate the fluxes using two overlapping spots. The other spot would produce blackbody emission with isotropic beaming and the other one the power-law emission with e.g., a linear dependency on the beaming angle $\sigma'$ (representing the accretion shock). The spots may have different shapes and sizes. %This model will be added to the pulse profile code in the near future.
 
 
 In the calculations of this thesis we use monochromatic number fluxes (in units of photons/cm$^{2}$/s/erg) since those are the fluxes we get from the observations. We must thus divide the fluxes we get from equation (\ref{eq:fluxspot2}) with the observed energy $E$. When calculating the flux we make again a grid of values of the derivatives $\d\cos\psi / \d\cos\alpha$ (same as $(\d\cos\alpha / \d\cos\psi)^{-1}$) with different $\alpha$ and $R$. The derivatives for each point are found by linear interpolation. 
@@ -904,11 +907,11 @@ The different light travel times in Schwarzschild metric may be calculated and s
 \be \label{eq:delay2}
 %c\Delta t_{p}(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{\mathrm{ref}},R),
 %\ee
-c\Delta t(R,\alpha)=  c\Delta t_{s}(R,\alpha) -\delta t(r_{\mathrm{ref}},R),
+c\Delta t(R,\alpha)=  c\Delta t_{\mathrm{s}}(R,\alpha) -\delta t(r_{\mathrm{ref}},R),
 \ee
 where 
 \be \label{eq:delayint}
-c\Delta t_{s}(R,\alpha) =
+c\Delta t_{\mathrm{s}}(R,\alpha) =
 \int_R^{\infty} \frac{\d r}{1- \rg/r}
 \left\{ \left[ 1-  \frac{b^2}{r^2}  \left( 1- \frac{\rg}{r} \right)
 \right] ^{-1/2}  -1 \right\}
@@ -929,7 +932,7 @@ c\Delta t(R,\alpha)= 2c\Delta t_{s}(p,\pi/2)-c\Delta t_{s}(R,\pi-\alpha)\\+2\lef
 
 The integral in equation (\ref{eq:delayint}) is not very easy to solve numerically. That is why we use again the variable substitution $x = \sqrt{1-R/r}$ before using Simpson quadrature. We also make a grid of time delays corresponding to different $\alpha$ and $R$, which we later interpolate linearly in order to make the code run faster.
 
-We are now able to compute the bending angle $\psi$, the emission angles $\alpha$ and $\sigma$, and the impact parameter $b$ using equations (\ref{eq:bend2}), (\ref{eq:impact2}), and (\ref{eq:cossigma2}) for a given pulsar phase $\phi$. The corresponding delays $\Delta t(R,\alpha)$ or $\Delta t_{p}(R,\alpha)$ we can find using formulae (\ref{eq:delay2}) and (\ref{eq:delay22}). When these time delays are known, we compute the delays expressed in phase with 
+We are now able to compute the bending angle $\psi$, the emission angles $\alpha$ and $\sigma$, and the impact parameter $b$ using equations (\ref{eq:bend2}), (\ref{eq:impact2}), and (\ref{eq:cossigma2}) for a given pulsar phase $\phi$. The corresponding delays $\Delta t(R,\alpha)$   we can find using formulae (\ref{eq:delay2}) or (\ref{eq:delay22}). When these time delays are known, we compute the delays expressed in phase with 
 %For a given pulsar phase $\phi$, we compute angle $\psi$, then
 %we find the corresponding emitted $\alpha$, $\sigma$ and the impact parameter $b$
 %using  formulae (\ref{eq:bend2}), (\ref{eq:impact2}) and (\ref{eq:cossigma2}), and
@@ -1079,18 +1082,18 @@ The original standard MCMC algorithm is called the Metropolis algorithm \cite{me
 It is a MCMC method for obtaining a sequence of random samples from a probability distribution. It generates these random samples by moving in a random walk; that is in some sequence $X_{1}...X_{\tstep}$. Metropolis algorithm, like all the other MCMC sampling methods, satisfies the so-called Markov property. It means that the conditional probability distribution of $X_{\tstep+1}$, given all the past elements, is independent of all the other states except the previous state \cite{kaiser}:
 
  \be \label{eq:markov_prop}
-P(X_{\tstep +1} = x|X_{\tstep}. . . X_{1}) = P(X_{\tstep +1} = x|X_{\tstep}).
+p(X_{\tstep +1} = x|X_{\tstep}. . . X_{1}) = p(X_{\tstep +1} = x|X_{\tstep}).
 \ee
 So generally we can conclude that a Markov chain is a random walk with Markov property.
  
 The Metropolis algorithm works by taking an arbitrary move near the current
-point in the sequence. If $X_{\tstep}$ is the sample at time $\tstep$, then the new sample Y is proposed from the proposal distribution $q(Y|X_{\tstep})$. In the original Metropolis algorithm this distribution must be symmetric, meaning that $q(X_{\tstep}|Y)$ = $q(Y|X_{\tstep})$. However, in Metropolis-Hastings algorithm it may be non-symmetric. The likelihood of the new sample is then in both cases compared to that of the previous sample. The likelihood ratio $\alpha$ between the two states is calculated from the following equation \cite{tuomi}:
+point in the sequence. If $X_{\tstep}$ is the sample at time $\tstep$, then the new sample Y is proposed from the proposal distribution $q(Y|X_{\tstep})$. In the original Metropolis algorithm this distribution must be symmetric, meaning that $q(X_{\tstep}|Y)$ = $q(Y|X_{\tstep})$. However, in Metropolis-Hastings algorithm it may be non-symmetric. The likelihood of the new sample is then in both cases compared to that of the previous sample. The likelihood ratio $\lratio$ between the two states is calculated from the following equation \cite{tuomi}:
 \be \label{eq:likely_ratio} 
-\alpha = \frac{p(Y|\mathcal{D})q(X_{\tstep}|Y)}{p(X_{\tstep}|\mathcal{D})q(Y|X_{\tstep})}.
+\lratio= \frac{p(Y|\mathcal{D})q(X_{\tstep}|Y)}{p(X_{\tstep}|\mathcal{D})q(Y|X_{\tstep})}.
 \ee
 The conditional probabilities given the data are calculated using the Bayes formula (\ref{eq:bayes}). The ratio of these probabilities is multiplied with the ratio of proposal distributions $q$ (sometimes called transition kernels) so that the algorithm satisfies a detailed balance condition. It is an important property for proving the convergence of the chain. It states that the number of transitions from $X_{\tstep}$ to $Y$ must be the same as from $Y$ to $X_{\tstep}$.  The proposal density $q(X_{\tstep}|Y)$ describes the probability of a transition from $Y$ to $X_{\tstep}$ in the parameter space.
 
-The next step is to decide whether the likelihood ratio is high enough in order to accept the new step. In Metropolis(-Hastings) algorithm, we automatically accept a step, if $\alpha \ge 1$, but otherwise with a probability $\alpha$ (if $\alpha$ is greater than a random number between 0 and 1). If the new state is accepted, we repeat the first steps using now $Y$ as the current point. Otherwise we propose a new sample using again the same $X_{\tstep}$. 
+The next step is to decide whether the likelihood ratio is high enough in order to accept the new step. In Metropolis(-Hastings) algorithm, we automatically accept a step, if $\lratio \ge 1$, but otherwise with a probability $\lratio$ (if $\lratio$ is greater than a random number between 0 and 1). If the new state is accepted, we repeat the first steps using now $Y$ as the current point. Otherwise we propose a new sample using again the same $X_{\tstep}$. 
 
 
 %If the probability distribution function (PDF) has greater value at that point, then the walk always moves there. If the PDF has a smaller value, then the move is accepted with probability dependent on how much less likely.
@@ -1119,7 +1122,7 @@ One way to compute the autocorrelation time is to use the weights (log-likelihoo
 
 One other major disadvantage is that the Metropolis algorithm may work poorly for skewed or anisotropic distributions depending on the proposal distribution. One simple example of such is a two dimensional skewed probability distribution (shown in figure \ref{fig:skewed})
 \be \label{eq:skew} 
-f(\vec{x}) = \exp(-\frac{(x_{1}-x_{2})^{2}}{2\epsilon_{c}}-\frac{(x_{1}+x_{2})^{2}}{2}),
+H(\vec{x}) = \exp(-\frac{(x_{1}-x_{2})^{2}}{2\epsilon_{c}}-\frac{(x_{1}+x_{2})^{2}}{2}),
 \ee
 where $\epsilon_{c}$  is a constant. Metropolis (like many other MCMC strategies too) would be forced to make perturbations of order $\sqrt{\epsilon_{c}}$ and would have slow equilibration. A better MCMC sampler would use larger perturbations in (-1,1) than in (1,1) direction. However, the problem gets worse in high dimensions where it is difficult to tune all the step sizes correctly. As a next step to address this issue we can use the ensemble sampler which is presented in the next section. 
 
@@ -1147,7 +1150,7 @@ the ensemble. However, each walker is independent of the other walkers. They are
 %https://arxiv.org/pdf/1202.3665v4.pdf
 
 
-The ensemble sampler is called affine invariant since its performance is unaffected by affine transformations of space. This means that one can sample a probability distribution function $g(x) = Af(x) + b$ either directly or sample first $f$ and then apply $A$ and $b$ afterwords. 
+The ensemble sampler is called affine invariant since its performance is unaffected by affine transformations of space. This means that one can sample a probability distribution function $\mathcal{G}(x) = \mathcal{A}\mathcal{F}(x) + \mathcal{B}$ either directly or sample first $\mathcal{F}$ and then apply the constants $\mathcal{A}$ and $\mathcal{B}$ afterwords. 
 %sampling a PDF g(x) = Af(x) + b is equivalent to sampling f then applying A and b %after. 
 For this reason the algorithm is particularly useful for sampling badly scaled distributions. Computational tests show that the affine invariant methods can be significantly faster than standard MCMC methods on highly skewed distributions.
 
@@ -1187,9 +1190,9 @@ This ensures that the move (\ref{eq:smove}) is symmetric in the usual informal w
 
 When deciding whether the new sample is accepted or not, the Metropolis-Hastings selection rules are again applied. However, instead of equation (\ref{eq:likely_ratio}) the likelihood ratio is now calculated (for a given walker) as
 \be \label{eq:likely_ratio_smove} 
-\alpha = Z^{N-1}\frac{p(Y|\mathcal{D})}{p(X_{\tstep}|\mathcal{D})},
+\lratio = Z^{N-1}\frac{p(Y|\mathcal{D})}{p(X_{\tstep}|\mathcal{D})},
 \ee
-where $N$ is now the number of parameters sampled \cite{emceehammer}. The transition probabilities $q$ are not needed since in the case of symmetric move (\ref{eq:smove}) the acceptance ratio (\ref{eq:likely_ratio_smove}) can be shown to satisfy the detailed balance condition. 
+where $N$ is the number of parameters sampled \cite{emceehammer}. The transition probabilities $q$ are not needed since in the case of symmetric move (\ref{eq:smove}) the acceptance ratio (\ref{eq:likely_ratio_smove}) can be shown to satisfy the detailed balance condition. 
 
 
 %=dimension of the parameter space
@@ -1296,12 +1299,12 @@ The total probability $p(\mathcal{D}|\textbf{y})$ (which will be used to calcula
 
 As a first step we assume that all the prior probabilities of the parameters ($p(\textbf{y})$) are uniform so that equations (\ref{eq:bayes}) and (\ref{eq:likely_ratio_smove}) give 
 \be \label{eq:alpha1}
-\alpha = Z^{N-1}\frac{p(D|Y)}{p(D|X_{\tstep})}.
+\lratio = Z^{N-1}\frac{p(D|Y)}{p(D|X_{\tstep})}.
 \ee
 
 As a second step we make the prior probabilities of inclination and spot colatitude non-uniform so that the previous likelihood ratio is multiplied with the ratio of the prior probabilities, to yield
 \be \label{eq:alpha2}
-\alpha = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{\tstep})}.
+\lratio = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{\tstep})}.
 \ee
 
 It is not obvious what kind of prior probabilities one should use. It depends on how informative constraints we are able to get from the observations to the given parameter. Unlike in the case of the usual flux, the measured polarization differ significantly if $i$ and $\thetas$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions to these parameters. In this thesis we choose to use normally distributed prior probabilities for $i$ and $\thetas$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviations for these priors are chosen to be $15 \degree$. 
