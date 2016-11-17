@@ -78,11 +78,12 @@
 \def\mumax{\mu_{\rm max}}
 \def\phiobs{\phi_{\rm obs}}
 \def\ani{h}
-\def\thetas{\theta_{s}}
+\def\thetas{\theta_{S}}
 \def\tstep{\mathsf{t}}
 \def\bolo{\mathrm{B}}
 \def\ene{E}%\mathrm{E}}
 \def\lratio{\mathcal{R}}
+\def\req{R_{\mathrm{eq}}}
 %###
 
 %
@@ -158,7 +159,7 @@ from pulse shape modeling}
         {Salmi, Tuomo}%
         {Mass and radius constraints for neutron stars
 from pulse shape modeling}
-        {Master's thesis, \pageref{LastPage} pp.}%s., 3 Appendices}%
+        {Master's thesis, \pageref{LastPage} pages}%s., 3 Appendices}%
         {Astronomy}% Oppiaine
         {November 2016}%
 
@@ -166,10 +167,11 @@ from pulse shape modeling}
 	
 In this thesis we present one method that can be used to constrain masses and radii of neutron stars. The method is suitable for accreting millisecond pulsars, where a rapidly rotating neutron star, called a millisecond pulsar, accretes matter from a relatively low mass companion star, via an accretion disk, onto the magnetic poles of the neutron star. Because of the accretion, we observe radiation from two "hot spots" \ on the neutron star surface. This radiation is pulsating coherently at the spinning frequency of the neutron star. The exact shape of the pulses can be modeled with a  theoretical model that takes into account the general and special relativistic effects via "Schwarzschild-Doppler" \ approximation and the oblate shape of the star caused by the fast rotation. The details of this model are discussed. 
 	
-The pulse profiles carry information about the mass and radius of a neutron star since e.g., the light bending and thus pulse shape depends much on the compactness of the star. Also many other physical parameters and observing angles affect the light curves. Therefore, we use Bayesian analysis and "ensemble sampler" \ to obtain probability distributions for the different parameters, especially for the mass and the radius. The ensemble sampler has shown to overcome many difficulties concerning the traditional Metropolis-Hastings sampler. 
+The pulse profiles carry information about the mass and radius of a neutron star since e.g., the light bending and thus pulse shape depends much on the compactness of the star. Also many other physical parameters and observing angles affect the light curves. Therefore, we use Bayesian analysis and a novel Monte Carlo sampling method, called "ensemble sampler", to obtain probability distributions for the different parameters, especially for the mass and the radius. The ensemble sampler has shown to overcome many difficulties concerning the traditional Metropolis-Hastings sampler. 
 
 We have also generated a synthetic data to test our method and fitted the pulse profiles to this data. The results of our samplings, using this synthetic data, show that obtaining new constraints for radius and mass is not a very easy task. However, according to our study, prior information obtained from polarization measurements may be used the get significantly tighter constraints.  
 
+$keywords: ~Neutron ~stars, ~Accreting ~millisecond ~pulsars, ~Pulse ~profile ~modeling, \\ ~Bayesian ~analysis, ~Ensemble ~sampler, ~Mass ~and ~radius ~constraints$
 	
 	
 \end{tiivistelma}
@@ -280,11 +282,11 @@ Näitä noudattamalla saadaan vähennettyä ainakin yksi tarkastuskierros.
 Neutron stars are some of the most dense and massive objects in the
 Universe. Typical mass $M$ of a neutron star is on the order of $1.5$ solar masses ($\msun$), %($M_{\odot}$), 
 and typical radius $R$ on the order of $12$ km. The central density $n_{c}$ can be from $5$ to $10$ times the nuclear equilibrium density $n_{0} \approx 0.16 ~\mathrm{fm}^{-3}$ of neutrons and protons found in laboratory nuclei \cite{lattimer}. Neutrons dominate the nucleonic content of neutron stars, but also some protons, electrons and muons exist. At the supernuclear densities more exotic baryons, mesons or quarks may also appear. The composition of the innermost core of the neutron star is still unknown. Superfluidity and/or superconductivity of the matter %fermions are
-is in any case excepted inside the star. 
+is in any case expected inside the star. 
 
  
 Neutron stars are created after the gravitational collapse of a core of a
-massive star (>$8~\msun$) at the end of its life. The collapse also triggers a Type II supernova explosion \cite{lattimer}. More massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
+massive star ($>8~\msun$) at the end of its life. The collapse also triggers a Type II supernova explosion \cite{lattimer}. More massive stars collapse instead into a black hole. The general relativistic Schwarzschild condition 
 \be \label{eq:schw_cond}
  R > \frac{2GM}{c^{2}},
 \ee 
@@ -304,7 +306,7 @@ A lower limit for the compactness of a neutron star can be obtained from its spi
 \be \label{eq:keplerian}
 \nu_{\mathrm{K}} = 2 \pi \sqrt{\frac{GM}{r^{3}}},
 \ee 
-where $r$ is the distance from the center of the star. Thus at $r=R$, $\nu_{\mathrm{K}}$ has to be higher than the observed spin frequency, and we get a lower limit for $M/R^{3}$. One should also take into account the non-spherical shape and the general relativistic effects but a lower limit is still obtained.
+where $r$ is the distance from the center of the star. Thus at $r=R$, $~\nu_{\mathrm{K}}$ has to be higher than the observed spin frequency, and we get a lower limit for $M/R^{3}$. One should also take into account the non-spherical shape and the general relativistic effects but a lower limit is still obtained.
 
 
 
@@ -327,7 +329,7 @@ and
 \be
  \frac{\d m(r)}{\d r } = 4 \pi \rho_{\mathrm{m}} r^{2},
 \ee
-where $\mathcal{P}$ and $\rho_{\mathrm{m}}$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. $M-R$ relation can now be obtained if the relation between the pressure and the density $\mathcal{P}=\mathcal{P}(\rho_{\mathrm{m}})$ is known. This relation is called the EOS. 
+where $\mathcal{P}$ and $\rho_{\mathrm{m}}$ are the pressure and mass-energy density, respectively, and $m(r)$ is the gravitational mass enclosed within a radius $r$. The $M-R$ relation can now be obtained if the relation between the pressure and the density $\mathcal{P}=\mathcal{P}(\rho_{\mathrm{m}})$ is known. This relation is called the EOS. 
 
 
 For realistic EOSs the previous equations must be numerically solved to obtain $M-R$ relations. These can be separated into three categories according to the compressibility of the matter: soft, moderate, and stiff equations of state. The determination of the EOS would thus allow us to find out the structure of a neutron star and the properties of the nucleonic matter inside it \cite{akmal}. Even the exteriors of neutron stars may be either normal hadronic matter or a so-called strange quark matter (SQM) depending on the EOS.  
@@ -342,12 +344,12 @@ For realistic EOSs the previous equations must be numerically solved to obtain $
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The number of possible EOSs can be reduced by observing which masses and radii the EOS should be able to produce. Different equations of states are shown in figure \ref{fig:eos_mr}. The highest measured mass of a neutron star is close to two solar masses \cite{demorest} which rules out all the EOSs that cannot produce a mass so large. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar ($641$ Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS must reach. This constraint and also constraints from the general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radius $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$, since the light bending makes the star look larger, and is given by \cite{lattimer2001}
+The number of possible EOSs can be reduced by observing which masses and radii the EOS should be able to produce. Different EOSs are shown in figure \ref{fig:eos_mr}. The highest measured mass of a neutron star is close to two solar masses \cite{demorest} which rules out all the EOSs that cannot produce a mass so large. In the figure \ref{fig:eos_mr} this leaves only two possible EOSs, but there are also many EOSs which are not shown. From the highest measured rotational frequency of a pulsar ($641$ Hz \cite{lattimer}) we get a lower limit for the compactness that an EOS must reach. This constraint and also constraints from the general relativity and causality (equations \ref{eq:schw_cond} and \ref{eq:causality}) are presented in the figure \ref{fig:eos_mr}. The orange curves in the figure show the contours of constant radiation radius $R_{\infty}$, which is the apparent radius of the object at "infinity". It is larger than $R$, since the light bending makes the star appear larger, and is given by \cite{lattimer2001}
 \be \label{eq:rinfty}
 R_{\infty} = \frac{R}{\sqrt{1-2GM/Rc^{2}}}.
 \ee  
 
-Knowing the relation between the mass and radius of any particular neutron star gives also limits to the possible EOSs. For example, suddenly increased spin rates of pulsars ("glitches") have been used to get mass-radius relations \cite{lattimer2001}. It has been a strong indication that the star's moment of inertia $I$ acts as an angular momentum reservoir for the sudden spin-ups \cite{link1999}. The measured $\Delta I / I = 0.014$  for Vela pulsar gives its mass as a function of radius, and it is also shown as a dashed line in the figure \ref{fig:eos_mr}. The correct EOS of neutron star has to cross this line. In our work we aim to find out independent knowledge %(in terms of probability distributions) 
+Knowing the relation between the mass and radius of any particular neutron star gives also limits to the possible EOSs. For example, suddenly increased spin rates of pulsars ("glitches") have been used to get mass-radius relations \cite{lattimer2001}. It has been a strong indication that the star's moment of inertia $I$ acts as an angular momentum reservoir for the sudden spin-ups \cite{link1999}. The measured $\Delta I / I = 0.014$  for Vela pulsar gives the mass as a function of radius, and it is also shown as a dashed line in the figure \ref{fig:eos_mr}. The correct EOS of neutron star has to cross this line. In our work we aim to find out independent knowledge %(in terms of probability distributions) 
 of both mass and radius of observed pulsars using pulse profile modeling. 
 
 
@@ -381,7 +383,7 @@ of both mass and radius of observed pulsars using pulse profile modeling.
 
 
 Rotating neutron stars were first detected as radio pulsars in 1967 \cite{gold68}. %http://adsabs.harvard.edu/abs/1968Natur.218..731G
-After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim \msun$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 ~\mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. A schematic view of the accretion to the hot spots of the pulsar is shown in figure \ref{fig:shcematic}.
+After that, many different classes of pulsars have been discovered including low mass X-ray binaries (LMXBs). LMXBs are systems in which the neutron star accretes matter from a non-collapsed companion (with a relatively low mass $M \lesssim \msun$) via an accretion disk. Accreting millisecond X-ray pulsars (AMXPs) are a subgroup of the LMXBs in which the gas from the accretion disk (stripped from the companion) is channeled onto the magnetic poles of a rapidly rotating neutron star. The result is a pair of "hot spots" \ on the pulsar surface.  This gives rise to the X-ray pulsations with typical periods of a few milliseconds corresponding to the spin frequency of the neutron star. By definition, AMXPs are spinning at frequencies $\nu \ge 100 ~\mathrm{Hz}$ and have weak surface magnetic fields ($B \sim 10^{8-9}$ G) ~\cite{patruno}. A schematic view of the accretion onto the hot spots of the pulsar is shown in figure \ref{fig:shcematic}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,14 +403,14 @@ In case when the Roche lobe of the companion star is full of matter, the gas lef
 
 The first AMXP discovered was \source. It is also used as a reference target in this thesis. %It is also the main observed target in this thesis. 
 The source was first found in 1996 by the Italian-Dutch BeppoSAX satellite \cite{zandsax1808}. %http://adsabs.harvard.edu/abs/1998A%26A...331L..25I
-The first coherent pulsations (at 401 Hz) were detected during the second outburst with NASA's Rossi X-ray Timing Explorer (RXTE) in 1998 \cite{wijnandssax1808}. %http://adsabs.harvard.edu/abs/1998Natur.394..344W
+The first coherent pulsations (at $401$ Hz) were detected during the second outburst with NASA's Rossi X-ray Timing Explorer (RXTE) in 1998 \cite{wijnandssax1808}. %http://adsabs.harvard.edu/abs/1998Natur.394..344W
 It provided a confirmation of the "recycling scenario" \ which states that AMXPs are the evolutionary progenitors of recycled radio millisecond pulsars. They are responsible for the conversion of slowly rotating neutron stars with high magnetic field ($B \sim 10^{12}$ G), into a rapidly spinning objects with a relatively weak magnetic field ($B \sim 10^{8}$ G) \cite{patruno}. The idea is that a weakening magnetic field allows accretion to happen. The angular momentum of the accreting matter is transferred to the pulsar resulting in the increase of its spin frequency.% of the pulsar.
 
 
 %SAX J1808.4–3658 went into outburst again in 2000, 2002, 2005, 2008 and 2011,
 %with an approximate recurrence time of about 1.6-3.3 yr, and is the best sampled and
 
-After the first two outbursts, \source \ has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied object out of all AMXPS. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase, and the flaring tail. Except the last phase, the aforementioned outburst division is typical for several X-ray binaries and can in principle be partially explained with a so-called instability model \cite{disc-instability} (see figure \ref{fig:outburst} for a such outburst).
+After the first two outbursts, \source \ has gone into outburst several times reoccurring approximately every two to three years. It is the best sampled and studied object out of all AMXPs. Typically the outburst consists of five phases: a fast rise, with a steep increase in luminosity lasting only a few days, a peak, a slow decay stage, a fast decay phase, and the flaring tail. Except the last phase, the aforementioned outburst division is typical for several X-ray binaries and can in principle be partially explained with a so-called instability model \cite{disc-instability} (see figure \ref{fig:outburst} for a such outburst).
 
 
 
@@ -488,8 +490,8 @@ There have been many different attempts to constrain the masses and radii of neu
 The coherent flux oscillations at the rotational frequency (the light curves) of accreting millisecond pulsars (described in the first chapter) can be modeled with different models. One example of the observed pulse profiles (of \source) is shown in Figure \ref{fig:saxdata}. The model presented here assumes that the radiation is originated from one or two of the polar caps of the star. General and special relativistic effects have been taken into account using a so-called Schwarzschild-Doppler (S+D) approximation %(Miller, Lamb 1998   
 \cite{millerlamb98}%http://adsabs.harvard.edu/abs/1998ApJ...499L..37M
 %, Poutanen, Gierlinski 2003 
-\cite{poutagierlinskisax}. In the S+D approximation the effects of general relativity (gravitational light-bending) are modeled as though the star is not rotating using the Schwarzschild metric and the formalism specified by
-Pechenick, Ftaclas, and Cohen (1983) \cite{pechenick}. Rotational effects have been approximated by using special relativistic Doppler transformations as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken into account using an empirical formula for the oblate shape \cite{algendy} \cite{morsink}.
+\cite{poutagierlinskisax}. In the S+D approximation the effects of general relativity (gravitational light bending) are modeled as though the star is not rotating using the Schwarzschild metric and the formalism specified by
+Pechenick, Ftaclas, and Cohen (1983) \cite{pechenick}. Rotational effects have been approximated by using special relativistic Doppler transformations as though the star is a rotating object with no gravitational field. The oblate shapes of the rapidly rotating neutron stars have also been taken into account using an empirical formula for the oblate shape \cite{algendy} \cite{morsink}.
 
 %Rotational effects are added by introducing Doppler terms as though the star is a rotating object with no gravitational field. The oblate shape of the rapidly rotating neutron stars have also been taken account using an empirical formula for the oblate shape.
 
@@ -515,7 +517,7 @@ where $G = c = 1$)
 
 \begin{equation}
 \label{rtheta2}
-\frac{R(\theta)}{R_{\mathrm{eq}}} = (1 + o_{2}(x,\bar{\Omega})\cos^{2}(\theta)),
+\frac{R(\theta)}{\req} = (1 + o_{2}(x,\bar{\Omega})\cos^{2}(\theta)),
 \end{equation}
 where
 \begin{equation}
@@ -524,27 +526,27 @@ o_{2}(x,\bar{\Omega}) = \bar{\Omega}^{2}(-0.788+1.030x),
 \end{equation}
 \begin{equation}
 \label{rtheta2x}
-x = \frac{M}{R_{\mathrm{eq}}},
+x = \frac{M}{\req},
 \end{equation}
 and
 \begin{equation}
 \label{rtheta2omega}
-\bar{\Omega} = \Omega \left(\frac{R_{\mathrm{eq}}^{3}}{M} \right)^{1/2}.
+\bar{\Omega} = \Omega \left(\frac{\req^{3}}{M} \right)^{1/2}.
 \end{equation}
-In these equations $R_{\mathrm{eq}}$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where $P$ is the spin period. %The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
+In these equations $\req$ is the radius of the rotating star measured at the equator and $\Omega = 2\pi/P$, where $P$ is the spin period. %The equator radius is measured in the normal Schwarzschild coordinates as all the radii are in this thesis.
 
 As another model %in pulse profile comparison 
 we have also used a model presented by Morsink et al. (2007) \cite{morsink}. In that model
 \be\label{eq:rtheta}
-\frac{R(\theta)}{R_{\mathrm{eq}}} = 1 + \sum\limits_{n=0}^2 a_{2n}(\bar{\zeta},\bar{\epsilon})P_{2n}(\cos(\theta)), 
+\frac{R(\theta)}{\req} = 1 + \sum\limits_{n=0}^2 a_{2n}(\bar{\zeta},\bar{\epsilon})P_{2n}(\cos(\theta)), 
 \ee
 where $P_{n}(\cos(\theta))$ is the Legendre polynomial of order $n$ and parameters $\bar{\zeta}$ and $\bar{\epsilon}$ are obtained from
 \be\label{eq:parzeta}
-\bar{\zeta} = \frac{GM}{R_{\mathrm{eq}}c^{2}}
+\bar{\zeta} = \frac{GM}{\req c^{2}}
 \ee
 and
 \be\label{eq:parepsilon}
-\bar{\epsilon} = \frac{\Omega^{2}R_{\mathrm{eq}}^{3}}{GM}.
+\bar{\epsilon} = \frac{\Omega^{2}\req^{3}}{GM}.
 \ee
 The coefficients needed are given as
 \be\label{eq:azero}
@@ -607,7 +609,7 @@ In case of a spherical star $\d R / \d \theta = 0$ and thus $\bmath{n} = \bmath{
 
 %We will start the waveform with the center of the spot in the plane defined... 
 The computation of the waveform is started from the center of the spot in the plane defined by the spin axis and the direction to the observer 
-(when the spot crosses the plane defined by $\bmath{z}$ and $\bmath{k}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance to the center of the star (e.g., the equator radius of the star) is used to define the zero of the observer's time coordinate. Measuring of the time $t$ is started when this photon arrives at the observer (hence fixing $t=0$). %The time is set to zero when this photon arrives at the observer. 
+(when the spot crosses the plane defined by $\bmath{z}$ and $\bmath{k}$). The light pulse originating at this moment at the point that is directly below the observer and with a reference distance $r_{\mathrm{ref}}$ to the center of the star (e.g., the equator radius of the star) is used to define the zero of the observer's time coordinate. Measuring of the time $t$ is started when this photon arrives at the observer (hence fixing $t=0$). %The time is set to zero when this photon arrives at the observer. 
 
 
 
@@ -731,7 +733,7 @@ The equation (\ref{eq:cossigma2}) is useful since we need to know the emission a
 
 \subsubsection{Light bending}
 
-Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also first need to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ (for every point at every phase) we know directly from the geometry since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6), we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\thetas$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
+Before we can get the angle $\sigma$ from equation (\ref{eq:cossigma2}) we also first need to know how to get the angle $\alpha$ when we know the light bending angle $\psi$. The angles $\psi$ (for every point at every phase) we know directly from the geometry since we can calculate them using the equation (\ref{eq:psi2}). In case of non-infinitesimal spot (which is discussed more in the Section 2.1.6), we of course need a  transformation of coordinates between the spot frame and the frame of the star (to get corresponding $\theta$ and $\phi$ for every point inside the spot). The angle $\psi$ is anyway straight determined since we are going to calculate the trajectories for only those photons which are going to arrive at the observer (not in some other direction). The task is now to find out the true emission angle $\alpha$ using general relativity. 
 
 The exact relation between $\alpha$ and $\psi$ (when $\alpha < \pi/2$) in Schwarzschild geometry (i.e., light bending) is given by \cite{mtw}%(e.g. Misner et al. 1973 \cite{mtw}) %\citep[e.g.][]{mtw73}
 \be \label{eq:bend2}
@@ -817,9 +819,9 @@ the usual formula $\d\Omega=\d S' \cos \sigma'/D^2$.
 
 We have now obtained the solid angle $\d\Omega$ needed to calculate the flux from our spot with equation (\ref{eq:dF_E2}). However, we still need to find out a expression for intensity $I_{\ene}$. The intensity is also different in the static frame of the distant observer than in the local frame comoving with the spot due to both gravitational redshift and Doppler effects. The relation between monochromatic observed and local intensities is \cite{mtw}\cite{rybicki}%(see e.g. Misner et. al. 1973 \cite{mtw} or Rybicki \& Lightman 1979 \cite{rybicki})%\citep[see e.g.][]{mtw73,rl79}:
 \be
-I_{\ene} = \left (\frac{E}{E'}\right )^3 I'_{\ene'} (\sigma')
+I_{\ene} = \left (\frac{E}{E'}\right )^3 I'_{\ene'} (\sigma'),
 \ee
-where $E/E'=\Dop \sqrt{1-u}$. Here $I'_{\ene'}(\sigma')$ is the intensity computed in the corotating frame. The dependency of redshift ($1+z = 1/\sqrt{1-u}$) to the power of -3 can be understood by noting that $I_{\ene} \propto \nu^{3}$ and $\nu = \nu'(1+z)^{-1}$.
+where $E/E'=\Dop \sqrt{1-u}$. Here $I'_{\ene'}(\sigma')$ is the intensity computed in the corotating frame. The dependency of redshift ($1+z = 1/\sqrt{1-u}$) to the power of $-3$ can be understood by noting that $I_{\ene} \propto \nu^{3}$ and $\nu = \nu'(1+z)^{-1}$.
 For the bolometric intensity the relation to frequency goes as $\nu^{4}$ and one gets
 \be \label{eq:bolointensity}
 I_{\bolo}= \left (\Dop \sqrt{1-u} \right )^4 I_{\bolo}'(\sigma') .
@@ -984,13 +986,13 @@ In the model in this thesis we assumed a spherically symmetric spot (the angle m
 
 The new versions of the waveform code have been tested by comparing the pulse profiles to profiles obtained from other theoretical models or from a similar model developed by other groups. In all comparisons we assume the neutron star to be at distance $D = 10$ kpc. In the case of spherical star we have checked that the new version gives the same results as the old one (which assumed spherical star and has been shown to give accurate results). 
 
-In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The waveforms are computed for one small spot (we use spot angular size $\rho = 1 \degree$), which emits isotropic blackbody radiation ($R = 16.4$ km, $M = 1.4$  $\msun$, $\nu = 600$ Hz, and $T_{\mathrm{eff}} = 2$ keV). The oblateness of the star is described with the function (\ref{eq:rtheta}). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3}, and \ref{fig:cad4}. They are in good agreement except in cases of some very high bending angles. In the Figure \ref{fig:mor3} ($\thetas = 49 \degree$ and $i = 70 \degree$) and in the Figure \ref{fig:cad4} ($\thetas = 15 \degree$ and $i = 100 \degree$) we see situations when the spot is on the other side of the pulsar and only photons with high bending angles can reach the observer. Instead in the Figure \ref{fig:cad3} ($\thetas = 41 \degree$ and $i = 20 \degree$) most of the spot is all the time observed. 
+In the case of oblate star we have compared our light curves to those obtained by Morsink \cite{morsink} and Cadeau \cite{cadeau} (model called oblate S+D). The waveforms are computed for one small spot (we use spot angular size $\rho = 1 \degree$), which emits isotropic blackbody radiation ($\req = 16.4$ km, $M = 1.4$  $\msun$, $\nu = 600$ Hz, and $T_{\mathrm{eff}} = 2$ keV). The oblateness of the star is described with the function (\ref{eq:rtheta}). The results are shown in Figures \ref{fig:mor3}, \ref{fig:cad3}, and \ref{fig:cad4}. They are in good agreement except in cases of some very high bending angles. In the Figure \ref{fig:mor3} ($\thetas = 49 \degree$ and $i = 70 \degree$) and in the Figure \ref{fig:cad4} ($\thetas = 15 \degree$ and $i = 100 \degree$) we see situations when the spot is on the other side of the pulsar and only photons with high bending angles can reach the observer. Instead in the Figure \ref{fig:cad3} ($\thetas = 41 \degree$ and $i = 20 \degree$) most of the spot is all the time observed. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=mor3test.eps,width=12.0cm}}
-\caption{Light curves (bolometric flux) for light emitted from one infinitesimal spot with $R = 16.4$ km, $M = 1.4$ $\msun$, $\nu = 600$ Hz, $\thetas = 49 \degree$, $i = 70 \degree$, and $T_{\mathrm{eff}} = 2$ keV . Results are compared with the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of \cite{morsink} and the black solid line is our result.
+\caption{Light curves (bolometric flux) for light emitted from one infinitesimal spot with $\req = 16.4$ km, $M = 1.4$ $\msun$, $\nu = 600$ Hz, $\thetas = 49 \degree$, $i = 70 \degree$, and $T_{\mathrm{eff}} = 2$ keV . Results are compared with the Figure 3 of Morsink et. al. (2007) \cite{morsink}. The blue dotted curve is the result of \cite{morsink} and the black solid line is our result.
 \label{fig:mor3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1015,8 +1017,8 @@ In the case of oblate star we have compared our light curves to those obtained b
 
 
 The profiles of pulsars have also been compared to profiles obtained from full ray tracing method (figures \ref{fig:jpulse1}, \ref{fig:jpulse2}, and \ref{fig:jpulse3}), which show very similar results. %correspond each other well. 
-The number fluxes at $2$, $6$, and $12$ keV energies, along with the bolometric number flux, are computed to both spherical ($R(\thetas) = R_{\mathrm{eq}}$) and oblate stars ($R(\thetas)$ from equation \ref{rtheta2}). Angular distribution of radiation corresponds either to a blackbody with isotropic beaming (noted as "blackbody") or to a Hopf profile. %so some power-law or what is the energy-dependence then....?
-In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\thetas = 50 \degree$, $i = 60 \degree$, and $T_{\mathrm{eff}} = 2$ keV) we compute the light curves with two different spinning frequencies ($\nu = 1$ Hz and $\nu = 400$ Hz) and with the spot size $\rho = 1 \degree$ or $30 \degree$ (figures \ref{fig:jpulse1} and \ref{fig:jpulse2}). In the case of oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4  ~\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$, and $T_{\mathrm{eff}} = 2$ keV) we show the light curves with three different spot colatitudes $\thetas  = 18 \degree$,   $45 \degree$, and $90 \degree$ for the isotropic blackbody along with $\thetas = 45 \degree$ and Hopf profile.
+The number fluxes at $2$, $6$, and $12$ keV energies, along with the bolometric number flux, are computed to both spherical ($R(\thetas) = \req$) and oblate stars ($R(\thetas)$ from equation \ref{rtheta2}). Angular distribution of radiation corresponds either to a blackbody with isotropic beaming (noted as "blackbody") or to a Hopf profile. %so some power-law or what is the energy-dependence then....?
+In the case of spherical star ($\req = 12$ km, $M = 1.6$ $\msun$, $\thetas = 50 \degree$, $i = 60 \degree$, and $T_{\mathrm{eff}} = 2$ keV) we compute the light curves with two different spinning frequencies ($\nu = 1$ Hz and $\nu = 400$ Hz) and with the spot size $\rho = 1 \degree$ or $30 \degree$ (figures \ref{fig:jpulse1} and \ref{fig:jpulse2}). In the case of oblate star ($\req = 12$ km, $M = 1.4  ~\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$, and $T_{\mathrm{eff}} = 2$ keV) we show the light curves with three different spot colatitudes $\thetas  = 18 \degree$,   $45 \degree$, and $90 \degree$ for the isotropic blackbody along with $\thetas = 45 \degree$ and Hopf profile.
 
 
 %Show here some profiles..
@@ -1026,7 +1028,7 @@ In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\thetas = 50 \de
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=jpulsec1.pdf,width=17.0cm}}
-\caption{The light curve (monochromatic number fluxes at $2$, $6$, and $12$ keV along with bolometric number flux) comparisons with slowly rotating spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\nu = 1$ Hz, $i = 60 \degree$, $\thetas = 50 \degree$, and $T_{\mathrm{eff}} = 2$ keV) emitting according to isotropic blackbody law or Hopf profile with spot size either $1$ or $30$ degrees. Black solid line shows the pulse profiles computed using the method described in this thesis (S+D) and red dashed line is a profile computed with the full ray tracing method (FRTM). The residuals are shown in the lower panel as $\Delta = (\mathrm{model}_{\mathrm{S+D}}/\mathrm{model}_{\mathrm{FRTM}})*100$ \%. Figure from Nättilä \& Pihajoki 2016 (in preparation).
+\caption{The light curve (monochromatic number fluxes at $2$, $6$, and $12$ keV along with bolometric number flux) comparisons with slowly rotating spherical star ($\req = 12$ km, $M = 1.6$ $\msun$, $\nu = 1$ Hz, $i = 60 \degree$, $\thetas = 50 \degree$, and $T_{\mathrm{eff}} = 2$ keV) emitting according to isotropic blackbody law or Hopf profile with spot size either $1$ or $30$ degrees. Black solid line shows the pulse profiles computed using the method described in this thesis (S+D) and red dashed line is a profile computed with the full ray tracing method (FRTM). The residuals are shown in the lower panel as $\Delta = (\mathrm{model}_{\mathrm{S+D}}/\mathrm{model}_{\mathrm{FRTM}})*100$ \%. Figure from Nättilä \& Pihajoki 2016 (in preparation).
 \label{fig:jpulse1}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1044,7 +1046,7 @@ In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\thetas = 50 \de
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=jpulsec3.pdf,width=17.0cm}}
-\caption{The light curve (monochromatic number fluxes at $2$, $6$, and $12$ keV along with bolometric number flux) comparisons with an oblate star ($R_{\mathrm{eq}} = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$, and $T_{\mathrm{eff}} = 2$ keV) emitting according to isotropic blackbody law or Hopf profile with different spot colatitudes: $\thetas = 18 \degree$, $45 \degree$ and $90 \degree$. The symbols are the same as in figures \ref{fig:jpulse1} and \ref{fig:jpulse2}. Figure from Nättilä and Pihajoki 2016 (in preparation).
+\caption{The light curve (monochromatic number fluxes at $2$, $6$, and $12$ keV along with bolometric number flux) comparisons with an oblate star ($\req = 12$ km, $M = 1.4$ $\msun$, $\nu = 700$ Hz, $i = 45 \degree$, $\rho = 10 \degree$, and $T_{\mathrm{eff}} = 2$ keV) emitting according to isotropic blackbody law or Hopf profile with different spot colatitudes: $\thetas = 18 \degree$, $45 \degree$ and $90 \degree$. The symbols are the same as in figures \ref{fig:jpulse1} and \ref{fig:jpulse2}. Figure from Nättilä and Pihajoki 2016 (in preparation).
 \label{fig:jpulse3}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1238,7 +1240,7 @@ In our simulations we see how the two datasets with different $i-\thetas$ soluti
   \begin{tabular}{| c | c |}
     \hline
      Parameter & Value\\ \hline
-      Radius $R$ & $12.0$ km  \\ \hline
+      Radius $\req$ & $12.0$ km  \\ \hline
       Mass $M$ & $1.5 ~\msun$  \\ \hline
       Inclination $i$ & $5 \degree$ or $75 \degree$ \\ \hline
       Spot colatitude $\thetas$ & $75 \degree$ or $5 \degree$ \\ \hline
@@ -1362,7 +1364,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
     \hline
       Quantity & $95\%$ lower limit & $68\%$ lower limit & Most probable value / median & $68\%$ upper limit & $95\%$ upper limit \\ \hline
      \multicolumn{6}{c}{Polar spot with only uniform priors} \\ %\hline
-      Radius $R$ (km) & $8.1$ & $8.3$ & $9.0$ & $12.4$ & $13.8$  \\ %\hline
+      Radius $\req$ (km) & $8.1$ & $8.3$ & $9.0$ & $12.4$ & $13.8$  \\ %\hline
       Mass $M$ ($\msun$) & $1.0$ & $1.1$ & $1.2$ & $1.6$ & $1.7$  \\ %\hline
       Inclination $i$ ($\degree$) & $3.2$ & $3.4$ & $6.2$ & $62.7$ & $77.1$ \\ %\hline
       Spot colatitude $\thetas$ ($\degree$) & $3.3$ & $3.4$ & $6.8$ & $70.8$ & $76.2$ \\ %\hline
@@ -1370,7 +1372,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
       Distance $D$ (kpc) & $2.1$ & $2.2$ & $2.5$ & $3.0$ & $3.0$ \\   \hline
       
       \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
-      Radius $R$ (km) & $8.7$ & $10.8$ & $12.8$ & $14.7$ & $16.1$  \\ %\hline
+      Radius $\req$ (km) & $8.7$ & $10.8$ & $12.8$ & $14.7$ & $16.1$  \\ %\hline
       Mass $M$ ($\msun$) & $1.1$ & $1.4$ & $1.6$ & $1.8$ & $2.0$  \\ %\hline
       Inclination $i$ ($\degree$) & $11.6$ & $72.8$ & $80.8$ & $88.6$ & $89.5$ \\ %\hline
       Spot colatitude $\thetas$ ($\degree$) & $2.8$ & $3.6$ & $5.4$ & $5.5$ & $9.4$ \\ %\hline %peak bf sm 4.4
@@ -1378,7 +1380,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
       Distance $D$ (kpc) & $2.1$ & $2.2$ & $2.5$ & $2.9$ & $3.0$ \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ %\hline
-      Radius $R$ (km) & $8.1$ & $8.2$ & $9.1$ & $10.8$ & $16.1$  \\ %\hline
+      Radius $\req$ (km) & $8.1$ & $8.2$ & $9.1$ & $10.8$ & $16.1$  \\ %\hline
       Mass $M$ ($\msun$) & $1.0$ & $1.0$ & $1.1$ & $1.4$ & $2.0$  \\ %\hline
       Inclination $i$ ($\degree$) & $3.3$ & $3.7$ & $7.9$ & $18.1$ & $79.1$ \\ %\hline
       Spot colatitude $\thetas$ ($\degree$) & $4.6$ & $4.8$ & $8.2$ & $73.5$ & $77.2$ \\ %\hline
@@ -1386,7 +1388,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
       Distance $D$ (kpc) &  $2.0$ & $2.1$ & $2.5$ & $2.9$ & $3.0$ \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
-      Radius $R$ (km) & $8.2$ & $9.8$ & $10.7$ & $14.1$ & $16.1$  \\ %\hline
+      Radius $\req$ (km) & $8.2$ & $9.8$ & $10.7$ & $14.1$ & $16.1$  \\ %\hline
       Mass $M$ ($\msun$) & $1.1$ & $1.2$ & $1.5$ & $1.7$ & $2.0$  \\ %\hline
       Inclination $i$ ($\degree$) & $2.3$ & $3.5$ & $5.5$ & $6.1$ & $67.1$ \\ %\hline
       Spot colatitude $\thetas$ ($\degree$) & $4.0$ & $67.4$ & $77.4$ & $85.4$ & $89.3$ \\ %\hline
@@ -1454,7 +1456,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The dark orange color shows a $68 \%$ and the light orange color a $95 \%$ highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a $95 \%$ and the dashed contour a $68 \%$ highest posterior density credible region.  
+\caption{Posterior probability distributions of radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The dark orange color shows a $68 \%$ and the light orange color a $95 \%$ highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a $95 \%$ and the dashed contour a $68 \%$ highest posterior density credible region.  
 \label{fig:polpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1462,7 +1464,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}. 
+\caption{Posterior probability distributions of radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}. 
 \label{fig:polpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1472,7 +1474,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions of radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$ and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
 \label{fig:eqpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1482,7 +1484,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions of radius $R$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions of radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$ and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
