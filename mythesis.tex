@@ -1176,7 +1176,7 @@ One of the simplest affine invariant trial moves, and the move we use here, is t
 \be \label{eq:smove}
 Y(k) = X(j) + Z(X(k)-X(j)),
 \ee
-where the scaling variable $Z$ is a random variable from a probability distribution $g(\mathcal{Z})$ satisfying the symmetry condition
+where the scaling variable $Z$ is a random variable drawn from a probability distribution $g(\mathcal{Z})$ satisfying the symmetry condition
 \be \label{eq:symmetry_condition}
 g(1/\mathcal{Z}) = \mathcal{Z}g(\mathcal{Z}).
 \ee
@@ -1215,12 +1215,12 @@ As mentioned earlier the aim of this work is to determine the probability distri
 The synthetic data in this work is made to resemble the real observations as closely as possible. The X-ray count data from \source \ is used as a reference. The amplitude of the modulation in the normalized number fluxes have been set close to the same value in the synthetic data as in the observations. We also use the same energy intervals and same the number of phase points as in the real data. The original data is shown in the Figure \ref{fig:saxdata}.  
 
 
-The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in the Table \ref{table:params}. The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\thetas$ appropriately since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
+The parameters of the pulse profile model are chosen such that their values are physically reasonable and they produce a light curve similar to the SAX-data. The physical parameters are given in Table \ref{table:params}. The observed variability amplitude (see equation \ref{eq:amplitude}) is then obtained by choosing inclination $i$ and the colatitude of the spot $\thetas$ appropriately since the amplitude can be approximated (neglecting the Doppler effect and using the Beloborodov's approximation \cite{poutaviironen})
 \be \label{eq:amplitude_incthet}
 A \approx \frac{(1-\rg/R)\sin i \sin \thetas}{\rg/R+(1-\rg/R)\cos i \cos \thetas}.
 \ee 
 
-We see that $i$ and $\thetas$ can be changed in the equation (\ref{eq:amplitude_incthet}) without affecting the amplitude. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\thetas$. We call them datasets for polar and equatorial spots even though the spots are not exactly at the pole or equator. 
+We see that $i$ and $\thetas$ can be changed in equation (\ref{eq:amplitude_incthet}) without affecting the amplitude. The exact calculation shows also only a small difference between these two parameters. Thus we have created two identical synthetic datasets which differ only in $i$ and $\thetas$. We call them datasets for polar and equatorial spots even though the spots are not exactly at the pole or equator. 
 
 The datasets have been generated using our pulse profile model. Since the observed data always includes noise, we want to have it also in our synthetic data. For this reason a different random number, from a normal distribution with mean equal to zero, is added to the original flux at each phase point. The average size of this random number have been chosen to match closely the known errors of the \source \ data. Thus a relatively larger noise has been added to the highest energy channels where the count rates are lowest. The normalized synthetic spectral fluxes and their errors (amount of noise added) are shown in Figures \ref{fig:syntpol2} and \ref{fig:synteq2}.
 
@@ -1236,7 +1236,7 @@ In our simulations we see how the two datasets with different $i-\thetas$ soluti
 
 \begin{center}
 \begin{table}
-  \caption{Paramters of the synthetic datasets.}
+  \caption{Parameters of the synthetic datasets.}
 \label{table:params}
 \begin{center}
   \begin{tabular}{| c | c |}
@@ -1286,7 +1286,8 @@ In our simulations we see how the two datasets with different $i-\thetas$ soluti
 All the parameters presented in Table \ref{table:params}, except temperature, are sampled using the ensemble sampler. There are also other parameters in the model which are not currently sampled. %(at least not in this work yet). 
 "Beaming parameter" \ is set to zero meaning that the intensity from the spot does not depend on the emission angle (isotropic beaming). 
 
-We also use only one spherically symmetric hot spot. The oblate shape of the star is described by the function in equation (\ref{rtheta2}). Some parameters affecting the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
+We also use only one circular hot spot. The oblate shape of the star is described by
+equation (\ref{rtheta2}). Some parameters affecting the accuracy of the pulse profile calculation have been changed after creating the synthetic data in order to get faster sampling. For example the quadratic interpolation of light bending angles have been replaced by linear interpolation. The accuracy is still more than enough for our purposes. 
 
 To exploit all possible computational power we have also made the ensemble sampler code to run parallel. In this thesis we did simultaneously six independent simulations on six different processors and then combined the results of each individual chain. Thus each processor had its own ensemble (or also called the chain). The number of walkers was set to $20$ in each ensemble. 
  
@@ -1340,7 +1341,7 @@ Before obtaining the final posterior probability distributions we have reduced t
 
 The same averaged steps are also used in Figure \ref{fig:acexample}, where we show an example of the autocorrelation. The autocorrelations of all the six ensembles from one simulation are presented using the weights as observables (see equation \ref{eq:autocovariance}). The Figure shows the autocorrelation only approximatively since one should make sure that the ensemble averaged weights are calculated for walkers being at a same state of their sequence. We may, however, see that in general the correlation is not very strong, and we have reduced it by taking every fifth sample from the chain.%... Thinning we used is .... (TBD)  
 
-The results of our samplings are presented in the Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\thetas$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). However, the correct ratio between mass and radius (and thus the gravitational redshift) seems to be in every case well found.
+The results of our samplings are presented in Figures \ref{fig:polpost}-\ref{fig:eqpostpr}. From these posterior probability distributions we can easily see how the prior information of angles $\thetas$ and $i$ improves the fits of the mass and radius of the neutron star (by comparing Figures \ref{fig:polpostpr} and \ref{fig:polpost} or Figures \ref{fig:eqpostpr} and \ref{fig:eqpost}). However, the correct ratio between mass and radius (and thus the gravitational redshift) seems to be in every case well found.
 
 Without the prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\thetas$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. All calculated confidence limits and most probable values are shown in Table \ref{table:conflimits}. The limits are calculated using the highest posterior probability credible intervals. In case of the polar spot, the radius is below $14$ km, and the mass is below $1.7 ~\msun$, with $95 \%$ probabilities. The most probable value for radius is $9$ km and for mass $1.2 ~\msun$. In case of the equatorial spot, the radius is below $16$ km with a $95 \%$ probability, but for the mass the $95 \%$ credible interval extends until the upper limit of the sampling interval ($2.0 ~\msun$). The most probable value for radius is $9$ km and for mass $1.1 ~\msun$. 
 
@@ -1350,7 +1351,7 @@ In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr}
 
 The non-uniform priors for $\thetas$ and $i$ have also a strong effect on the posterior probability distributions for the mass and the radius. They are now also distributed on both sides of the correct values having the maximum near the correct value. The prior information shifts the probability densities of mass and radius towards higher masses and radii, since the incorrect $\thetas - i$ solutions are in this case not contributing to the small masses and radii so much. Most importantly both the lower and upper limits can now be determined. In case of the polar spot, the radius (correct value $12$ km) is between $11$ km and $15$ km, and the mass (correct value $1.5 ~\msun$) is between $1.4 ~\msun$ and $1.8 ~\msun$, with $68 \%$ probabilities. The most probable values are $13$ km and $1.6 ~\msun$. In case of the equatorial spot and with same the confidence limits, the radius is between $10$ km and $14$ km, and the mass is between $1.2 ~\msun$ and $1.7 ~\msun$. The most probable values are $11$ km and $1.5 ~\msun$. 
 
-The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability density is very close to $10 \degree$ ($\rho$ is between $6 \degree$ and $14 \degree$ at least with a $95 \%$ probability in every simulation) which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between $2$ and $3$ kpc). The distance is not constrained, and that causes problems with a larger interval. An uniform posterior probability distribution for the distance is obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level.
+The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability density is very close to $10 \degree$ ($\rho$ is between $6 \degree$ and $14 \degree$ at least with a $95 \%$ probability in every simulation) which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between $2$ and $3$ kpc). The distance is not constrained, and that causes problems with a larger interval. A uniform posterior probability distribution for the distance is obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level.
 
 
 \begin{center}
@@ -1466,7 +1467,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}. 
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}. 
 \label{fig:polpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1476,7 +1477,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1486,7 +1487,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in the Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
