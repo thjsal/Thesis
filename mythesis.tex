@@ -1061,7 +1061,7 @@ In the case of spherical star ($R = 12$ km, $M = 1.6$ $\msun$, $\thetas = 50 \de
 %http://math.nyu.edu/~mjlewis/foo.pdf %about Monte Carlo
 
 The model presented in the previous section can be used to constrain parameters of neutron stars by using Bayesian inference. We can fit the observed data to the model and use Markov Chain Monte Carlo (MCMC) methods to integrate over the parameter space to find the most probable values for the parameters of the model \cite{mc_methods_book}. The data can also be synthetic (as in this thesis) in order to test our methods and tools. %if the sampler will actually find the same values that were used when generating the data. 
-Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g., by Ka Ho Lo et al, 2013 \cite{miller}. %(for future space missions).   
+Previously the constraints of neutron star masses and radii with synthetic data have been studied e.g., by Ka Ho Lo et al, 2013 \cite{miller} and Miller \& Lamb, 2015 \cite{millerlamb2015}. %(for future space missions).   
 More about the synthetic data of this thesis is presented in the Results section. 
 
 The aim of this work is to determine the most probable ("best-fit") values of the parameters in the pulse profile model, given the "observed" \ 
@@ -1314,7 +1314,7 @@ As a second step we make the prior probabilities of inclination and spot colatit
 
 It is not obvious what kind of prior probabilities one should use. It depends on how informative constraints we are able to get from the observations to the given parameter. Unlike in the case of the usual flux, the measured polarization differ significantly if $i$ and $\thetas$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions for these parameters. In this thesis we choose to use normally distributed prior probabilities for $i$ and $\thetas$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviations for these priors are chosen to be $15 \degree$. 
 
-Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same as the sizes of the corresponding axes in the posterior probability Figures in the next section. 
+Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same as the sizes of the corresponding axes in the posterior probability figures in the next section. 
 
 
 
@@ -1345,7 +1345,7 @@ The results of our samplings are presented in Figures \ref{fig:polpost}-\ref{fig
 
 Without the prior information we get the highest probabilities for the lowest masses and radii, since those correspond to more possible solutions in  $\thetas$ and $i$ than the highest masses and radii. In this case we are only able to get upper limits to the mass and radius. All calculated confidence limits and most probable values are shown in Table \ref{table:conflimits}. The limits are calculated using the highest posterior probability credible intervals. In case of the polar spot, the radius is below $14$ km, and the mass is below $1.7 ~\msun$, with $95 \%$ probabilities. The most probable value for radius is $9$ km and for mass $1.2 ~\msun$. In case of the equatorial spot, the radius is below $16$ km with a $95 \%$ probability, but for the mass the $95 \%$ credible interval extends until the upper limit of the sampling interval ($2.0 ~\msun$). The most probable value for radius is $9$ km and for mass $1.1 ~\msun$. 
 
-The polar and equatorial spots give quite similar results compared to each other as expected (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However, they are not identical which shows that switching $\thetas$ and $i$ has a small but significant effect on the light curves of the pulsar. It seems also slightly easier to find out the correct $\thetas-i$ solution in the case of the equatorial spot. Although, in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional probability distribution of $\thetas-i$. For the polar spot and $i$, the $95 \%$ credible interval is between $3 \degree$ and $77 \degree$, when the correct value is $75 \degree$. However, the $68 \%$ confidence limits are $3 \degree$ and $63 \degree$. The $95 \%$ interval for $\thetas$ is between $3 \degree$ and $76 \degree$, when the correct value is $5 \degree$. In this case the $68 \%$ confidence limits are from $3 \degree$ to $71 \degree$. For the equatorial spot, the $95 \%$ limits are almost the same (and the correct values are switched), but we see that the probability density of $\thetas$ is distributed more towards the higher angles compared to results of the polar spot. Inclination is now also better constrained. It is between $3 \degree$ and $18 \degree$ with a $68 \%$ probability.
+The polar and equatorial spots give quite similar results compared to each other as expected (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However, they are not identical which shows that switching $\thetas$ and $i$ has a small but significant effect on the light curves of the pulsar. It seems also slightly easier to find out the correct $\thetas-i$ solution in the case of the equatorial spot. Although, in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional probability distribution of $\thetas-i$. For the polar spot, the $95 \%$ credible interval for $i$ is between $3 \degree$ and $77 \degree$, when the correct value is $75 \degree$. However, the $68 \%$ confidence limits are $3 \degree$ and $63 \degree$. The $95 \%$ interval for $\thetas$ is between $3 \degree$ and $76 \degree$, when the correct value is $5 \degree$. In this case the $68 \%$ confidence limits are from $3 \degree$ to $71 \degree$. For the equatorial spot, the $95 \%$ limits are almost the same (and the correct values are switched), but we see that the probability density of $\thetas$ is distributed more towards the higher angles compared to results of the polar spot. Inclination is now also better constrained. It is between $3 \degree$ and $18 \degree$ with a $68 \%$ probability.
 
 In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}), we find the correct solutions for $\thetas$ and $i$ even though our prior distributions are not centered  around the correct values. In case of the polar spot, $\thetas$ is now between $3 \degree$ and $9 \degree$ with a $95 \%$ probability, and $i$ is larger than $73 \degree$ with a $68 \%$ probability. In case of the equatorial spot, $i$ is between $4 \degree$ and $6 \degree$ with a $68 \%$ probability, and $\thetas$ is larger than $67 \degree$ with a $68 \%$ probability. In both cases the most probable values are close to the correct values (see the Table \ref{table:conflimits}), especially for the smaller one of the angles. The posterior probability distribution for the larger angle is almost entirely determined by the assumed prior probability distribution.  
 
@@ -1459,7 +1459,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The dark orange color shows a $68 \%$ and the light orange color a $95 \%$ highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a $95 \%$ and the dashed contour a $68 \%$ highest posterior density credible region.  
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The dark orange color shows a $68 \%$ and the light orange color a $95 \%$ highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a $95 \%$ and the dashed contour a $68 \%$ highest posterior density credible region. The blue cross shows the correct solution for mass and radius. 
 \label{fig:polpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1467,7 +1467,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=fpolprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}. 
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}. 
 \label{fig:polpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1477,7 +1477,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with only uniform priors.The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpost}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1487,7 +1487,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centerline{\epsfig{file=feqprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors and contours are the same as in Figure \ref{fig:polpost}.
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1499,7 +1499,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 \section{Summary and Conclusions}
 
-We began this thesis by introducing the basic concept of neutron stars. The mass-radius relation of a neutron star was explained to be connected to the EOS of neutron stars and thus to the properties of the nucleonic matter inside them. We introduced also AMXPs, a subgroup of LMXBs, in which gas from a companion star is channeled onto to the magnetic poles of a rapidly rotating neutron star. We examined few examples of AMXPs and their outbursts during which we have observed coherent oscillations at the spinning frequency of the pulsar.
+We began this thesis by introducing the basic concept of neutron stars. The mass-radius relation of a neutron star was explained to be connected to the EOS of neutron stars and thus to the properties of the nucleonic matter inside them. We introduced also AMXPs, a subgroup of LMXBs, in which gas from a companion star is channeled onto the magnetic poles of a rapidly rotating neutron star. We examined few examples of AMXPs and their outbursts during which we have observed coherent oscillations at the spinning frequency of the pulsar.
 
 The methods used to obtain constraints on mass-radius relation were shown next. We presented our pulse profile model that explains the observed coherent pulsations of AMXPs (whether or not they occur during an outburst). %should distinguish between accretion and nuclear powered accreting millisecond pulsars in the text?
 The special and general relativistic effects, including light bending, time delays, and the aberration of light, have been taken into account using the Schwarzschild-Doppler approximation. The oblate shape of the pulsar have been described with an empirical function, and the geometrical effects on the pulse profiles due to the oblateness have been taken care of. 
@@ -1508,7 +1508,7 @@ We also presented our method to fit observed data to the profiles obtained from 
 
 Finally, we obtained posterior probability distributions for the parameters with promising results. We were most interested in the probability distributions for mass and radius and how to get tighter constraints for those. We found that the ratio between mass and radius is found accurately, but to get independent knowledge of the mass and the radius is remarkably easier if we have independent knowledge of the spot-colatitude $\thetas$ and the observer inclination $i$. Without prior information, we were only able to get upper limits. Using non-uniform priors for $\thetas$ and $i$, we got both lower and upper limits. Prior information to these angles is expected to be obtained from the X-ray polarization measurements of AMXPs.  
 
-The next step to the work of this thesis is to add a few more free parameters to the ensemble sampler and see if the results still remain the same. The pulse profile model may also be developed further e.g., to take into account both the blakcbody and power-law parts of the spectrum. Finally, we are able to fit the real observations and hopefully get new constraints to the possible EOSs of neutron star.  
+The next step to the work of this thesis is to add a few more free parameters to the ensemble sampler and see if the results still remain the same. The pulse profile model may also be developed further e.g., to take into account both the blackbody and power-law parts of the spectrum. Finally, we are able to fit the real observations and hopefully get new constraints to the possible EOSs of neutron star.  
 
 
 
