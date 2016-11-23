@@ -1312,7 +1312,7 @@ As a second step we make the prior probabilities of inclination and spot colatit
 \lratio = Z^{N-1}\frac{p(D|Y)p(Y)}{p(D|X_{t})p(X_{\tstep})}.
 \ee
 
-It is not obvious what kind of prior probabilities one should use. It depends on how informative constraints we are able to get from the observations to the given parameter. Unlike in the case of the usual flux, the measured polarization differ significantly if $i$ and $\thetas$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions for these parameters. In this thesis we choose to use normally distributed prior probabilities for $i$ and $\thetas$ around $0 \degree$ or $90 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviations for these priors are chosen to be $15 \degree$. 
+It is not obvious what kind of prior probabilities one should use. It depends on how informative constraints we are able to get from the observations to the given parameter. Unlike in the case of the usual flux, the measured polarization differ significantly if $i$ and $\thetas$ are switched \cite{poutaviironen}. Thus from modeling the polarization we can get the prior probability distributions for these parameters. In this thesis we choose to use normally distributed prior probabilities for $i$ and $\thetas$ around $5 \degree$ or $75 \degree$ to study the effect on the posterior probabilities of mass and radius. The standard deviations for these priors are chosen to be $15 \degree$. 
 
 Other prior probabilities of the parameters are kept always uniform inside their sampling intervals. The sizes of these intervals are the same as the sizes of the corresponding axes in the posterior probability figures in the next section. 
 
@@ -1347,9 +1347,10 @@ Without the prior information we get the highest probabilities for the lowest ma
 
 The polar and equatorial spots give quite similar results compared to each other as expected (Figures \ref{fig:polpost} and \ref{fig:eqpost}). However, they are not identical which shows that switching $\thetas$ and $i$ has a small but significant effect on the light curves of the pulsar. It seems also slightly easier to find out the correct $\thetas-i$ solution in the case of the equatorial spot. Although, in the one-dimensional histograms the small angles give always a higher peak in the probability density because of the marginalization and the shape of two-dimensional probability distribution of $\thetas-i$. For the polar spot, the $95 \%$ credible interval for $i$ is between $3 \degree$ and $77 \degree$, when the correct value is $75 \degree$. However, the $68 \%$ confidence limits are $3 \degree$ and $63 \degree$. The $95 \%$ interval for $\thetas$ is between $3 \degree$ and $76 \degree$, when the correct value is $5 \degree$. In this case the $68 \%$ confidence limits are from $3 \degree$ to $71 \degree$. For the equatorial spot, the $95 \%$ limits are almost the same (and the correct values are switched), but we see that the probability density of $\thetas$ is distributed more towards the higher angles compared to results of the polar spot. Inclination is now also better constrained. It is between $3 \degree$ and $18 \degree$ with a $68 \%$ probability.
 
-In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}), we find the correct solutions for $\thetas$ and $i$ even though our prior distributions are not centered  around the correct values. In case of the polar spot, $\thetas$ is now between $3 \degree$ and $9 \degree$ with a $95 \%$ probability, and $i$ is larger than $73 \degree$ with a $68 \%$ probability. In case of the equatorial spot, $i$ is between $4 \degree$ and $6 \degree$ with a $68 \%$ probability, and $\thetas$ is larger than $67 \degree$ with a $68 \%$ probability. In both cases the most probable values are close to the correct values (see the Table \ref{table:conflimits}), especially for the smaller one of the angles. The posterior probability distribution for the larger angle is almost entirely determined by the assumed prior probability distribution.  
+In case of non-uniform priors for $\thetas$ and $i$ (Figures \ref{fig:polpostpr} and \ref{fig:eqpostpr}), we find the correct solutions for $\thetas$ and $i$ because our prior distributions are centered around the correct values. %even though our prior distributions are not centered  around the correct values. 
+In case of the polar spot, $\thetas$ is now between $3 \degree$ and $10 \degree$ with a $95 \%$ probability, and $i$ is larger than $61 \degree$ with a $68 \%$ probability. In case of the equatorial spot, $i$ is between $3 \degree$ and $14 \degree$ with a $95 \%$ probability, and $\thetas$ is larger than $60 \degree$ with a $68 \%$ probability. In both cases the most probable values are close to the correct values (see the Table \ref{table:conflimits}), especially for the smaller one of the angles. The posterior probability distribution for the larger angle is almost entirely determined by the assumed prior probability distribution.  
 
-The non-uniform priors for $\thetas$ and $i$ have also a strong effect on the posterior probability distributions for the mass and the radius. They are now also distributed on both sides of the correct values having the maximum near the correct value. The prior information shifts the probability densities of mass and radius towards higher masses and radii, since the incorrect $\thetas - i$ solutions are in this case not contributing to the small masses and radii so much. Most importantly both the lower and upper limits can now be determined. In case of the polar spot, the radius (correct value $12$ km) is between $11$ km and $15$ km, and the mass (correct value $1.5 ~\msun$) is between $1.4 ~\msun$ and $1.8 ~\msun$, with $68 \%$ probabilities. The most probable values are $13$ km and $1.6 ~\msun$. In case of the equatorial spot and with same the confidence limits, the radius is between $10$ km and $14$ km, and the mass is between $1.2 ~\msun$ and $1.7 ~\msun$. The most probable values are $11$ km and $1.5 ~\msun$. 
+The non-uniform priors for $\thetas$ and $i$ have also a strong effect on the posterior probability distributions for the mass and the radius. They are now also distributed on both sides of the correct values having the maximum near the correct value. The prior information shifts the probability densities of mass and radius towards higher masses and radii, since the incorrect $\thetas - i$ solutions are in this case not contributing to the small masses and radii so much. Most importantly both the lower and upper limits can now be determined. In case of the polar spot, the radius (correct value $12$ km) is between $10$ km and $13$ km, and the mass (correct value $1.5 ~\msun$) is between $1.2 ~\msun$ and $1.7 ~\msun$, with $68 \%$ probabilities. The most probable values are $12$ km and $1.5 ~\msun$. In case of the equatorial spot and with same the confidence limits, the radius is between $9$ km and $13$ km, and the mass is between $1.2 ~\msun$ and $1.7 ~\msun$. The most probable values are $11$ km and $1.3 ~\msun$. 
 
 The angular size of the spot $\rho$ is found to be the closest to the correct value from all the  parameters in our sampling. The highest probability density is very close to $10 \degree$ ($\rho$ is between $6 \degree$ and $14 \degree$ at least with a $95 \%$ probability in every simulation) which is the value used when creating the datasets. Partly this is due to the choice to sample the distance in a quite small interval (between $2$ and $3$ kpc). The distance is not constrained, and that causes problems with a larger interval. A uniform posterior probability distribution for the distance is obtained using the narrow limits. For this reason the size of the spot cannot change very much in order to keep the observed count rate at a correct level.
 
@@ -1367,36 +1368,36 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
     \hline
       Quantity & $95\%$ lower limit & $68\%$ lower limit & Most probable value / median & $68\%$ upper limit & $95\%$ upper limit \\ \hline
      \multicolumn{6}{c}{Polar spot with only uniform priors} \\ %\hline
-      Radius $\req$ (km) & $8.1$ & $8.3$ & $9.0$ & $12.4$ & $13.8$  \\ %\hline
+      Radius $\req$ (km) & $8.1$ & $8.3$ & $9.0$ & $12$ & $14$  \\ %\hline
       Mass $M$ ($\msun$) & $1.0$ & $1.1$ & $1.2$ & $1.6$ & $1.7$  \\ %\hline
-      Inclination $i$ ($\deg$) & $3.2$ & $3.4$ & $6.2$ & $62.7$ & $77.1$ \\ %\hline
-      Spot colatitude $\thetas$ ($\deg$) & $3.3$ & $3.4$ & $6.8$ & $70.8$ & $76.2$ \\ %\hline
-      Spot angular size $\rho$ ($\deg$) & $6.8$ & $8.3$ & $9.8$ & $11.2$ & $12.7$ \\ %\hline
+      Inclination $i$ ($\deg$) & $3.2$ & $3.4$ & $6.2$ & $63$ & $77$ \\ %\hline
+      Spot colatitude $\thetas$ ($\deg$) & $3.3$ & $3.4$ & $9.4$ & $71$ & $76$ \\ %\hline
+      Spot angular size $\rho$ ($\deg$) & $6.8$ & $8.3$ & $9.8$ & $11$ & $13$ \\ %\hline
       Distance $D$ (kpc) & $2.1$ & $2.2$ & $2.5$ & $3.0$ & $3.0$ \\   \hline
       
       \multicolumn{6}{c}{Polar spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
-      Radius $\req$ (km) & $8.7$ & $10.8$ & $12.8$ & $14.7$ & $16.1$  \\ %\hline
-      Mass $M$ ($\msun$) & $1.1$ & $1.4$ & $1.6$ & $1.8$ & $2.0$  \\ %\hline
-      Inclination $i$ ($\deg$) & $11.6$ & $72.8$ & $80.8$ & $88.6$ & $89.5$ \\ %\hline
-      Spot colatitude $\thetas$ ($\deg$) & $2.8$ & $3.6$ & $5.4$ & $5.5$ & $9.4$ \\ %\hline %peak bf sm 4.4
-      Spot angular size $\rho$ ($\deg$) & $7.4$ & $8.4$ & $10.0$ & $11.4$ & $13.0$ \\ %\hline
-      Distance $D$ (kpc) & $2.1$ & $2.2$ & $2.5$ & $2.9$ & $3.0$ \\ \hline
+      Radius $\req$ (km) & $8.5$ & $9.6$ & $12$ & $13$ & $15$  \\ %\hline
+      Mass $M$ ($\msun$) & $1.1$ & $1.2$ & $1.5$ & $1.7$ & $1.9$  \\ %\hline
+      Inclination $i$ ($\deg$) & $3.5$ & $61$ & $74$ & $83$ & $89$ \\ %\hline
+      Spot colatitude $\thetas$ ($\deg$) & $3.2$ & $4.0$ & $5.2$ & $6.6$ & $10$ \\ %\hline %peak bf sm 4.4
+      Spot angular size $\rho$ ($\deg$) & $7.0$ & $8.4$ & $10$ & $12$ & $14$ \\ %\hline
+      Distance $D$ (kpc) & $2.1$ & $2.2$ & $2.5$ & $3.0$ & $3.0$ \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with only uniform priors} \\ %\hline
-      Radius $\req$ (km) & $8.1$ & $8.2$ & $9.1$ & $10.8$ & $16.1$  \\ %\hline
-      Mass $M$ ($\msun$) & $1.0$ & $1.0$ & $1.1$ & $1.4$ & $2.0$  \\ %\hline
-      Inclination $i$ ($\deg$) & $3.3$ & $3.7$ & $7.9$ & $18.1$ & $79.1$ \\ %\hline
-      Spot colatitude $\thetas$ ($\deg$) & $4.6$ & $4.8$ & $8.2$ & $73.5$ & $77.2$ \\ %\hline
-      Spot angular size $\rho$ ($\deg$) & $6.5$ & $8.7$ & $10.3$ & $11.6$ & $13.1$ \\ %\hline
+      Radius $\req$ (km) & $8.1$ & $8.2$ & $9.0$ & $11$ & $16$  \\ %\hline
+      Mass $M$ ($\msun$) & $1.0$ & $1.0$ & $1.2$ & $1.4$ & $2.0$  \\ %\hline
+      Inclination $i$ ($\deg$) & $3.3$ & $3.7$ & $9.3$ & $18$ & $79$ \\ %\hline
+      Spot colatitude $\thetas$ ($\deg$) & $4.6$ & $4.8$ & $9.6$ & $74$ & $77$ \\ %\hline
+      Spot angular size $\rho$ ($\deg$) & $6.5$ & $8.7$ & $10$ & $12$ & $13$ \\ %\hline
       Distance $D$ (kpc) &  $2.0$ & $2.1$ & $2.5$ & $2.9$ & $3.0$ \\ \hline
       
       \multicolumn{6}{c}{Equatorial spot with non-uniform $i$ and $\thetas$ priors} \\ %\hline
-      Radius $\req$ (km) & $8.2$ & $9.8$ & $10.7$ & $14.1$ & $16.1$  \\ %\hline
-      Mass $M$ ($\msun$) & $1.1$ & $1.2$ & $1.5$ & $1.7$ & $2.0$  \\ %\hline
-      Inclination $i$ ($\deg$) & $2.3$ & $3.5$ & $5.5$ & $6.1$ & $67.1$ \\ %\hline
-      Spot colatitude $\thetas$ ($\deg$) & $4.0$ & $67.4$ & $77.4$ & $85.4$ & $89.3$ \\ %\hline
-      Spot angular size $\rho$ ($\deg$) & $7.2$ & $8.2$ & $9.9$ & $11.3$ & $13.5$ \\ %\hline
-      Distance $D$ (kpc) & $2.1$ & $2.1$ & $2.5$ & $2.9$ & $3.0$ \\ 
+      Radius $\req$ (km) & $8.2$ & $9.4$ & $11$ & $13$ & $15$  \\ %\hline
+      Mass $M$ ($\msun$) & $1.0$ & $1.2$ & $1.3$ & $1.7$ & $1.8$  \\ %\hline
+      Inclination $i$ ($\deg$) & $2.5$ & $3.9$ & $5.3$ & $7.2$ & $14$ \\ %\hline
+      Spot colatitude $\thetas$ ($\deg$) & $7.3$ & $59$ & $73$ & $82$ & $88$ \\ %\hline
+      Spot angular size $\rho$ ($\deg$) & $7.2$ & $8.3$ & $10$ & $11$ & $13$ \\ %\hline
+      Distance $D$ (kpc) & $2.0$ & $2.2$ & $2.5$ & $3.0$ & $3.0$ \\ 
 
 
     \hline
@@ -1458,7 +1459,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpolf.pdf,width=17.0cm}}
+\centerline{\epsfig{file=fpolfs.pdf,width=17.0cm}}
 \caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The dark orange color shows a $68 \%$ and the light orange color a $95 \%$ highest posterior density credible interval. In the 2D posterior distributions the solid contour shows a $95 \%$ and the dashed contour a $68 \%$ highest posterior density credible region. The blue cross shows the correct solution for mass and radius. 
 \label{fig:polpost}}
 \end{figure}
@@ -1466,7 +1467,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=fpolprf.pdf,width=17.0cm}}
+\centerline{\epsfig{file=fpolprf2s.pdf,width=17.0cm}}
 \caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the polar spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}. 
 \label{fig:polpostpr}}
 \end{figure}
@@ -1476,7 +1477,7 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feqf.pdf,width=17.0cm}}
+\centerline{\epsfig{file=feqfs.pdf,width=17.0cm}}
 \caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with only uniform priors. The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpost}}
 \end{figure}
@@ -1486,8 +1487,8 @@ The angular size of the spot $\rho$ is found to be the closest to the correct va
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
-\centerline{\epsfig{file=feqprf.pdf,width=17.0cm}}
-\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\theta_{s}$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}.
+\centerline{\epsfig{file=feqprf2s.pdf,width=17.0cm}}
+\caption{Posterior probability distributions for radius $\req$, mass $M$, observer inclination $i$, spot colatitude $\thetas$, spot angular size $\rho$, and distance $D$ for the equatorial spot with non-uniform $i$ and $\thetas$ priors (shown with a blue line). The one-dimensional distributions are normalized to give $1$ as the total probability. The colors, contours, and other symbols are the same as in Figure \ref{fig:polpost}.
 \label{fig:eqpostpr}}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
