@@ -178,7 +178,7 @@ FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
   s num.names$ 'numnames :=
-  numnames #4 >
+  numnames #2 >
   s numnames "{ll}" format.name$ "others" = numnames #1 > and
   or 'etal :=
   useetal
@@ -198,14 +198,14 @@ FUNCTION {format.names}
         { namesleft #1 >
             { ", " * t * }
             { nameptr #2 >
-                { "" * }      % muokattu... alkuperäinen{ "," * }
+                { "," * }      % muokattu... alkuperäinen{ "," * }
                 'skip$
               if$
               t "others" =
               etal or
                 { " {\it et~al.}" * }    
                 %{ " ja " * t * }  % muokattu... alkuperäinen { " and " * t * }
-		{ " and " * t * }
+		{ " \& " * t * }
               if$
             }
           if$
